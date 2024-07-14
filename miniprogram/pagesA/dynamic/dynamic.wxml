@@ -1,0 +1,2 @@
+<!--pagesA/dynamic/dynamic.wxml-->
+<navigation-bar title="动态" back="{{false}}" color="black" background="linear-gradient(to right,#0081ff,#1cbbb4)" color="white"></navigation-bar>

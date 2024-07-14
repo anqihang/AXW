@@ -1,0 +1,2 @@
+<!--pages/min/mine.wxml-->
+<navigation-bar title="我的" back="{{false}}" color="black" background="linear-gradient(to right,#0081ff,#1cbbb4)" color="white"></navigation-bar>

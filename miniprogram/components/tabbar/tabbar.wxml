@@ -1,0 +1,11 @@
+<!--components/tabbar/tabbar.wxml-->
+<view class="tabbarComponent">
+  <view wx:for="{{tabbars}}" wx:key="{{item.id}}" class="item" id="{{item.id}}" bind:tap="change">
+    <view class="tabbar">
+      <view class="icon">
+        <image src="{{item.icon}}{{cur===item.id?'_cur':''}}.png" mode="aspectFit"/>
+      </view>
+      <text class="text-gray" class="{{cur===item.id?'select':''}}">{{item.text}}</text>
+    </view>
+  </view>
+</view>

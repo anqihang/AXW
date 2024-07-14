@@ -1,0 +1,29 @@
+/**app.wxss**/
+// @import "/assets/attr.scss";
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+
+swiper {
+  height: 100%;
+}
+
+image {
+  width: 100%;
+}
+button{
+  background-color: transparent;
+  padding:0;
+  margin:0;
+  outline:none;
+  width:auto;
+  font-size:12px;
+  border-radius: 8rpx;
+}

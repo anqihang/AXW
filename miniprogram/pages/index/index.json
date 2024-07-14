@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "home": "/pagesA/home/home",
+    "dynamic": "/pagesA/dynamic/dynamic",
+    "mine": "/pagesA/mine/mine",
+    "tabbar": "/components/tabbar/tabbar"
+  }
+}

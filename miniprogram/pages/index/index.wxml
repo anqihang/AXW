@@ -1,0 +1,10 @@
+<!--index.wxml-->
+<view class="main">
+  <!-- 首页 -->
+  <home class="main" wx:if="{{cur===1}}"></home>
+  <!-- 动态 -->
+  <dynamic class="main" wx:if="{{cur===2}}"></dynamic>
+  <!-- 我的 -->
+  <mine class="main" wx:if="{{cur===5}}"></mine>
+</view>
+<tabbar bind:changeTabbar="change"></tabbar>
