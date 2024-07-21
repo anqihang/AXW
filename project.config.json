@@ -20,12 +20,14 @@
     "packNpmRelationList": [],
     "ignoreUploadUnusedFiles": true,
     "compileHotReLoad": false,
-    "skylineRenderEnable": false,
+    "skylineRenderEnable": true,
     "condition": true,
     "es6": true,
+    "swc": false,
     "compileWorklet": true,
-    "swc": true,
-    "uglifyFileName": true
+    "uglifyFileName": true,
+    "minifyWXML": true,
+    "minifyWXSS": true
   },
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
@@ -35,10 +37,11 @@
     "tabIndent": "insertSpaces",
     "tabSize": 2
   },
-  "libVersion": "trial",
+  "libVersion": "2.32.3",
   "packOptions": {
     "ignore": [],
     "include": []
   },
-  "appid": "wx696cabc67851a6aa"
+  "appid": "wx696cabc67851a6aa",
+  "projectname": "AXW"
 }

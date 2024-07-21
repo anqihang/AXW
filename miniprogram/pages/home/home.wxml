@@ -1,0 +1,40 @@
+<!--pages/home/home.wxml-->
+<navigation-bar title="首页" back="{{false}}" color="black" background="linear-gradient(45deg,#0081ff,#1cbbb4)" color="white" class="" style="position:absolute;width:100%;"></navigation-bar>
+
+<scroll-view scroll-y type="custom" show-scrollbar="{{false}}" class="HomeView" style="height:100vh">
+  <view style="height:88px"></view>
+  <sticky-section>
+
+    <sticky-header>
+      <!-- 轮播图 -->
+      <swiper class="swiper" indicator-dots autoplay circular indicator-type="scroll">
+        <block wx:for="{{swiperList}}" wx:key="{{item.id}}">
+          <swiper-item>
+            <view>
+              <image src="{{item.url}}" mode="aspectFill" />
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+      <!-- 分类 -->
+      <view class="category">
+        <scroll-view enhanced="{{true}}" show-scrollbar="{{false}}" enable-flex type="custom" scroll-x class="scroll">
+          <list-view wx:for="{{categories}}" wx:key="{{item.id}}">
+            <button hover-class="none" class="{{selectCategoryId===item.id?'select':''}}" style="width:auto;padding:0 32rpx;" bindtap="changeSelect" id="{{item.id}}">
+              {{item.text}}
+            </button>
+          </list-view>
+        </scroll-view>
+      </view>
+    </sticky-header>
+    <grid-view class="posts" type="masonry" cross-axis-count="2" main-axis-gap="2" cross-axis-gap="2">
+      <block wx:for="{{textList}}" wx:key="{{item.id}}">
+        <view class="">
+          <image src="{{item.cover}}" mode="widthFix" />
+          <text class="text-md" overflow="ellipsis" max-lines="{{2}}">{{item.title}}</text>
+          <text class="text-xs">{{item.author}} {{item.subscribeTime}}</text>
+        </view>
+      </block>
+    </grid-view>
+  </sticky-section>
+</scroll-view>

@@ -1,28 +1,11 @@
-// pages/home/home.ts
+// pages/experiment/experiment.ts
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    // 轮播图
-    rotatingList: [
-      { id: 1, img: "https://picsum.photos/200/300" },
-      { id: 2, img: "https://picsum.photos/200/300" },
-      { id: 3, img: "https://picsum.photos/200/300" }
-    ],
-      
-    categories: [
-      { id: 1, text: "热门" },
-      { id: 2, text: "推荐" },
-      { id: 3, text: "帖子" },
-      { id: 3, text: "帖子" },
-      { id: 3, text: "帖子" },
-      { id: 3, text: "帖子" },
-      { id: 3, text: "帖子" },
-      { id: 3, text: "帖子" },
-      { id: 3, text: "帖子" },
-    ]
+
   },
 
   /**

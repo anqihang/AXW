@@ -1,5 +1,5 @@
 /**app.wxss**/
-// @import "/assets/attr.scss";
+@import "/assets/attr.wxss";
 
 .container {
   height: 100%;
@@ -11,19 +11,26 @@
   box-sizing: border-box;
 }
 
-swiper {
-  height: 100%;
-}
-
 image {
   width: 100%;
+  vertical-align: top;
 }
+
 button{
   background-color: transparent;
-  padding:0;
+  padding: 0 30rpx;
   margin:0;
   outline:none;
   width:auto;
-  font-size:12px;
+  height: 64rpx;
+  font-size:28rpx;
   border-radius: 8rpx;
+  display: inline-flex;
+	align-items: center;
+  justify-content: center;
+  line-height: 1;
+	text-align: center;
+	text-decoration: none;
+	overflow: visible;
 }
+

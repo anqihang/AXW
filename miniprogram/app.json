@@ -3,12 +3,22 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/home/home",
-    "pages/mine/mine",
-    "pagesA/dynamic/dynamic"
+    "pages/dynamic/dynamic",
+    "pages/experiment/experiment",
+    "pages/mine/mine"
+  ],
+  "subPackages": [
+    {
+      "root": "packageA",
+      "pages": [
+        "login/login"
+      ]
+    }
   ],
   "window": {
     "navigationBarTextStyle": "black",
-    "navigationStyle": "custom"
+    "navigationStyle": "custom",
+    "enablePullDownRefresh": false
   },
   "style": "v2",
   "renderer": "skyline",

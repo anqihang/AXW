@@ -1,0 +1,32 @@
+/* pages/home/home.wxss */
+@import '/app.wxss';
+
+.HomeView {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  .swiper {
+    width: 100vw;
+    height: 56.25vw;
+    overflow: hidden
+  }
+
+  .category {
+    .scroll {
+      height: 64rpx;
+      background-color: white;
+    }
+
+    .select {
+      color: #6cbf43;
+    }
+  }
+  .posts{
+    .postsItem{
+    display: flex;
+    flex-direction: column;
+    }
+ 
+  }
+}

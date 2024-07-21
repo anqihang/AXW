@@ -1,9 +1,10 @@
 /**index.wxss**/
+@import "/assets/attr.wxss";
 page {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background:#f1f1f1;
+  background:var(--bg);
 }
 .main{
   display:flex;

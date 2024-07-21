@@ -1,8 +1,15 @@
 {
   "usingComponents": {
-    "home": "/pagesA/home/home",
-    "dynamic": "/pagesA/dynamic/dynamic",
-    "mine": "/pagesA/mine/mine",
-    "tabbar": "/components/tabbar/tabbar"
-  }
+    "navigation-bar": "/components/navigation-bar/navigation-bar",
+    "tabbar":"/components/tabbar/tabbar",
+    "home":"/pages/home/home",
+    "dynamic":"/pages/dynamic/dynamic",
+    "experiment":"/pages/experiment/experiment",
+    "mine":"/pages/mine/mine",
+    "login":"/packageA/login/login"
+  },
+  "componentPlaceholder": {
+    "login":"login"
+  },
+  "styleIsolation": "apply-shared"
 }

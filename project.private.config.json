@@ -6,7 +6,21 @@
     "skylineRenderEnable": true,
     "urlCheck": false,
     "bigPackageSizeSupport": true,
-    "preloadBackgroundData": false
+    "preloadBackgroundData": false,
+    "autoAudits": false
   },
-  "libVersion": "3.4.10"
+  "libVersion": "3.4.10",
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        }
+      ]
+    }
+  }
 }

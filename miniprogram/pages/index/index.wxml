@@ -4,6 +4,9 @@
   <home class="main" wx:if="{{cur===1}}"></home>
   <!-- 动态 -->
   <dynamic class="main" wx:if="{{cur===2}}"></dynamic>
+  <login class="main" wx:if="{{cur===3}}"></login>
+  <!-- 实验 -->
+  <experiment class="main" wx:if="{{cur===4}}"></experiment>
   <!-- 我的 -->
   <mine class="main" wx:if="{{cur===5}}"></mine>
 </view>
