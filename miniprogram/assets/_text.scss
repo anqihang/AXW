@@ -1,0 +1,10 @@
+@import "./_var";
+
+.text {
+  @each $class, $value in $fontSize {
+    &-#{$class},
+    &-#{$value / 2} {
+      font-size: #{$value}rpx;
+    }
+  }
+}

@@ -1,16 +1,15 @@
 /**index.wxss**/
 @import "/assets/attr.wxss";
-
 page {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background: var(--bg);
+  background:var(--bg);
 }
-.main {
-  display: flex;
+.main{
+  display:flex;
   flex-direction: column;
-  flex: 1;
+  flex:1;
 }
 
 .scrollarea {
@@ -57,8 +56,8 @@ page {
   width: 100%;
   padding: 16px;
   box-sizing: border-box;
-  border-top: 0.5px solid rgba(0, 0, 0, 0.1);
-  border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+  border-top: .5px solid rgba(0, 0, 0, 0.1);
+  border-bottom: .5px solid rgba(0, 0, 0, 0.1);
   color: black;
 }
 

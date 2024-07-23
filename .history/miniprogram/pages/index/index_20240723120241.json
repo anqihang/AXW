@@ -9,7 +9,7 @@
     "login": "/packageA/login/login"
   },
   "componentPlaceholder": {
-    "ALogin": "login"
+    // "login": "login"
   },
   "styleIsolation": "apply-shared"
 }

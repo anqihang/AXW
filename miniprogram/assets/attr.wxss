@@ -1,132 +1,73 @@
 page {
-  --text: #aaaaaa;
   --bg: #f1f1f1;
-  -red: #e54d42;
+  --text: #aaaaaa;
+
+  --red: #e54d42; // 嫣红
   --light-red: #fadbd9;
-  --orange: #f37b1d;
+  --orange: #f37b1d; // 桔橙
   --light-orange: #fde6d2;
-  --yellow: #fbbd08;
+  --yellow: #fbbd08; // 明黄
   --light-yellow: #fef2ced2;
-  --olive: #8dc63f;
+  --olive: #8dc63f; // 橄榄
   --light-olive: #e8f4d9;
-  --green: #39b54a;
+  --green: #39b54a; // 森绿
   --light-green: #d7f0dbff;
-  --cyan: #1cbbb4;
+  --cyan: #1cbbb4; // 天青
   --light-cyan: #d2f1f0;
-  --blue: #0081ff;
+  --blue: #0081ff; // 海蓝
   --light-blue: #cce6ff;
-  --purple: #6739b6;
+  --purple: #6739b6; // 姹紫
   --light-purple: #e1d7f0;
-  --manve: #9c26b0;
-  --light-manve: #ebd4ef;
-  --pink: #e03997;
+  --mauve: #9c26b0; // 木槿
+  --light-mauve: #ebd4ef;
+  --pink: #e03997; // 桃粉
   --light-pink: #f9d7ea;
-  --brown: #a5673f;
-  --ligt-brown: #ede1d9;
-  --grey: #8799a3;
+  --brown: #a5673f; // 棕褐
+  --light-brown: #ede1d9;
+  --grey: #8799a3; // 玄灰
   --light-grey: #e7ebed;
-  --gray: #f0f0f0;
-  --black: #333333;
-  --white: #ffffff;
+  --gray: #f0f0f0; // 草灰
+  --black: #333333; // 墨黑
+  --white: #ffffff; // 雅白
 }
 
 .bg-gradual-red {
+  // 魅红
   background-image: linear-gradient(45deg, #f43f3b, #ec008c);
   color: #ffffff;
 }
 
 .bg-gradual-orange {
+  // 鎏金
   background-image: linear-gradient(45deg, #ff9700, #ed1c24);
   color: #ffffff;
 }
 
 .bg-gradual-green {
+  // 翠柳
   background-image: linear-gradient(45deg, #39b54a, #8dc63f);
   color: #ffffff;
 }
 
 .bg-gradual-purple {
+  // 惑紫
   background-image: linear-gradient(45deg, #9000ff, #5e00ff);
   color: #ffffff;
 }
 
 .bg-gradual-pink {
+  // 霞彩
   background-image: linear-gradient(45deg, #ec008c, #6739b6);
   color: #ffffff;
 }
 
 .bg-gradual-blue {
+  // 靛青
   background-image: linear-gradient(45deg, #0081ff, #1cbbb4);
   color: #ffffff;
 }
 
 
-/* ==================
-          文本
- ==================== */
 
-.text-xs {
-  font-size: 20rpx;
-}
 
-.text-sm {
-  font-size: 24rpx;
-}
 
-.text-md {
-  font-size: 28rpx;
-}
-
-.text-lg {
-  font-size: 32rpx;
-}
-
-.text-xl {
-  font-size: 36rpx;
-}
-
-.text-2xl {
-  font-size: 44rpx;
-}
-
-.text-3xl {
-  font-size: 80rpx;
-}
-
-.text-4xl {
-  font-size: 120rpx;
-}
-
-text {
-  font-size: 28rpx;
-}
-
-/* .ellspsis-1 {
-  text-overflow: -o-ellipsis-lastline;
-  text-overflow:ellipsis;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  line-clamp: 1;
-  -webkit-box-orient: vertical;
-} */
-
-.ellspsis-2 {}
-
-.ellspsis-3 {}
-
-.flex {
-  display: flex;
-}
-
-.flex-col {
-  flex-direction: column;
-}
-
-.grid {
-  display: grid;
-}
-
-.rounded-4 {
-  border-radius: 4px;
-}

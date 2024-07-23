@@ -1,0 +1,132 @@
+page {
+  --text: #aaaaaa;
+  --bg: #f1f1f1;
+  -red: #e54d42;
+  --light-red: #fadbd9;
+  --orange: #f37b1d;
+  --light-orange: #fde6d2;
+  --yellow: #fbbd08;
+  --light-yellow: #fef2ced2;
+  --olive: #8dc63f;
+  --light-olive: #e8f4d9;
+  --green: #39b54a;
+  --light-green: #d7f0dbff;
+  --cyan: #1cbbb4;
+  --light-cyan: #d2f1f0;
+  --blue: #0081ff;
+  --light-blue: #cce6ff;
+  --purple: #6739b6;
+  --light-purple: #e1d7f0;
+  --manve: #9c26b0;
+  --light-manve: #ebd4ef;
+  --pink: #e03997;
+  --light-pink: #f9d7ea;
+  --brown: #a5673f;
+  --ligt-brown: #ede1d9;
+  --grey: #8799a3;
+  --light-grey: #e7ebed;
+  --gray: #f0f0f0;
+  --black: #333333;
+  --white: #ffffff;
+}
+
+.bg-gradual-red {
+  background-image: linear-gradient(45deg, #f43f3b, #ec008c);
+  color: #ffffff;
+}
+
+.bg-gradual-orange {
+  background-image: linear-gradient(45deg, #ff9700, #ed1c24);
+  color: #ffffff;
+}
+
+.bg-gradual-green {
+  background-image: linear-gradient(45deg, #39b54a, #8dc63f);
+  color: #ffffff;
+}
+
+.bg-gradual-purple {
+  background-image: linear-gradient(45deg, #9000ff, #5e00ff);
+  color: #ffffff;
+}
+
+.bg-gradual-pink {
+  background-image: linear-gradient(45deg, #ec008c, #6739b6);
+  color: #ffffff;
+}
+
+.bg-gradual-blue {
+  background-image: linear-gradient(45deg, #0081ff, #1cbbb4);
+  color: #ffffff;
+}
+
+
+/* ==================
+          文本
+ ==================== */
+
+.text-xs {
+  font-size: 20rpx;
+}
+
+.text-sm {
+  font-size: 24rpx;
+}
+
+.text-md {
+  font-size: 28rpx;
+}
+
+.text-lg {
+  font-size: 32rpx;
+}
+
+.text-xl {
+  font-size: 36rpx;
+}
+
+.text-2xl {
+  font-size: 44rpx;
+}
+
+.text-3xl {
+  font-size: 80rpx;
+}
+
+.text-4xl {
+  font-size: 120rpx;
+}
+
+text {
+  font-size: 28rpx;
+}
+
+/* .ellspsis-1 {
+  text-overflow: -o-ellipsis-lastline;
+  text-overflow:ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+} */
+
+.ellspsis-2 {}
+
+.ellspsis-3 {}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.grid {
+  display: grid;
+}
+
+.rounded-4 {
+  border-radius: 4px;
+}
