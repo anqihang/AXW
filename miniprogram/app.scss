@@ -1,5 +1,5 @@
 /**app.wxss**/
-@import "/assets/ui";
+@import "./assets/ui.scss";
 
 .container {
   height: 100%;
@@ -38,7 +38,4 @@ button {
 =================*/
 view {
   box-sizing: border-box;
-}
-text {
-  font-size: 28rpx;
 }

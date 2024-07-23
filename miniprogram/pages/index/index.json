@@ -6,10 +6,9 @@
     "dynamic": "/pages/dynamic/dynamic",
     "experiment": "/pages/experiment/experiment",
     "mine": "/pages/mine/mine",
-    "login": "/packageA/login/login"
+    "login":"/packageA/login/login"
   },
   "componentPlaceholder": {
-    "ALogin": "login"
-  },
-  "styleIsolation": "apply-shared"
+      "login":"login"
+  }
 }

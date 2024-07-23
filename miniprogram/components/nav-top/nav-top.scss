@@ -1,0 +1,15 @@
+/* components/navTop/navTop.wxss */
+.weui-navigation-bar {
+  --height: 44px;
+}
+.weui-navigation-bar .android {
+  --height: 48px;
+}
+.weui-navigation-bar__inner {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: calc(var(--height) + env(safe-area-inset-top));
+  width: 100%;
+  box-sizing: border-box;
+}

@@ -1,0 +1,2 @@
+<!--components/navTop/navTop.wxml-->
+<view class="weui-navigation-bar weui-navigation-bar__inner {{ios ? 'ios' : 'android'}}"></view>

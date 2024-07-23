@@ -1,4 +1,4 @@
-@import "./_var";
+@import "./_var.scss";
 
 .text {
   @each $class, $value in $fontSize {

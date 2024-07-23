@@ -1,4 +1,4 @@
-// $fontSize: ();
+$fontSize: ();
 $fontSize: map-merge(
   (
     xs: 20,
@@ -8,9 +8,9 @@ $fontSize: map-merge(
     xl: 36,
     "2xl": 44,
     "3xl": 80,
-    "4xl": 120,
+    "4xl": 120
   ),
-  //   $fontSize
+  $fontSize
 );
 
 $red: #e54d42; // 嫣红
@@ -43,6 +43,5 @@ $white: #ffffff; // 雅白
 
 $colors: ();
 $colors: map-merge((
-    'red':    $red,
-    ''
+    'red':    $red
 ), $colors);

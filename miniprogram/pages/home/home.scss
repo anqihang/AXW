@@ -1,15 +1,14 @@
 /* pages/home/home.wxss */
-@import '/app.wxss';
+// @import '/app.scss';
 
 .HomeView {
   flex: 1;
-  display: flex;
-  flex-direction: column;
+  overflow: hidden;
 
   .swiper {
     width: 100vw;
     height: 56.25vw;
-    overflow: hidden
+    overflow: hidden;
   }
 
   .category {
@@ -27,6 +26,5 @@
     display: flex;
     flex-direction: column;
     }
- 
   }
 }
