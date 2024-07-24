@@ -32,7 +32,7 @@
   <block wx:for="{{textList}}" wx:key="id">
     <view class="">
       <image src="{{item.cover}}" mode="widthFix" />
-      <text class="text-md" overflow="ellipsis" max-lines="{{2}}">{{item.title}}</text>
+      <text class="text-md px-4" overflow="ellipsis" max-lines="{{2}}">{{item.title}}</text>
       <text class="text-xs">{{item.author}} {{item.subscribeTime}}</text>
     </view>
   </block>

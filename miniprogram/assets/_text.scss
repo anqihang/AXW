@@ -1,10 +1,20 @@
 @import "./_var.scss";
 
 .text {
-  @each $class, $value in $fontSize {
+
+  @each $class,
+  $value in $fontSize {
+
     &-#{$class},
     &-#{$value / 2} {
       font-size: #{$value}rpx;
     }
+  }
+}
+
+@each $type,
+$value in $fontWeight {
+  .font-#{$type} {
+    font-weight: $value;
   }
 }

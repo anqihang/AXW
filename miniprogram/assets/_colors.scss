@@ -1,67 +1,93 @@
 @import "./var.scss";
 
-@each $color, $value in $colors {
-  .text-#{$color},
-  .text-#{$value} {
+@each $color,
+$value in $colors {
+  .text-#{$color} {
     color: $value;
   }
-  .text-#{$color}-light,
-  .text-#{$value}-light {
+
+  .text-#{$color}-light {
     color: #{mix(white, $value, 80%)};
   }
 
-  .bg-#{$color},
-  .bg-#{$value} {
+  .bg-#{$color} {
     background-color: $value;
   }
-  .bg-#{$color}-light,
-  .bg-#{$value}-light {
+
+  .bg-#{$color}-light {
     background-color: #{mix(white, $value, 80%)};
   }
+// 条纹
   .bg-#{$color}-stripes {
     background-color: #{mix(#ffffff00, desaturate($value, 45%), 93%)};
-    background-image: linear-gradient(
-      225deg,
+    background-image: linear-gradient(225deg,
       #{mix(#ffffff00, $value, 50%)} 10%,
       transparent 0,
       transparent 50%,
       #{mix(#ffffff00, $value, 50%)} 0,
       #{mix(#ffffff00, $value, 50%)} 60%,
       transparent 0,
-      transparent
-    );
+      transparent);
     background-size: 7.07px 7.07px;
     z-index: -1;
   }
 
-  @each $colorSub, $valueSub in $colors {
-    @if $color != $colorSub {
-      .bg-#{$color}-#{$colorSub},
-      .bg-#{$value}-#{$valueSub} {
+  .border-#{$color} {
+    border-color: $value;
+  }
+
+  .border-#{$color}-light {
+    border-color: #{mix(white, $value, 80%)};
+  }
+
+  // 渐变
+  @each $colorSub,
+  $valueSub in $colors {
+    @if $color !=$colorSub {
+      .bg-#{$color}-#{$colorSub} {
         background-image: linear-gradient(130deg, $value, $valueSub);
         color: white;
       }
     }
   }
-
-  .border-#{$color},
-  .border-#{$value} {
-    border-color: $value;
-  }
-  .border-#{$color}-light,
-  .border-#{$value}-light {
-    border-color: #{mix(white, $value, 80%)};
-  }
 }
-
-@each $gray, $value in map-merge($grays,$darks) {
+// 灰度
+@each $gray,
+$value in map-merge($grays, $darks) {
   .text-#{$gray} {
     color: $value;
   }
+
   .bg-#{$gray} {
     background-color: $value;
   }
+
   .border-#{$gray} {
     border-color: $value;
   }
 }
+.bg-gradual-red/* 魅红 #f43f3b - #ec008c */
+{
+  background-image:linear-gradient(45deg,#f43f3b,#ec008c);
+}
+.bg-gradual-orange /* 鎏金 #ff9700 - #ed1c24 */
+{
+  background-image:linear-gradient(45deg,#ff9700,#ed1c24);
+}
+.bg-gradual-green /* 翠柳 #39b54a - #8dc63f */
+{
+  background-image:linear-gradient(45deg,#39b54a,#8dc63f);
+}
+.bg-gradual-blue /* 靛青 #0081ff - #1cbbb4 */
+{
+  background-image:linear-gradient(45deg,#0081ff,#1cbbb4);
+}
+.bg-gradual-purple /* 惑紫 #9000ff - #5e00ff */
+{
+  background-image:linear-gradient(45deg,#9000ff,#5e00ff);
+}
+.bg-gradual-pink /* 霞彩 #ec008c - #6739b6 */
+{
+  background-image:linear-gradient(45deg,#ec008c,#6739b6);
+}
+

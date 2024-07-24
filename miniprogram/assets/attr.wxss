@@ -31,41 +31,6 @@ page {
   --white: #ffffff; // 雅白 */
 }
 
-.bg-gradual-red {
-  /* // 魅红 */
-  background-image: linear-gradient(45deg, #f43f3b, #ec008c);
-  color: #ffffff;
-}
-
-.bg-gradual-orange {
-  /* // 鎏金 */
-  background-image: linear-gradient(45deg, #ff9700, #ed1c24);
-  color: #ffffff;
-}
-
-.bg-gradual-green {
-  /* // 翠柳 */
-  background-image: linear-gradient(45deg, #39b54a, #8dc63f);
-  color: #ffffff;
-}
-
-.bg-gradual-purple {
-  /* // 惑紫 */
-  background-image: linear-gradient(45deg, #9000ff, #5e00ff);
-  color: #ffffff;
-}
-
-.bg-gradual-pink {
-  /* // 霞彩 */
-  background-image: linear-gradient(45deg, #ec008c, #6739b6);
-  color: #ffffff;
-}
-
-.bg-gradual-blue {
-   /* 靛青 */
-  background-image: linear-gradient(45deg, #0081ff, #1cbbb4);
-  color: #ffffff;
-}
 
 
 

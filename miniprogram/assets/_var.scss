@@ -1,7 +1,5 @@
 $fontSize: ();
-$fontSize: map-merge(
-  (
-    xs: 20,
+$fontSize: map-merge((xs: 20,
     sm: 24,
     df: 28,
     lg: 32,
@@ -10,8 +8,18 @@ $fontSize: map-merge(
     "3xl": 80,
     "4xl": 120,
   ),
-  $fontSize
-);
+  $fontSize);
+$fontWeight:();
+$fontWeight:map-merge((thin: 100,
+    extralight: 200,
+    light: 300,
+    normal: 400,
+    medium: 500,
+    semibold: 600,
+    bold: 700,
+    extrabold: 800,
+    black: 900,
+  ), $fontWeight);
 
 $red: #e54d42; // 嫣红
 $light-red: #fadbd9;
@@ -42,9 +50,7 @@ $black: #333333; // 墨黑
 $white: #ffffff; // 雅白
 
 $colors: ();
-$colors: map-merge(
-  (
-    "red": $red,
+$colors: map-merge(("red": $red,
     "orange": $orange,
     "yellow": $yellow,
     "olive": $olive,
@@ -57,13 +63,10 @@ $colors: map-merge(
     "brown": $brown,
     "grey": $grey,
     "gray": $gray,
-    // "black": $black,
-    // "white": $white,,,,,,,,,
   ),
-  $colors
-);
+  $colors);
 //灰度
-$white: #ffffff; //
+$white: #ffffff;
 $gray-f: #f8f9fa;
 $gray-e: #eeeeee;
 $gray-d: #dddddd;
@@ -76,15 +79,13 @@ $dark-7: #777777;
 $dark-6: #666666;
 $dark-5: #555555;
 $dark-4: #444444;
-$dark-3: #333333; //
+$dark-3: #333333;
 $dark-2: #222222;
 $dark-1: #111111;
-$black: #000000; //
+$black: #000000;
 
 $grays: ();
-$grays: map-merge(
-  (
-    "white": $white,
+$grays: map-merge(("white": $white,
     "gray-f": $gray-f,
     "gray-e": $gray-e,
     "gray-d": $gray-d,
@@ -93,13 +94,10 @@ $grays: map-merge(
     "gray-a": $gray-a,
     "gray": $gray-a,
   ),
-  $grays
-);
+  $grays);
 
 $darks: ();
-$darks: map-merge(
-  (
-    "dark-9": $dark-9,
+$darks: map-merge(("dark-9": $dark-9,
     "dark-8": $dark-8,
     "dark-7": $dark-7,
     "dark-6": $dark-6,
@@ -110,11 +108,9 @@ $darks: map-merge(
     "dark-1": $dark-1,
     "black": $black,
   ),
-  $darks
-);
+  $darks);
 
-$directions: (
-  "top": "t",
+$directions: ("top": "t",
   "right": "r",
   "bottom": "b",
   "left": "l",

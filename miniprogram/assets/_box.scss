@@ -1,15 +1,20 @@
 @import "./var.scss";
 
-@each $num in 0 to 80 {
-  @each $dir, $value in $directions {
-    .p-#{$value}-#{$num} {
-      padding-#{#dir}: #{$num * 2}rpx;
+@each $dir,
+$value in $directions {
+  @for $i from 1 through 80 {
+    .p#{$value}-#{$i} {
+      padding-#{$dir}: #{$i}rpx;
     }
-    .m-#{$value}-#{$num} {
-      margin-#{#dir}: #{$num * 2}rpx;
+
+    .m#{$value}-#{$i} {
+      margin-#{$dir}: #{$i * 2}rpx;
     }
-    .border-#{$value}-#{$num} {
-      border-#{#dir}-width: #{$num * 2}rpx;
+  }
+
+  @for $i from 1 through 12 {
+    .border-#{$value}-#{$i} {
+      border-#{$dir}-width: #{$i * 2}rpx;
     }
   }
 }
