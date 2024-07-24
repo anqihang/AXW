@@ -57,68 +57,8 @@ $colors: map-merge(
     "brown": $brown,
     "grey": $grey,
     "gray": $gray,
-    // "black": $black,
-    // "white": $white,,,,,,,,,
+    "black": $black,
+    "white": $white,
   ),
   $colors
-);
-//灰度
-$white: #ffffff; //
-$gray-f: #f8f9fa;
-$gray-e: #eeeeee;
-$gray-d: #dddddd;
-$gray-c: #cccccc;
-$gray-b: #bbbbbb;
-$gray-a: #aaaaaa;
-$dark-9: #999999;
-$dark-8: #888888;
-$dark-7: #777777;
-$dark-6: #666666;
-$dark-5: #555555;
-$dark-4: #444444;
-$dark-3: #333333; //
-$dark-2: #222222;
-$dark-1: #111111;
-$black: #000000; //
-
-$grays: ();
-$grays: map-merge(
-  (
-    "white": $white,
-    "gray-f": $gray-f,
-    "gray-e": $gray-e,
-    "gray-d": $gray-d,
-    "gray-c": $gray-c,
-    "gray-b": $gray-b,
-    "gray-a": $gray-a,
-    "gray": $gray-a,
-  ),
-  $grays
-);
-
-$darks: ();
-$darks: map-merge(
-  (
-    "dark-9": $dark-9,
-    "dark-8": $dark-8,
-    "dark-7": $dark-7,
-    "dark-6": $dark-6,
-    "dark-5": $dark-5,
-    "dark-4": $dark-4,
-    "dark-3": $dark-3,
-    "dark-2": $dark-2,
-    "dark-1": $dark-1,
-    "black": $black,
-  ),
-  $darks
-);
-
-$directions: (
-  "top": "t",
-  "right": "r",
-  "bottom": "b",
-  "left": "l",
-  "block": "x",
-  “inline”: "y",
-  "": "",
 );
