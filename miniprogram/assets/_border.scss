@@ -1,17 +1,53 @@
 @import "./var.scss";
 
-@each $dir, $value in $directions {
-  @for $i from 1 through 12 {
-    .border-#{$dir}-#{$i} {
-      border-#{$value}-width: #{$i * 2}rpx;
+.border {
+  @each $dir, $value in $directions {
+    @for $i from 1 through 12 {
+      &-#{$dir}-#{$i} {
+        border-#{$value}-width: #{$i * 2}rpx;
+      }
+    }
+  }
+
+  @each $type in ("solid", "dashed", "dotted", "double", "none", "hidden") {
+    &-#{$type} {
+      border-style: $type;
     }
   }
 }
-
-.border {
-  @each $type in ("solid" "dashed" "dotted") {
-    &-#{$type} {
-      border-style: $type;
+.rounded {
+  @each $dir,
+    $list
+      in (
+        "t": (
+          "top-left",
+          "top-right",
+        ),
+        "r": (
+          "top-right",
+          "bottom-right",
+        ),
+        "b": (
+          "bottom-left",
+          "bottom-right",
+        ),
+        "l": (
+          "top-left",
+          "bottom-left",
+        )
+      )
+  {
+    @each $d in $list {
+      @each $size in (2, 4, 6, 8, 10, 12, 14, 16, 18, "full") {
+        &-#{$dir}-#{$size} {
+          @if (type-of($size) === "string") {
+            border-#{$d}-radius: 9999px;
+          }
+          @if (type-of($size) === "number") {
+            border-#{$d}-radius: #{$size * 2}rpx;
+          }
+        }
+      }
     }
   }
 }

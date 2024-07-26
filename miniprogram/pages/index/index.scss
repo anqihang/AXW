@@ -1,18 +1,17 @@
 /**index.wxss**/
-// @import "/app";
-
-page {
-  height: 100vh;
+.container {
+  flex: 1;
+  overflow: auto;
   display: flex;
   flex-direction: column;
-  background: var(--bg);
-  font-size: 28rpx;
+  align-items: center;
 }
+
 .main {
   display: flex;
   flex-direction: column;
   flex: 1;
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 .scrollarea {

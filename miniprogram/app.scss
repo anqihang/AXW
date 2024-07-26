@@ -1,41 +1,25 @@
-/**app.wxss**/
+/**app.scss**/
 @import "./assets/ui.scss";
 
-.container {
-  height: 100%;
+page {
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 200rpx 0;
-  box-sizing: border-box;
-}
-
-image {
-  width: 100%;
-  vertical-align: top;
-}
-
-button {
-  background-color: transparent;
-  padding: 0 30rpx;
-  margin: 0;
-  outline: none;
-  width: auto;
-  height: 64rpx;
+  overflow: hidden;
+  background: var($gray);
   font-size: 28rpx;
-  border-radius: 8rpx;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
-  text-align: center;
-  text-decoration: none;
-  overflow: visible;
 }
 /*=================
         初始化
 =================*/
 view {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+image {
+  width: 100%;
+  vertical-align: sub;
 }

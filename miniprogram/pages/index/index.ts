@@ -1,23 +1,24 @@
 // index.ts
 // 获取应用实例
 const app = getApp<IAppOption>();
-const defaultAvatarUrl = "https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0";
+const defaultAvatarUrl = app.globalData.defaultAvatarUrl;
 
 Page({
-  
   data: {
-    motto: "Hello World",
+    // motto: "Hello World",
     userInfo: {
       avatarUrl: defaultAvatarUrl,
       nickName: "",
     },
     hasUserInfo: false,
-    canIUseGetUserProfile: wx.canIUse("getUserProfile"),
-    canIUseNicknameComp: wx.canIUse("input.type.nickname"),
-    // 选中的tabbar
+    // canIUseGetUserProfile: wx.canIUse("getUserProfile"),
+    // canIUseNicknameComp: wx.canIUse("input.type.nickname"),
+
+    // 选中的tabBarIndex
     cur: 1,
   },
-  change(e: any) {
+  // 切换tabBar
+  changeTab(e: any) {
     console.log(e, 1);
     this.setData({
       cur: Number(e.detail),

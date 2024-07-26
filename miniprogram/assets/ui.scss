@@ -1,3 +1,10 @@
-@import "./text";
-@import "./colors";
-@import "./box";
+@import "./_border";
+@import "./_box";
+@import "./_button";
+@import "./_colors";
+@import "./_flex";
+@import "./_shadow";
+@import "./_text";
+@import "./_var";
+
+--bg: var($gray);

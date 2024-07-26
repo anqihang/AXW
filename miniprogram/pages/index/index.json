@@ -1,14 +1,14 @@
 {
   "usingComponents": {
     "navigation-bar": "/components/navigation-bar/navigation-bar",
-    "tabbar": "/components/tabbar/tabbar",
+    "tabBar": "/components/tabBar/tabBar",
     "home": "/pages/home/home",
     "dynamic": "/pages/dynamic/dynamic",
     "experiment": "/pages/experiment/experiment",
     "mine": "/pages/mine/mine",
-    "login":"/packageA/login/login"
+    "login": "/packageA/login/login"
   },
   "componentPlaceholder": {
-      "login":"login"
+    "login": "login"
   }
 }

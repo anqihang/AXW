@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<view class="main">
+<view class="container">
   <!-- 首页 -->
   <home class="main" wx:if="{{cur===1}}"></home>
   <!-- 动态 -->
@@ -10,4 +10,4 @@
   <!-- 我的 -->
   <mine class="main" wx:if="{{cur===5}}"></mine>
 </view>
-<tabbar bind:changeTabbar="change"></tabbar>
+<tabbar bind:changeTabbar="changeTab"></tabbar>

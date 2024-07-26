@@ -1,5 +1,19 @@
 @import "./_var";
 
-.btn{
-    
+button {
+  background-color: transparent;
+  padding: 0 30rpx;
+  margin: 0;
+  outline: none;
+  width: auto;
+  height: 64rpx;
+  font-size: 28rpx;
+  border-radius: 8rpx;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  overflow: visible;
 }
