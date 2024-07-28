@@ -9,7 +9,7 @@
     "preloadBackgroundData": false,
     "autoAudits": false
   },
-  "libVersion": "3.4.10",
+  "libVersion": "3.5.1",
   "condition": {
     "miniprogram": {
       "list": [

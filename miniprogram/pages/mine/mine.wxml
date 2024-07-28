@@ -1,3 +1,41 @@
 <!--pages/min/mine.wxml-->
-<navigation-bar title="我的" back="{{false}}" color="black" background="linear-gradient(to right,#0081ff,#1cbbb4)" color="white"></navigation-bar>
-<view style="width:500rpx;height:200rpx" class="bg-red-yellow"></view>
+<!-- <navigation-bar title="我的" back="{{false}}" background="linear-gradient(45deg,#9000ff,#5e00ff)" color="white"></navigation-bar> -->
+<nav-top></nav-top>
+<view class="MineView flex-1 overflow">
+  <scroll-view class="h-full" scroll-y type="custom" enable-flex show-scrollbar="{{false}}" padding="{{[16,0,16,0]}}">
+    <view class="flex px-32">
+      <image class="avatar w-32 rounded-full" src="../../static/avatar.svg" mode="aspectFill" />
+      <view class="ml-16 flex flex-col justify-center">
+        <text class="text-xl font-bold">安琦航</text>
+        <view class="flex align-center">
+          <view class="">VIP</view>
+          <view class="ml-8">Lv.3</view>
+        </view>
+      </view>
+      <view></view>
+    </view>
+    <view class="Grid px-16 mt-16">
+      <view class="bg-white flex flex-wrap rounded-4 py-8">
+        <view class="item align-center flex flex-col py-12" wx:for="{{gridList}}" wx:key="{{index}}">
+          <view class="w-24 h-24">
+            <image class="h-full" src="../../static/avatar.svg" mode="aspectFit" />
+          </view>
+          <view class="mt-4">{{item.title}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="list px-16 mt-16">
+      <view class="rounded-4 overflow">
+        <view class="flex px-16 py-12 bg-white justify-between" wx:for="{{list}}" wx:key="index">
+          <view class="flex align-center">
+            <view class="w-24 h-24 mr-8">
+              <image class="h-full" src="../../static/avatar.svg" mode="aspectFit" />
+            </view>
+            <text class="text-lg">{{item.title}}</text>
+          </view>
+          <view class="w-24 h-24 bg-red"></view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

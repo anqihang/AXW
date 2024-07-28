@@ -1,5 +1,5 @@
 /* pages/home/home.wxss */
-// @import '/app.scss';
+@import '../../app.scss';
 
 .HomeView {
   flex: 1;
@@ -18,13 +18,15 @@
     }
 
     .select {
-      color: #6cbf43;
+      color: $green;
     }
   }
-  .posts{
-    .postsItem{
-    display: flex;
-    flex-direction: column;
+
+  .posts {
+
+    .postsItem {
+      display: flex;
+      flex-direction: column;
     }
   }
 }

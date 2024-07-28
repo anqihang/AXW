@@ -1,6 +1,7 @@
 // index.ts
 // 获取应用实例
 const app = getApp<IAppOption>();
+export {};
 const defaultAvatarUrl = app.globalData.defaultAvatarUrl;
 
 Page({
@@ -15,7 +16,7 @@ Page({
     // canIUseNicknameComp: wx.canIUse("input.type.nickname"),
 
     // 选中的tabBarIndex
-    cur: 1,
+    cur: 5,
   },
   // 切换tabBar
   changeTab(e: any) {

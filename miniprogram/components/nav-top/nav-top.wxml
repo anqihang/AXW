@@ -1,2 +1,4 @@
 <!--components/navTop/navTop.wxml-->
-<view class="weui-navigation-bar weui-navigation-bar__inner {{ios ? 'ios' : 'android'}}"></view>
+<view class="weui-navigation-bar {{ios ? 'ios' : 'android'}}" >
+<view class="weui-navigation-bar__inner" style="{{safeAreaTop}}"></view>
+</view>

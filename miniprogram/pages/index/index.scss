@@ -1,17 +1,13 @@
 /**index.wxss**/
 .container {
   flex: 1;
-  overflow: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  overflow:hidden;
 }
 
 .main {
+  height:100%;
   display: flex;
   flex-direction: column;
-  flex: 1;
-  // overflow: hidden;
 }
 
 .scrollarea {

@@ -6,8 +6,9 @@ page {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  background: var($gray);
+  background: $bg;
   font-size: 28rpx;
+  color:$black;
 }
 /*=================
         初始化
@@ -16,8 +17,9 @@ view {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  outline: none;
+  outline: unset;
 }
+
 
 image {
   width: 100%;

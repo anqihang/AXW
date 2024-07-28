@@ -1,4 +1,5 @@
 // components/navTop/navTop.ts
+const app = getApp<IAppOption>();
 Component({
 
   /**
@@ -12,7 +13,8 @@ Component({
    * 组件的初始数据
    */
   data: {
-    ios:false
+    ios:app.globalData.ios,
+    safeAreaTop:!app.globalData.ios?`height: calc(var(--height) + ${app.globalData.safeArea.top}px); padding-top: ${app.globalData.safeArea.top}px`:''
   },
 
   /**
@@ -23,18 +25,16 @@ Component({
   },
   lifetimes:{
     attached(){
-      wx.getSystemInfo({
-        success: (res) => {
-          const isAndroid = res.platform === 'android'
-          const isDevtools = res.platform === 'devtools'
-          this.setData({
-            ios: !isAndroid,
-            // innerPaddingRight: `padding-right: ${res.windowWidth - rect.left}px`,
-            // leftWidth: `width: ${res.windowWidth - rect.left }px`,
-            // safeAreaTop: isDevtools || isAndroid ? `height: calc(var(--height) + ${res.safeArea.top}px); padding-top: ${res.safeArea.top}px` : ``
-          })
-        }
-      })
+      // wx.getSystemInfo({
+      //   success: (res) => {
+      //     const isAndroid = res.platform === 'android'
+      //     const isDevtools = res.platform === 'devtools'
+      //     this.setData({
+      //       ios: !isAndroid,
+      //       safeAreaTop: isDevtools || isAndroid ? `height: calc(var(--height) + ${res.safeArea.top}px); padding-top: ${res.safeArea.top}px` : ``
+      //     })
+      //   }
+      // })
     }
   }
 })

@@ -1,14 +1,15 @@
 // app.ts
 App<IAppOption>({
   globalData: {
-    defaultAvatarUrl:"https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0"
+    defaultAvatarUrl: "https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0"
   },
   onLaunch() {
     wx.getSystemInfo({
       success: (res) => {
-        const isAndroid = res.platform === 'android'
-        // const isDevtools = res.platform === 'devtools'
-        this.globalData.ios=!isAndroid
+        const isAndroid = res.platform === 'android';
+        const isDevtools = res.platform === 'devtools';
+        this.globalData.ios = !isAndroid && !isDevtools;
+        this.globalData.safeArea = res.safeArea;
         // this.setData({
         //   ios: !isAndroid,
         //   innerPaddingRight: `padding-right: ${res.windowWidth - rect.left}px`,

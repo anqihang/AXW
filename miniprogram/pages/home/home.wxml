@@ -2,13 +2,12 @@
 <navigation-bar title="首页" back="{{false}}" color="black" background="linear-gradient(45deg,#0081ff,#1cbbb4)" color="white" class="" style="position:absolute;width:100%;"></navigation-bar>
 
 <scroll-view scroll-y enable-flex type="custom" show-scrollbar="{{false}}" class="HomeView">
-  <!-- <view style="height:88px;"></view> -->
   <nav-top></nav-top>
   <sticky-section>
 
 <sticky-header>
   <!-- 轮播图 -->
-  <swiper class="swiper" indicator-dots autoplay circular indicator-type="scroll">
+  <swiper class="swiper bg-white" indicator-dots autoplay circular indicator-type="scroll">
     <block wx:for="{{swiperList}}" wx:key="id">
       <swiper-item>
         <view>
@@ -28,12 +27,12 @@
     </scroll-view>
   </view>
 </sticky-header>
-<grid-view class="posts" type="masonry" cross-axis-count="2" main-axis-gap="2" cross-axis-gap="2">
-  <block wx:for="{{textList}}" wx:key="id">
-    <view class="">
+<grid-view class="posts" type="masonry" cross-axis-count="2" main-axis-gap="8" cross-axis-gap="8" padding="{{[8,4,8,4]}}">
+  <block wx:for="{{textList}}" wx:key="id" >
+    <view class="bg-white pt-8 pr-8 pb-8 pl-8 rounded-t-4 rounded-b-4">
       <image src="{{item.cover}}" mode="widthFix" />
-      <text class="text-md px-4" overflow="ellipsis" max-lines="{{2}}">{{item.title}}</text>
-      <text class="text-xs">{{item.author}} {{item.subscribeTime}}</text>
+      <text class="text-md mt-8 font-bold" overflow="ellipsis" max-lines="{{2}}">{{item.title}}</text>
+      <text class="text-xs mt-4">{{item.author}} {{item.subscribeTime}}</text>
     </view>
   </block>
 </grid-view>

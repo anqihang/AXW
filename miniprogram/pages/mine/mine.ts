@@ -5,7 +5,19 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    gridList: [
+      { id: 0, title: "图片" },
+      { id: 1, title: "图片" },
+      { id: 2, title: "图片" },
+      { id: 3, title: "图片" },
+      { id: 4, title: "图片" },
+      { id: 5, title: "图片" },
+    ],
+    list: [
+      { id: 0, title: "图标" },
+      { id: 1, title: "图标" },
+      { id: 2, title: "图标" },
+    ]
   },
 
   /**

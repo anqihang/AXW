@@ -1,21 +1,16 @@
 $fontSize: ();
-$fontSize: map-merge(
-  (
-    xs: 20,
+$fontSize: map-merge((xs: 20,
     sm: 24,
     df: 28,
     lg: 32,
     xl: 36,
     "2xl": 44,
     "3xl": 80,
-    "4xl": 120,
+    "4xl": 120
   ),
-  $fontSize
-);
+  $fontSize);
 $fontWeight: ();
-$fontWeight: map-merge(
-  (
-    thin: 100,
+$fontWeight: map-merge((thin: 100,
     extralight: 200,
     light: 300,
     normal: 400,
@@ -25,8 +20,7 @@ $fontWeight: map-merge(
     extrabold: 800,
     black: 900,
   ),
-  $fontWeight
-);
+  $fontWeight);
 
 $red: #e54d42; // 嫣红
 $orange: #f37b1d; // 桔橙
@@ -56,9 +50,7 @@ $black: #333333; // 墨黑
 $white: #ffffff; // 雅白
 
 $colors: ();
-$colors: map-merge(
-  (
-    "red": $red,
+$colors: map-merge(("red": $red,
     "orange": $orange,
     "yellow": $yellow,
     "olive": $olive,
@@ -70,10 +62,9 @@ $colors: map-merge(
     "pink": $pink,
     "brown": $brown,
     "grey": $grey,
-    "gray": $gray,
+    "gray": $gray
   ),
-  $colors
-);
+  $colors);
 //灰度
 $white: #ffffff;
 $gray-f: #f8f9fa;
@@ -94,24 +85,19 @@ $dark-1: #111111;
 $black: #000000;
 
 $grays: ();
-$grays: map-merge(
-  (
-    "white": $white,
+$grays: map-merge(("white": $white,
     "gray-f": $gray-f,
     "gray-e": $gray-e,
     "gray-d": $gray-d,
     "gray-c": $gray-c,
     "gray-b": $gray-b,
     "gray-a": $gray-a,
-    "gray": $gray-a,
+    "gray": $gray-a
   ),
-  $grays
-);
+  $grays);
 
 $darks: ();
-$darks: map-merge(
-  (
-    "dark-9": $dark-9,
+$darks: map-merge(("dark-9": $dark-9,
     "dark-8": $dark-8,
     "dark-7": $dark-7,
     "dark-6": $dark-6,
@@ -120,50 +106,33 @@ $darks: map-merge(
     "dark-3": $dark-3,
     "dark-2": $dark-2,
     "dark-1": $dark-1,
-    "black": $black,
+    "black": $black
   ),
-  $darks
-);
+  $darks);
 
-$directions: (
-  "t": "top",
+$directions: ("t": "top",
   "r": "right",
   "b": "bottom",
   "l": "left",
-  "x": (
-    left right,
-  ),
-  "y": (
-    top bottom,
-  ),
-  "": (
-    top right bottom left,
-  ),
+  // "x": ("left","right"),
+  // "y": (top,bottom),
+  // "": (top,right,bottom,left)
 );
 
-$display: (
-  "block",
+$display: ("block",
   "inline",
   "inline-block",
   "flex",
   "grid",
-  "inline-flex",
-  "inline-grid",
-  "table",
-  "table-row",
-  "table-cell",
-  "table-caption",
-  "list-item",
   "none",
   "inherit",
   "initial",
   "unset"
 );
 
-$positions: (
-  "static",
+$positions: ("static",
   "relative",
   "absolute",
   "fixed",
-  "sticky",
+  "sticky"
 );

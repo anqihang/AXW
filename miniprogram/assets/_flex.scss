@@ -1,15 +1,31 @@
 @each $row,
-  $value
-    in ("start": "flex-start", "end": "flex-end", "center": "center", "between": "space-between", "around": "space-around", "evenly": "space-evenly")
-{
+$value in ("start": flex-start, "end": flex-end, "center": center, "between": space-between, "around": space-around, "evenly": space-evenly) {
   .justify {
     &-#{$row} {
       justify-content: $value;
     }
   }
+
   .align {
-    $-#{$row} {
+    &-#{$row} {
       align-items: $value;
+    }
+  }
+}
+
+.flex {
+  &-1 {
+    flex: 1;
+  }
+  &-wrap{
+    flex-wrap: wrap;
+  }
+
+  @each $name,
+  $value in ("col":column) {
+    &-#{$name} {
+      display: flex;
+      flex-direction: $value;
     }
   }
 }
