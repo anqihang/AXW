@@ -34,7 +34,7 @@
       )
     )
 {
-  @for #size from 1 through 100 {
+  @for $size from 1 through 100 {
     @if ($size % 2==0) {
       .p#{$dir}-#{$size} {
         @each $prop in $value {

@@ -1,3 +1,5 @@
+import { EEventType } from "XrFrame";
+
 // pages/min/mine.ts
 Page({
 
@@ -6,17 +8,16 @@ Page({
    */
   data: {
     gridList: [
-      { id: 0, title: "图片" },
-      { id: 1, title: "图片" },
-      { id: 2, title: "图片" },
-      { id: 3, title: "图片" },
-      { id: 4, title: "图片" },
-      { id: 5, title: "图片" },
+      { id: 0, title: "文章",icon:"../../static/MaterialSymbolsArticleOutlineRounded.svg" },
+      { id: 1, title: "统计",icon:"../../static/IonStatsBars.svg" },
+      { id: 2, title: "收藏",icon:"../../static/EpCollectionTag.svg" },
+      { id: 3, title: "图片",icon:"" },
+      { id: 4, title: "扫一扫", icon: "../../static/TablerScan.svg" },
+      { id: 5, title: "小程序", icon: "../../static/IconParkOutlineWeixinMiniApp.svg" },
     ],
     list: [
-      { id: 0, title: "图标" },
-      { id: 1, title: "图标" },
-      { id: 2, title: "图标" },
+      { id: 0, title: "账号", rightIcon: "../../static/MaterialSymbolsLightChevronRightRounded.svg" },
+      { id: 1, title: "关于", rightIcon: "../../static/MaterialSymbolsLightChevronRightRounded.svg" },
     ]
   },
 
@@ -74,5 +75,23 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+  f_userInfo(){},
+  //
+  f_gradTap(e: any) {
+    console.log(e, 1);
+    switch (e.currentTarget.dataset.id) {
+      // 扫码
+      case 4: wx.scanCode({
+        success(res: any) {
+          console.log(res);
+        }
+      }); break;
+    }
+  },
+  //退出登录
+  f_logout(){
+      wx.removeStorageSync('ax-username');
+      wx.removeStorageSync('ax-token');
   }
 })

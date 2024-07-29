@@ -16,7 +16,7 @@ Page({
     // canIUseNicknameComp: wx.canIUse("input.type.nickname"),
 
     // 选中的tabBarIndex
-    cur: 5,
+    cur: 1,
   },
   // 切换tabBar
   changeTab(e: any) {

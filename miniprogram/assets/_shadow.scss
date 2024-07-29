@@ -1,9 +1,9 @@
 @import "./var";
 .shadow {
   @each $color, $value in map-merge($colors, $grays, $darks) {
-    &-#{$color}-xs {
-      box-shadow: 0.125em 0.125em rgba($value, 0.075);
-    }
+    // &-#{$color}-xs {
+    //   box-shadow: 0.125em 0.125em rgba($value, 0.075);
+    // }
     // &-#{$color}-sm {
     //   box-shadow: 0.125em 0.25em rgba($value, 0.075);
     // }
