@@ -7,7 +7,7 @@
       <view class="flex">
         <image class="avatar w-32 rounded-full" src="../../static/avatar.svg" mode="aspectFill" />
         <view class="ml-16 flex flex-col justify-center">
-          <text class="text-xl font-bold">{{username}}</text>
+          <text class="text-xl font-bold">安琦航</text>
           <view class="flex align-center">
             <view class="">VIP</view>
             <view class="ml-8">Lv.3</view>

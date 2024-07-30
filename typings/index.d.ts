@@ -5,7 +5,7 @@ interface IAppOption {
     userInfo?: WechatMiniprogram.UserInfo;
     ios?: Boolean;
     defaultAvatarUrl: String;
-    safeArea:any;
+    safeArea?: any; // 安全区域 top bottom
   };
   userInfoReadyCallback?: WechatMiniprogram.GetUserInfoSuccessCallback;
 }
