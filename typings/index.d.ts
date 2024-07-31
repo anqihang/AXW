@@ -4,8 +4,9 @@ interface IAppOption {
   globalData: {
     userInfo?: WechatMiniprogram.UserInfo;
     ios?: Boolean;
+    systemInfo?: any;
     defaultAvatarUrl: String;
-    safeArea?: any; // 安全区域 top bottom
+    location?: any; // 位置信息 经度longitude 纬度latitude
   };
   userInfoReadyCallback?: WechatMiniprogram.GetUserInfoSuccessCallback;
 }

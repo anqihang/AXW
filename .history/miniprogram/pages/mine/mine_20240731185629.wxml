@@ -25,7 +25,7 @@
       </view>
     </view>
     <view class="Grid px-16 mt-16">
-      <view class="bg-white flex flex-wrap rounded-4 py-8 grid-col-4">
+      <view class="bg-white flex flex-wrap rounded-4 py-8">
         <view class="item align-center flex flex-col py-12" wx:for="{{gridList}}" wx:key="{{index}}" bindtap="f_gradTap" data-id="{{item.id}}">
           <view class="ax-icon">
             <image class="h-full" src="{{item.icon}}" mode="aspectFit" />

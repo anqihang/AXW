@@ -17,7 +17,6 @@ Page({
       { id: 0, title: "文章", icon: "../../static/MaterialSymbolsArticleOutlineRounded.svg" },
       { id: 1, title: "回复", icon: "" },
       { id: 2, title: "收藏", icon: "../../static/EpCollectionTag.svg" },
-      { id: 2, title: "关注", icon: "../../static/EpCollectionTag.svg" },
       { id: 3, title: "统计", icon: "../../static/IonStatsBars.svg" },
       { id: 4, title: "扫一扫", icon: "../../static/TablerScan.svg" },
       { id: 5, title: "小程序", icon: "../../static/IconParkOutlineWeixinMiniApp.svg" },
@@ -56,12 +55,12 @@ Page({
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  // onPullDownRefresh() {},
+  onPullDownRefresh() {},
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  // onReachBottom() {},
+  onReachBottom() {},
 
   /**
    * 用户点击右上角分享
@@ -89,50 +88,13 @@ Page({
   f_gradTap(e: any) {
     console.log(e, 1);
     switch (e.currentTarget.dataset.id) {
-      case 0:
-        {
-          wx.navigateTo({
-            url: "/packageA/article/article",
-          });
-        }
-        break;
-      case 1:
-        {
-          wx.navigateTo({
-            url: "/packageA/reply/reply",
-          });
-        }
-        break;
-      case 2:
-        {
-          wx.navigateTo({
-            url: "/packageA/collection/collection",
-          });
-        }
-        break;
-      case 3:
-        {
-          wx.navigateTo({
-            url: "/packageA/statistics/statistics",
-          });
-        }
-        break;
       // 扫码
       case 4:
-        {
-          wx.scanCode({
-            success(res: any) {
-              console.log(res);
-            },
-          });
-        }
-        break;
-      case 5:
-        {
-          wx.navigateTo({
-            url: "/packageA/miniProgram/miniProgram",
-          });
-        }
+        wx.scanCode({
+          success(res: any) {
+            console.log(res);
+          },
+        });
         break;
     }
   },

@@ -27,7 +27,7 @@
         </scroll-view>
       </view>
     </sticky-header>
-    <grid-view class="posts" type="masonry" cross-axis-count="2" main-axis-gap="8" cross-axis-gap="8" padding="{{[8,8,8,8]}}">
+    <grid-view class="posts" type="masonry" cross-axis-count="2" main-axis-gap="8" cross-axis-gap="8" padding="{{[8,4,8,4]}}">
       <block wx:for="{{textList}}" wx:key="id">
         <view class="bg-white pt-8 pr-8 pb-8 pl-8 rounded-t-4 rounded-b-4">
           <image src="{{item.cover}}" mode="widthFix" />
