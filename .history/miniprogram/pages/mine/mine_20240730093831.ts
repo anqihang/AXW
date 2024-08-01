@@ -8,12 +8,12 @@ Page({
    */
   data: {
     gridList: [
-      { id: 0, title: "文章",icon:"../../static/MaterialSymbolsArticleOutlineRounded.svg" },
-      { id: 1, title: "统计",icon:"../../static/IonStatsBars.svg" },
-      { id: 2, title: "收藏",icon:"../../static/EpCollectionTag.svg" },
+      { id: 0, title: "文章",icon:"/static/MaterialSymbolsArticleOutlineRounded.svg" },
+      { id: 1, title: "统计",icon:"/static/IonStatsBars.svg" },
+      { id: 2, title: "收藏",icon:"/static/EpCollectionTag.svg" },
       { id: 3, title: "图片",icon:"" },
-      { id: 4, title: "扫一扫", icon: "../../static/TablerScan.svg" },
-      { id: 5, title: "小程序", icon: "../../static/IconParkOutlineWeixinMiniApp.svg" },
+      { id: 4, title: "扫一扫", icon: "/static/TablerScan.svg" },
+      { id: 5, title: "小程序", icon: "/static/IconParkOutlineWeixinMiniApp.svg" },
     ],
     list: [
       { id: 0, title: "账号", rightIcon: "../../static/MaterialSymbolsLightChevronRightRounded.svg" },

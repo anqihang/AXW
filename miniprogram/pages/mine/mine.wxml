@@ -9,7 +9,9 @@
         <view class="ml-16 flex flex-col justify-center">
           <view class="flex text-lg text-gray-500 font-bold" wx:if="{{!isLogin}}">
             <text class="text-lg" bindtap="f_goSignIn">登录</text>
-            <view class="w-1 h-full py-4 bg-gray mx-8"></view>
+            <view class="py-4">
+              <view class="w-1 h-full py-4 bg-gray mx-8"></view>
+            </view>
             <text class="" bindtap="f_goSignUp">注册</text>
           </view>
           <block wx:else>
@@ -20,8 +22,8 @@
           </block>
         </view>
       </view>
-      <view class="w-32 h-32" bindtap="f_userInfo">
-        <image class="h-full" src="../../static/MaterialSymbolsLightChevronRightRounded.svg" mode="aspectFit" />
+      <view class="w-32 h-32" bindtap="f_userInfo" wx:if="{{isLogin}}">
+        <image class="h-full" src="/static/MaterialSymbolsLightChevronRightRounded.svg" mode="aspectFit" />
       </view>
     </view>
     <view class="Grid px-16 mt-16">

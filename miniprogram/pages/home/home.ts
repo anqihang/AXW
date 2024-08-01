@@ -43,7 +43,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad() {
-
   },
 
   /**
@@ -98,6 +97,14 @@ Page({
     console.log(e);
     this.setData({
       selectCategoryId: Number(e.currentTarget.id)
+    })
+  },
+  f_goArticle(e:any){
+    wx.navigateTo({
+      url:"/packageA/article/article"+`?id=${e.currentTarget.dataset.id}`,
+      fail(err){
+        console.log(err);
+      }
     })
   }
 })

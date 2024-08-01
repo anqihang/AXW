@@ -5,6 +5,11 @@ export {};
 const defaultAvatarUrl = app.globalData.defaultAvatarUrl;
 
 Page({
+  onLoad(){
+    // wx.navigateTo({
+    //   url:"/packageA/article/article"
+    // })
+  },
   data: {
     // motto: "Hello World",
     userInfo: {

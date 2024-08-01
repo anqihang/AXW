@@ -1,7 +1,7 @@
 <!--packageA/login/login.wxml-->
 <view class="page flex justify-center items-center">
     <view class="ax-card rounded-4 bg-white">
-        <form type="submit" bindsubmit="f_submit" class="">
+        <!-- <form type="submit" bindsubmit="f_submit" class="">
             <view>
               <text class="text-xl font-bold">登 录</text>
             </view>
@@ -14,6 +14,6 @@
                 <input />
             <block>
 
-        </form>
+        </form> -->
     </view>
 </view>

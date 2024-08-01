@@ -29,7 +29,7 @@
     </sticky-header>
     <grid-view class="posts" type="masonry" cross-axis-count="2" main-axis-gap="8" cross-axis-gap="8" padding="{{[8,8,8,8]}}">
       <block wx:for="{{textList}}" wx:key="id">
-        <view class="bg-white pt-8 pr-8 pb-8 pl-8 rounded-t-4 rounded-b-4">
+        <view class="bg-white pt-8 pr-8 pb-8 pl-8 rounded-t-4 rounded-b-4" data-id="{{item.id}}" bindtap="f_goArticle">
           <image src="{{item.cover}}" mode="widthFix" />
           <text class="text-md mt-8 font-bold" overflow="ellipsis" max-lines="{{2}}">{{item.title}}</text>
           <text class="text-xs mt-4">{{item.author}} {{item.subscribeTime}}</text>
