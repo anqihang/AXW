@@ -46,6 +46,6 @@ App<IAppOption>({
     // logs.unshift(Date.now());
     // wx.setStorageSync("logs", logs);
     // 登录
-    apiLogin();
+    // apiLogin();
   },
 });

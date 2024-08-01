@@ -51,11 +51,11 @@
   }
 }
 @for $size from 1 through 10 {
-  .grid-cols--#{$size} {
-    view,
-    text,
-    block {
-      width: #{100 / $size};
+  .grid-cols-#{$size} {
+    & > view,
+    & > text,
+    & > block {
+      width: #{100% / $size};
     }
   }
 }
