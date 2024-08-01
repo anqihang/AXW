@@ -41,6 +41,11 @@
           padding-#{$prop}: #{$size * 2}rpx;
         }
       }
+      .m#{$dir}-#{$size} {
+        @each $prop in $value {
+          margin-#{$prop}: #{$size * 2}rpx;
+        }
+      }
     }
   }
 }

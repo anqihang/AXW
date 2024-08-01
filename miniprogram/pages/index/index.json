@@ -5,10 +5,8 @@
     "home": "/pages/home/home",
     "dynamic": "/pages/dynamic/dynamic",
     "experiment": "/pages/experiment/experiment",
-    "mine": "/pages/mine/mine",
-    "login": "/packageA/login/login"
+    "mine": "/pages/mine/mine"
   },
   "componentPlaceholder": {
-    "login": "login"
   }
 }

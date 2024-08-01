@@ -6,7 +6,7 @@ $value in ("start": flex-start, "end": flex-end, "center": center, "between": sp
     }
   }
 
-  .align {
+  .items {
     &-#{$row} {
       align-items: $value;
     }

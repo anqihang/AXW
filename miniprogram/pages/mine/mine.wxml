@@ -3,7 +3,7 @@
 <view class="MineView flex-1 overflow">
   <scroll-view class="h-full" scroll-y type="custom" enable-flex show-scrollbar="{{false}}" padding="{{[16,0,16,0]}}">
     <nav-top></nav-top>
-    <view class="flex px-32 justify-between align-center" bindtap="f_goUserInfo">
+    <view class="flex px-32 justify-between items-center" bindtap="f_goUserInfo">
       <view class="flex">
         <image class="avatar w-32 rounded-full" src="{{avatar}}" mode="aspectFill" />
         <view class="ml-16 flex flex-col justify-center">
@@ -14,7 +14,7 @@
           </view>
           <block wx:else>
           <text class="text-xl font-bold">{{username}}</text>
-          <view class="flex align-center">
+          <view class="flex items-center">
             <view class="mr-8 ax-tag" wx:for="{{identity}}" wx:key="index">{{item}}</view>
           </view>
           </block>
@@ -26,7 +26,7 @@
     </view>
     <view class="Grid px-16 mt-16">
       <view class="bg-white flex flex-wrap rounded-4 py-8 grid-cols-4">
-        <view class="item align-center flex flex-col py-12" wx:for="{{gridList}}" wx:key="{{index}}" bindtap="f_gradTap" data-id="{{item.id}}">
+        <view class="item items-center flex flex-col py-12" wx:for="{{gridList}}" wx:key="{{index}}" bindtap="f_gradTap" data-id="{{item.id}}">
           <view class="ax-icon">
             <image class="h-full" src="{{item.icon}}" mode="aspectFit" />
           </view>
@@ -37,7 +37,7 @@
     <view class="list px-16 mt-16">
       <view class="rounded-4 overflow bg-white">
         <view class="flex ax-list justify-between" wx:for="{{list}}" wx:key="index">
-          <view class="flex align-center">
+          <view class="flex items-center">
             <view class="ax-icon mr-8" wx:if="{{item.leftIcon}}">
               <image class="h-full" src="{{item.leftIcon}}" mode="aspectFit" />
             </view>

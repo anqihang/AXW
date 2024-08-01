@@ -11,7 +11,7 @@
     {
       "root": "packageA",
       "pages": [
-        "login/login"
+        "signIn/signIn"
       ]
     }
   ],

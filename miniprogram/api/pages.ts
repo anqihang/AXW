@@ -1,4 +1,4 @@
-import { Request } from "../utils/request";
+import { Request } from "./request";
 import storage from "../utils/storage";
 export function apiLogin() {
   // 登录
