@@ -1,0 +1,46 @@
+<!--packageA/article/article.wxml-->
+<view class="page bg-red">
+  <navigation-bar color="white"></navigation-bar>
+          <view class="bg-white px-16">
+          <view class="rounded-full flex bg-blue">
+            <input type="text" placeholder="关键词搜索" class="py-8 px-16 content-box flex-1 text-black" />
+            <view class="rounded-full bg-yellow px-18 flex items-center text-white">搜索</view>
+          </view>
+        </view>
+  <view class="tab-list">
+    <view wx:for="{{tabs}}" wx:key="title" class="tab-item {{selectedTab === index ? 'active' : ''}}" data-tab="{{index}}" bindtap="onTapTab">
+      <view>{{ item.title }}</view>
+    </view>
+    <view class="tab-border" style="transform: translateX({{translateX}}px) scaleX(0.7);"></view>
+  </view>
+  <scroll-view class="flex-1 overflow" type="custom" enable-flex scroll-y>
+    <!-- <sticky-section> -->
+      <list-view class="pb-12">
+        <block wx:for="{{articleList}}" wx:key="id">
+          <view class="px-16 mt-12">
+            <view class="bg-white rounded-4 px-16 py-12 flex">
+              <view>
+                <image src="" mode="aspectFill" class="w-48 h-48 bg-green rounded-full" />
+              </view>
+              <view class="ml-8 bg-red flex flex-col flex-1">
+                <text class="font-bold text-lg">name</text>
+                <text class="text-sm text-gray">2024-12-09</text>
+                <view class="mt-6">
+                  content
+                </view>
+                <view class="flex mt-6 justify-between">
+                  <view class="flex">
+                    <image src="" mode="aspectFit" class="w-24 h-24"/>
+                    <text>10</text>
+                  </view>
+                  <view>喜欢</view>
+                  <view>阅读</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </block>
+      </list-view>
+    <!-- </sticky-section> -->
+  </scroll-view>
+</view>

@@ -3,7 +3,7 @@
   "projectname": "AXW",
   "setting": {
     "compileHotReLoad": false,
-    "skylineRenderEnable": true,
+    "skylineRenderEnable": false,
     "urlCheck": false,
     "bigPackageSizeSupport": true,
     "preloadBackgroundData": false,

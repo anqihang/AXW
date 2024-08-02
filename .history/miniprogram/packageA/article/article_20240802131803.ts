@@ -55,20 +55,12 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage() {},
-  /**
-   * 切换
-   * @param e 
-   */
   f_switch(e: any) {
     console.log(e);
     this.setData({
       cur: e.detail.current,
     });
   },
-  /**
-   * 过渡
-   * @param e 
-   */
   f_trans(e) {
     if (e.detail.dy > 0) {
       console.log('下')

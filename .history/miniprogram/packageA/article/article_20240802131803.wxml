@@ -1,7 +1,7 @@
 <!--packageA/article/article.wxml-->
 <view class="page">
     <navigation-bar></navigation-bar>
-    <swiper class="flex-1" current="{{cur}}" circular="{{true}}" vertical="{{true}}" bindchange="f_switch" 	bindtransition="f_trans" 	cache-extent="1">
+    <swiper class="flex-1" current="{{cur}}" circular="{{true}}" vertical="{{true}}" bindchange="f_switch" 	bindtransition="f_trans">
         <swiper-item wx:for="{{5}}" wx:key="index" class="flex flex-col px-16">
             <view class="flex">
                  <image src="" mode="aspectFill" class="w-48 h-48"/>
