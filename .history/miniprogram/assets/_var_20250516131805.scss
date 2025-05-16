@@ -1,3 +1,4 @@
+// 字号
 $fontSize: ();
 $fontSize: map-merge(
   (
@@ -12,6 +13,7 @@ $fontSize: map-merge(
   ),
   $fontSize
 );
+// 字重
 $fontWeight: ();
 $fontWeight: map-merge(
   (
@@ -27,7 +29,7 @@ $fontWeight: map-merge(
   ),
   $fontWeight
 );
-
+// 主题色
 $red: #e54d42; // 嫣红
 $orange: #f37b1d; // 桔橙
 $light-orange: #fde6d2;
@@ -124,46 +126,28 @@ $darks: map-merge(
   ),
   $darks
 );
-
+// 方向
 $directions: (
   "t": "top",
   "r": "right",
   "b": "bottom",
   "l": "left",
   "x": (
-    left right,
+    "left",
+    "right",
   ),
   "y": (
-    top bottom,
+    "top",
+    "bottom",
   ),
   "": (
-    top right bottom left,
+    "top",
+    "right",
+    "bottom",
+    "left",
   ),
 );
-
-$display: (
-  "block",
-  "inline",
-  "inline-block",
-  "flex",
-  "grid",
-  "inline-flex",
-  "inline-grid",
-  "table",
-  "table-row",
-  "table-cell",
-  "table-caption",
-  "list-item",
-  "none",
-  "inherit",
-  "initial",
-  "unset"
-);
-
-$positions: (
-  "static",
-  "relative",
-  "absolute",
-  "fixed",
-  "sticky",
-);
+// 显示方式
+$display: ("block", "inline", "inline-block", "flex", "grid", "none", "inherit", "initial", "unset");
+// 定位类型
+$positions: ("static", "relative", "absolute", "fixed", "sticky");

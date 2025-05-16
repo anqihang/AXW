@@ -37,11 +37,9 @@
     "tabIndent": "insertSpaces",
     "tabSize": 2
   },
-  "libVersion": "2.32.3",
   "packOptions": {
     "ignore": [],
     "include": []
   },
-  "appid": "wx696cabc67851a6aa",
-  "projectname": "AXW"
+  "appid": "wx696cabc67851a6aa"
 }

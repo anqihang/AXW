@@ -1,0 +1,5 @@
+<view class="container">
+  <logs class="main" id="page1"></logs>
+</view>
+<navigation-bar id="page2"></navigation-bar>
+<!-- <tabBar bindchangeTabBar="f_changeTab"></tabBar> -->

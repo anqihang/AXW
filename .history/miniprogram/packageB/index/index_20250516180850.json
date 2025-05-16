@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "logs": "/pages/logs/logs",
+    "navigation-bar": "/components/navigation-bar/navigation-bar"
+  },
+  "componentPlaceholder": {
+    "logs": "view"
+  }
+}

@@ -1,5 +1,27 @@
 @import "./var.scss";
 
+// 尺寸
+@for $size from 1 through 100 {
+  .w-#{$size} {
+    width: #{$size * 2}rpx;
+  }
+  .h-#{$size} {
+    height: #{$size * 2}rpx;
+  }
+}
+.w-full {
+  width: 100%;
+}
+.h-full {
+  height: 100%;
+}
+.w-screen {
+  width: 100vw;
+}
+.w-height {
+  height: 100vh;
+}
+// 边距
 @each $dir, $value in $directions {
   @for $i from 1 through 80 {
     @if ($i % 2==0) {
@@ -9,20 +31,10 @@
             padding-#{$side}: #{$i * 2}rpx;
           }
         }
-
         @if (type-of($value) == "string") {
           padding-#{$value}: #{$i * 2}rpx;
         }
       }
-
-      // .px-#{$i} {
-      //   padding-left: #{$i * 2}rpx;
-      //   padding-right: #{$i * 2}rpx;
-      // }
-      // .py-#{$i} {
-      //   padding-top: #{$i * 2}rpx;
-      //   padding-bottom: #{$i * 2}rpx;
-      // }
 
       .m#{$dir}-#{$i} {
         @if (type-of($value) == "list") {
@@ -30,7 +42,6 @@
             margin-#{$side}: #{$i * 2}rpx;
           }
         }
-
         @if (type-of($value) == "string") {
           margin-#{$value}: #{$i * 2}rpx;
         }
@@ -38,7 +49,7 @@
     }
   }
 }
-
+// 显示方式
 @each $type in $display {
   .#{$type} {
     display: #{$type};
@@ -49,4 +60,20 @@
   .#{$type} {
     position: #{$type};
   }
+}
+@for $size from 1 through 10 {
+  .grid-cols-#{$size} {
+    & > view,
+    & > text,
+    & > block {
+      width: #{100% / $size};
+    }
+  }
+}
+// 盒模型类型
+.border-box {
+  box-sizing: border-box;
+}
+.content-box {
+  box-sizing: content-box;
 }

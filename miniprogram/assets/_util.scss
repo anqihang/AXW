@@ -1,17 +1,3 @@
-@for $size from 1 through 100 {
-  .w-#{$size} {
-    width: #{$size * 2}rpx;
-  }
-  .h-#{$size} {
-    height: #{$size * 2}rpx;
-  }
-}
-.w-full {
-  width: 100%;
-}
-.h-full {
-  height: 100%;
-}
 .overflow {
   overflow: hidden;
 }

@@ -3,11 +3,12 @@
   "projectname": "AXW",
   "setting": {
     "compileHotReLoad": false,
-    "skylineRenderEnable": false,
+    "skylineRenderEnable": true,
     "urlCheck": false,
     "bigPackageSizeSupport": true,
     "preloadBackgroundData": false,
-    "autoAudits": false
+    "autoAudits": false,
+    "lazyloadPlaceholderEnable": true
   },
   "libVersion": "3.5.1",
   "condition": {

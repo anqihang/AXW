@@ -1,17 +1,19 @@
+// 字号
 $fontSize: ();
 $fontSize: map-merge(
   (
-    xs: 20,
-    sm: 24,
-    df: 28,
-    lg: 32,
-    xl: 36,
-    "2xl": 44,
-    "3xl": 80,
-    "4xl": 120,
+    xxs: 8,
+    xs: 10,
+    sm: 12,
+    md: 14,
+    lg: 16,
+    xl: 18,
+    2xl: 20,
+    3xl: 22,
   ),
   $fontSize
 );
+// 字重
 $fontWeight: ();
 $fontWeight: map-merge(
   (
@@ -27,9 +29,8 @@ $fontWeight: map-merge(
   ),
   $fontWeight
 );
-
+// 主题色
 $red: #e54d42; // 嫣红
-$light-red: #fadbd9;
 $orange: #f37b1d; // 桔橙
 $light-orange: #fde6d2;
 $yellow: #fbbd08; // 明黄
@@ -59,19 +60,19 @@ $white: #ffffff; // 雅白
 $colors: ();
 $colors: map-merge(
   (
-    "red": $red,
-    "orange": $orange,
-    "yellow": $yellow,
-    "olive": $olive,
-    "green": $green,
-    "cyan": $cyan,
-    "blue": $blue,
-    "purple": $purple,
-    "mauve": $mauve,
-    "pink": $pink,
-    "brown": $brown,
-    "grey": $grey,
-    "gray": $gray,
+    red: $red,
+    orange: $orange,
+    yellow: $yellow,
+    olive: $olive,
+    green: $green,
+    cyan: $cyan,
+    blue: $blue,
+    purple: $purple,
+    mauve: $mauve,
+    pink: $pink,
+    brown: $brown,
+    grey: $grey,
+    gray: $gray,
   ),
   $colors
 );
@@ -97,14 +98,14 @@ $black: #000000;
 $grays: ();
 $grays: map-merge(
   (
-    "white": $white,
-    "gray-f": $gray-f,
-    "gray-e": $gray-e,
-    "gray-d": $gray-d,
-    "gray-c": $gray-c,
-    "gray-b": $gray-b,
-    "gray-a": $gray-a,
-    "gray": $gray-a,
+    white: $white,
+    gray-f: $gray-f,
+    gray-e: $gray-e,
+    gray-d: $gray-d,
+    gray-c: $gray-c,
+    gray-b: $gray-b,
+    gray-a: $gray-a,
+    gray: $gray-a,
   ),
   $grays
 );
@@ -112,59 +113,43 @@ $grays: map-merge(
 $darks: ();
 $darks: map-merge(
   (
-    "dark-9": $dark-9,
-    "dark-8": $dark-8,
-    "dark-7": $dark-7,
-    "dark-6": $dark-6,
-    "dark-5": $dark-5,
-    "dark-4": $dark-4,
-    "dark-3": $dark-3,
-    "dark-2": $dark-2,
-    "dark-1": $dark-1,
-    "black": $black,
+    dark-9: $dark-9,
+    dark-8: $dark-8,
+    dark-7: $dark-7,
+    dark-6: $dark-6,
+    dark-5: $dark-5,
+    dark-4: $dark-4,
+    dark-3: $dark-3,
+    dark-2: $dark-2,
+    dark-1: $dark-1,
+    black: $black,
   ),
   $darks
 );
-
+// 方向
 $directions: (
-  "t": "top",
-  "r": "right",
-  "b": "bottom",
-  "l": "left",
-  "x": (
-    left right,
+  t: top,
+  r: right,
+  b: bottom,
+  l: left,
+  x: (
+    left,
+    right,
   ),
-  "y": (
-    top bottom,
+  y: (
+    top,
+    bottom,
   ),
   "": (
-    top right bottom left,
+    top,
+    right,
+    bottom,
+    left,
   ),
 );
-
-$display: (
-  "block",
-  "inline",
-  "inline-block",
-  "flex",
-  "grid",
-  "inline-flex",
-  "inline-grid",
-  "table",
-  "table-row",
-  "table-cell",
-  "table-caption",
-  "list-item",
-  "none",
-  "inherit",
-  "initial",
-  "unset"
-);
-
-$positions: (
-  "static",
-  "relative",
-  "absolute",
-  "fixed",
-  "sticky",
-);
+// 显示方式
+$display: (block, inline, inline-block, flex, grid, none, inherit, initial, unset);
+// 定位类型
+$positions: (static, relative, absolute, fixed, sticky);
+// 换行
+$textWrap: (wrap, nowrap, wrap-reverse);
