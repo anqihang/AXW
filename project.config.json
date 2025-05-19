@@ -27,7 +27,12 @@
     "compileWorklet": true,
     "uglifyFileName": true,
     "minifyWXML": true,
-    "minifyWXSS": true
+    "minifyWXSS": true,
+    "uploadWithSourceMap": true,
+    "packNpmManually": false,
+    "localPlugins": false,
+    "disableUseStrict": false,
+    "disableSWC": true
   },
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
@@ -37,6 +42,7 @@
     "tabIndent": "insertSpaces",
     "tabSize": 2
   },
+  "libVersion": "trial",
   "packOptions": {
     "ignore": [],
     "include": []

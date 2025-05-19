@@ -2,6 +2,9 @@
 .container {
   flex: 1;
   overflow:hidden;
+  .cont{
+    display: flex;
+  }
 }
 
 // .main {

@@ -1,7 +1,9 @@
 <!--pages/home/home.wxml-->
-<navigation-bar title="首页" back="{{false}}" color="white" background="linear-gradient(45deg,#0081ff,#1cbbb4)" color="white" class="" style="position:absolute;width:100%;"></navigation-bar>
+<!-- <navigation-bar title="首页" back="{{false}}" color="white" background="linear-gradient(45deg,#0081ff,#1cbbb4)" class="" style="width:100%;"></navigation-bar> -->
 
-<scroll-view scroll-y enable-flex type="custom" show-scrollbar="{{false}}" class="HomeView">
+<nav-bar title="首页" back="{{false}}" color="white" background="linear-gradient(45deg,#0081ff,#1cbbb4)"></nav-bar>
+
+<scroll-view wx:if="{{false}}" scroll-y enable-flex type="custom" show-scrollbar="{{false}}" class="HomeView">
   <nav-top></nav-top>
   <sticky-section>
 

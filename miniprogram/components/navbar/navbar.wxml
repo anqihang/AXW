@@ -1,17 +1,42 @@
-<view class="navbarComponent">
-  <view class="navbar__inner">
-    <view class="navbar__left">
-      <view wx:if="{{back || homeButton}}"></view>
-      <view wx:else>
+<view class="navBarComponent {{extClass}}">
+  <view class="content {{ios?'ios':'android'}}" style="color:{{color}};background:{{background}};{{safeAreaTop}};{{contentPaddingRight}}">
+    <view class="left" style="{{leftWidth}}">
+      <block wx:if="{{back || homeButton}}">
+        <!-- 返回上一页 -->
+        <block wx:if="{{trback}}">
+          <view class="">
+            <view bindtap="back" class="button" hover-class="active" hover-stay-time="100" aria-role="button" aria-label="返回">
+              <view class="btn-back"></view>
+            </view>
+          </view>
+        </block>
+        <!-- 返回首页 -->
+        <block wx:if="{{true||homeButton}}">
+          <view class="">
+            <view bindtap="home" class="button" hover-class="weui-active" aria-role="button" aria-label="首页">
+              <view class="btn-home"></view>
+            </view>
+          </view>
+        </block>
+      </block>
+      <block wx:else>
         <slot name="left"></slot>
-      </view>
+      </block>
     </view>
-    <view class="navbar__content">
+    <!-- 标题 -->
+    <view class="center">
+      <block wx:if="{{title}}">
+        <text>{{title}}</text>
+      </block>
+      <block wx:else>
+        <slot name="center"></slot>
+      </block>
     </view>
-    <view class="navbar__right">
-      <view>
+    <!-- 右侧留空 -->
+    <view class="right">
+      <block>
         <slot name="right"></slot>
-      </view>
+      </block>
     </view>
   </view>
 </view>

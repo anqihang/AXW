@@ -71,7 +71,7 @@ $colors: map-merge(
     mauve: $mauve,
     pink: $pink,
     brown: $brown,
-    grey: $grey,
+    greyc: $grey,// grey会报错
     gray: $gray,
   ),
   $colors

@@ -1,6 +1,9 @@
 {
   "usingComponents": {
-    "tabBar": "/components/tabBar/tabBar"
+    "tab-bar": "/components/tabBar/tabBar",
+    "home":"/packageA/home/home"
   },
-  "componentPlaceholder": {}
+  "componentPlaceholder": {
+    "home":"view"
+  }
 }

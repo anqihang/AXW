@@ -3,9 +3,9 @@
 
     <!-- 左侧按钮 -->
     <view class='weui-navigation-bar__left' style="{{leftWidth}}">
-      <block wx:if="{{back || homeButton}}">
+      <block wx:if="{{true||back || homeButton}}">
         <!-- 返回上一页 -->
-        <block wx:if="{{back}}">
+        <block wx:if="{{true||back}}">
           <view class="weui-navigation-bar__buttons weui-navigation-bar__buttons_goback">
             <view
               bindtap="back"

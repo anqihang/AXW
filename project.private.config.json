@@ -5,23 +5,20 @@
     "compileHotReLoad": false,
     "skylineRenderEnable": true,
     "urlCheck": false,
-    "bigPackageSizeSupport": true,
+    "bigPackageSizeSupport": false,
     "preloadBackgroundData": false,
     "autoAudits": false,
-    "lazyloadPlaceholderEnable": true
+    "lazyloadPlaceholderEnable": true,
+    "coverView": false,
+    "useApiHook": true,
+    "useApiHostProcess": true,
+    "showShadowRootInWxmlPanel": false,
+    "useStaticServer": false,
+    "useLanDebug": false,
+    "showES6CompileOption": false,
+    "checkInvalidKey": true,
+    "ignoreDevUnusedFiles": true
   },
-  "libVersion": "3.5.1",
-  "condition": {
-    "miniprogram": {
-      "list": [
-        {
-          "name": "pages/index/index",
-          "pathName": "pages/index/index",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        }
-      ]
-    }
-  }
+  "libVersion": "3.8.4",
+  "condition": {}
 }
