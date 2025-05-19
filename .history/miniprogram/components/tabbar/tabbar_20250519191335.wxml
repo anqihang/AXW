@@ -1,7 +1,7 @@
 <!--components/tabbar/tabbar.wxml-->
-<view class="tabBarComponent">
-  <view wx:for="{{tabBars}}" wx:key="id" class="item" id="{{item.id}}" bind:tap="f_change">
-    <view class="tabBar">
+<view class="tabbarComponent">
+  <view wx:for="{{tabBars}}" wx:key="id" class="item" id="{{item.id}}" bindtap="f_change">
+    <view class="tabbar">
       <view class="icon">
         <image class="image" wx:if="{{item.icon}}" src="{{item.icon}}{{cur===item.id?'_cur':''}}.png" mode="aspectFit" />
       </view>

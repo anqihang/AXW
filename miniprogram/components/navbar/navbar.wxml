@@ -1,0 +1,17 @@
+<view class="navbarComponent">
+  <view class="navbar__inner">
+    <view class="navbar__left">
+      <view wx:if="{{back || homeButton}}"></view>
+      <view wx:else>
+        <slot name="left"></slot>
+      </view>
+    </view>
+    <view class="navbar__content">
+    </view>
+    <view class="navbar__right">
+      <view>
+        <slot name="right"></slot>
+      </view>
+    </view>
+  </view>
+</view>

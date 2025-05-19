@@ -1,26 +1,41 @@
 // index.ts
 // 获取应用实例
 const app = getApp<IAppOption>();
-const defaultAvatarUrl = "https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0";
+export {};
+const defaultAvatarUrl = app.globalData.defaultAvatarUrl;
 
 Page({
+  onLoad() {
+    // const page = this.selectComponent(`#page${this.data.cur}`);
+    // page.onLoad();
+  },
+  onHide() {
+    const page = this.selectComponent(`#page${this.data.cur}`);
+    page.onLoad();
+  },
   data: {
-    motto: "Hello World",
+    // motto: "Hello World",
     userInfo: {
       avatarUrl: defaultAvatarUrl,
       nickName: "",
     },
-    hasUserInfo: false,
-    canIUseGetUserProfile: wx.canIUse("getUserProfile"),
-    canIUseNicknameComp: wx.canIUse("input.type.nickname"),
-    // 选中的tabbar
-    cur: 1,
+    hasUserInfo: false, // 判断是否登录
+    // canIUseGetUserProfile: wx.canIUse("getUserProfile"),
+    // canIUseNicknameComp: wx.canIUse("input.type.nickname"),
+
+    cur: 1, // 选中的tabBarIndex
   },
-  change(e: any) {
+  // 切换tabBar
+  f_changeTab(e: any) {
     console.log(e, 1);
+    // const page = this.selectComponent(`#page${e.detail}`);
+    // page.onLoad();
+
     this.setData({
       cur: Number(e.detail),
     });
+
+    // page.onShow();
   },
   // 事件处理函数
   bindViewTap() {

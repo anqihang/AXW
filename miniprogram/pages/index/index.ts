@@ -6,8 +6,8 @@ const defaultAvatarUrl = app.globalData.defaultAvatarUrl;
 
 Page({
   onLoad() {
-    const page = this.selectComponent(`#page${this.data.cur}`);
-    page.onLoad();
+    // const page = this.selectComponent(`#page${this.data.cur}`);
+    // page.onLoad();
   },
   onHide() {
     const page = this.selectComponent(`#page${this.data.cur}`);

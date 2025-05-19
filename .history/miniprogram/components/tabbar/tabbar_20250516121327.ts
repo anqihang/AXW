@@ -27,7 +27,7 @@ Component({
    */
   methods: {
     f_change(event: any) {
-      console.log('切换tabBar',event.currentTarget.id);
+      console.log('切换tabbar',event.currentTarget.id);
       this.triggerEvent('changeTabBar', event.currentTarget.id);
       this.setData({
         cur: Number(event.currentTarget.id)

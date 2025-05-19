@@ -1,12 +1,6 @@
 {
   "usingComponents": {
-    "navigation-bar": "/components/navigation-bar/navigation-bar",
-    "tabBar": "/components/tabBar/tabBar",
-    "home": "/pages/home/home",
-    "dynamic": "/pages/dynamic/dynamic",
-    "experiment": "/pages/experiment/experiment",
-    "mine": "/pages/mine/mine"
+    "tabBar": "/components/tabBar/tabBar"
   },
-  "componentPlaceholder": {
-  }
+  "componentPlaceholder": {}
 }
