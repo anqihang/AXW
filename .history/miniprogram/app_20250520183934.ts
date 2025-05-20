@@ -1,4 +1,4 @@
-import { apiLogin } from "./api";
+import { apiLogin } from "./api/pages";
 
 // app.ts
 App<IAppOption>({

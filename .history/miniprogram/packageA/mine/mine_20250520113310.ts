@@ -1,4 +1,4 @@
-import { apiSignOut } from "../../api";
+import { apiSignOut } from "../../api/pages";
 import storage from "../../utils/storage";
 
 // pages/min/mine.ts

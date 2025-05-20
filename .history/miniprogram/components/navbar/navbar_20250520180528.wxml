@@ -3,7 +3,7 @@
     <view class="left" wx:if="{{existLeft}}" style="{{leftWidth}}">
       <block wx:if="{{backButton || homeButton}}">
         <!-- 返回上一页 -->
-        <block wx:if="{{backButton}}">
+        <block wx:if="{{bacKButton}}">
           <view class="">
             <view bindtap="back" class="button" hover-class="active" hover-stay-time="100" aria-role="button" aria-label="返回">
               <view class="btn-back"></view>

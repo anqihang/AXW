@@ -11,6 +11,9 @@ Component({
    * 组件的初始数据
    */
   data: {
+    safeAreaTop: !(globalData.deviceInfo.platform === "ios")
+      ? `height: calc(var(--height) + ${globalData.windowInfo.safeArea.top}px); padding-top: ${globalData.windowInfo.safeArea.top}px`
+      : "",
   },
 
   /**

@@ -20,15 +20,11 @@ Component({
       type: String,
       value: "white",
     },
-    backButton: {
+    back: {
       type: Boolean,
       value: true,
     },
     homeButton: {
-      type: Boolean,
-      value: true,
-    },
-    existLeft: {
       type: Boolean,
       value: true,
     },
@@ -38,6 +34,9 @@ Component({
    */
   data: {
     platform: globalData.systemInfo.platform,
+    safeAreaTop: !(globalData.systemInfo.platform === "ios")
+      ? `height: calc(var(--height) + ${globalData.windowInfo.safeArea.top}px); padding-top: ${globalData.windowInfo.safeArea.top}px`
+      : "",
     leftWidth: "0px",
     contentPaddingRight: "0px",
   },

@@ -20,15 +20,11 @@ Component({
       type: String,
       value: "white",
     },
-    backButton: {
+    back: {
       type: Boolean,
       value: true,
     },
     homeButton: {
-      type: Boolean,
-      value: true,
-    },
-    existLeft: {
       type: Boolean,
       value: true,
     },
@@ -37,7 +33,10 @@ Component({
    * 组件的初始数据
    */
   data: {
-    platform: globalData.systemInfo.platform,
+    ios: globalData.systemInfo.ios,
+    safeAreaTop: !globalData.systemInfo.ios
+      ? `height: calc(var(--height) + ${globalData.systemInfo.safeArea.top}px); padding-top: ${globalData.systemInfo.safeArea.top}px`
+      : "",
     leftWidth: "0px",
     contentPaddingRight: "0px",
   },
@@ -56,6 +55,7 @@ Component({
           this.setData({
             contentPaddingRight: `padding-right: ${res.windowWidth - rect.left}px`,
             leftWidth: `width: ${res.windowWidth - rect.left}px`,
+            // safeAreaTop: isDevtools || isAndroid ? `height: calc(var(--height) + ${res.safeArea.top}px); padding-top: ${res.safeArea.top}px` : ``
           });
         },
       });

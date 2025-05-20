@@ -1,9 +1,9 @@
 <view class="navBarComponent {{extClass}}">
-  <view class="content {{platform=='ios'?'ios':'android'}}" style="color:{{color}};background:{{background}};{{contentPaddingRight}}">
-    <view class="left" wx:if="{{existLeft}}" style="{{leftWidth}}">
+  <view class="content {{ios?'ios':'android'}}" style="color:{{color}};background:{{background}};{{safeAreaTop}};{{contentPaddingRight}}">
+    <view class="left" style="{{leftWidth}}">
       <block wx:if="{{backButton || homeButton}}">
         <!-- 返回上一页 -->
-        <block wx:if="{{backButton}}">
+        <block wx:if="{{bacKButton}}">
           <view class="">
             <view bindtap="back" class="button" hover-class="active" hover-stay-time="100" aria-role="button" aria-label="返回">
               <view class="btn-back"></view>
@@ -13,7 +13,7 @@
         <!-- 返回首页 -->
         <block wx:if="{{homeButton}}">
           <view class="">
-            <view bindtap="home" class="button" hover-class="active" hover-stay-time="100" aria-role="button" aria-label="首页">
+            <view bindtap="home" class="button" hover-class="weui-active" aria-role="button" aria-label="首页">
               <view class="btn-home"></view>
             </view>
           </view>

@@ -20,7 +20,7 @@ Component({
       type: String,
       value: "white",
     },
-    backButton: {
+    back: {
       type: Boolean,
       value: true,
     },

@@ -1,0 +1,52 @@
+.navBarComponent {
+  --height: 44px;
+
+  .content {
+    height: calc(var(--heigt) + env(safe-area-inset-top));
+    overflow: hidden;
+    display: flex;
+    padding-top: env(safe-area-inset-top);
+
+    .left {
+      display: flex;
+
+      .button {
+        padding: 11px 18px 11px 16px;
+        // margin: 0px -18px 0px -16px;
+
+        .btn-back {
+          font-size: 12px;
+          width: 12px;
+          height: 24px;
+          -webkit-mask: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='24' viewBox='0 0 12 24'%3E  %3Cpath fill-opacity='.9' fill-rule='evenodd' d='M10 19.438L8.955 20.5l-7.666-7.79a1.02 1.02 0 0 1 0-1.42L8.955 3.5 10 4.563 2.682 12 10 19.438z'/%3E%3C/svg%3E") no-repeat 50% 50%;
+          mask: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='24' viewBox='0 0 12 24'%3E  %3Cpath fill-opacity='.9' fill-rule='evenodd' d='M10 19.438L8.955 20.5l-7.666-7.79a1.02 1.02 0 0 1 0-1.42L8.955 3.5 10 4.563 2.682 12 10 19.438z'/%3E%3C/svg%3E") no-repeat 50% 50%;
+          -webkit-mask-size: cover;
+          mask-size: cover;
+          background-color: rgba(0, 0, 0, .9);
+        }
+      }
+
+      .active {
+        opacity: 0.5;
+      }
+    }
+
+    .center {
+      flex: 1;
+      font-size: 14px;
+      text-align: center;
+      font-weight: bole;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .right {}
+  }
+
+}
+
+.navbar .android {
+  --height: 48px;
+}
