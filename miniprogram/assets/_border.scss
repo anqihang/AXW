@@ -1,14 +1,14 @@
 @import "./var.scss";
 
 .border {
-  @each $dir,
-  $value in $directions {
-    @for $i from 1 through 12 {
-      &-#{$dir}-#{$i} {
-        border-#{$value}-width: #{$i * 2}rpx;
-      }
-    }
-  }
+  // @each $dir,
+  // $value in $directions {
+  //   @for $i from 1 through 12 {
+  //     &-#{$dir}-#{$i} {
+  //       border-#{$value}-width: #{$i * 2}rpx;
+  //     }
+  //   }
+  // }
 
   @each $type in (solid, dashed, dotted, double, none, hidden) {
     &-#{$type} {

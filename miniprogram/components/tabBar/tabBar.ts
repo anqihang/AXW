@@ -16,7 +16,7 @@ Component({
       { id: 4, text: "实验", icon: "/static/tabbar/plugin" },
       { id: 5, text: "我的", icon: "/static/tabbar/mine" },
     ],
-    cur: 1,
+    cur: 5,
   },
   pageLifetimes: {
     // 组件所在页面的生命周期函数

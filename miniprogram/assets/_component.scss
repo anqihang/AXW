@@ -1,27 +1,35 @@
 .ax-list {
-  display: flex;
-  padding: 24rpx 32rpx;
-  font-size: 32rpx;
+  &_item {
+    display: flex;
+    padding: 24rpx 32rpx;
+    font-size: 32rpx;
+  }
 }
+
 .ax-card {
   padding: 32rpx;
 }
+
 .ax-icon {
   width: 48rpx;
   height: 48rpx;
   overflow: hidden;
+
   image {
     width: 100%;
     height: 100%;
   }
 }
+
 .ax-image {
   overflow: hidden;
+
   image {
     width: 100%;
     height: 100%;
   }
 }
+
 .ax-model {
   width: 100vw;
   height: 100vh;
@@ -31,6 +39,7 @@
   left: 0;
   justify-content: center;
   align-items: center;
+
   &-main {
     padding: 24rpx 32rpx;
     display: flex;
@@ -39,6 +48,7 @@
     font-size: 28rpx;
   }
 }
+
 .ax-tag {
   padding: 8rpx 12rpx;
   border-radius: 8rpx;

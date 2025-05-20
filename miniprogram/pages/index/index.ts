@@ -9,7 +9,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad() {
-    console.log("home");
+    console.log("index");
     // const page = this.selectComponent(`#page${this.data.cur}`);
     // page.onLoad();
   },
@@ -53,28 +53,21 @@ Page({
   onShareAppMessage() {},
 
   data: {
-    // motto: "Hello World",
+    cur: 5, // 选中的tabBarIndex
     userInfo: {
       avatarUrl: defaultAvatarUrl,
       nickName: "",
     },
-    hasUserInfo: false, // 判断是否登录
+    isSignIn: false, // 判断是否登录
     // canIUseGetUserProfile: wx.canIUse("getUserProfile"),
     // canIUseNicknameComp: wx.canIUse("input.type.nickname"),
-
-    cur: 1, // 选中的tabBarIndex
   },
   // 切换tabBar
   f_changeTab(e: any) {
-    console.log(e, 1);
-    // const page = this.selectComponent(`#page${e.detail}`);
-    // page.onLoad();
-
+    console.log(e.detail);
     this.setData({
       cur: Number(e.detail),
     });
-
-    // page.onShow();
   },
   // 事件处理函数
   bindViewTap() {

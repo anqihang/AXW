@@ -1,13 +1,5 @@
 /* pages/min/mine.wxss */
-.MineView {
-  .avatar {
-    width: 112rpx;
-    height: 112rpx;
-  }
-  .Grid {
-    .item {
-      // width: 25%;
-      display: flex;
-    }
-  }
+.Mine {
+  flex: 1;
+  overflow: hidden;
 }

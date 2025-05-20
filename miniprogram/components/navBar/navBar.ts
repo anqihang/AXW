@@ -37,7 +37,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    platform: globalData.systemInfo.platform,
+    platform: globalData.deviceInfo.platform,
     leftWidth: "0px",
     contentPaddingRight: "0px",
   },

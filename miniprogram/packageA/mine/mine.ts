@@ -1,17 +1,26 @@
-import { apiSignOut } from "../../api";
+// import { apiSignOut } from "../../api";
 import storage from "../../utils/storage";
 
 // pages/min/mine.ts
 const { globalData } = getApp<IAppOption>();
 
 Component({
+  properties: {
+    hidden: {
+      type: Boolean,
+      value: false,
+      observer(e) {
+        console.log("mine",e)
+      }
+    },
+  },
   /**
    * 页面的初始数据
    */
   data: {
-    isLogin: storage.get("Authorization"),
-    nickName: globalData.userInfo?.nickName || "安琦航",
-    avatar: globalData.userInfo?.avatarUrl || globalData.defaultAvatarUrl,
+    isSignIn: storage.get("Authorization"),
+    nickName:"安琦航",
+    avatar: globalData.defaultAvatarUrl,
     identity: ["Lv.1", "VIP", "SVIP"],
     gridList: [
       { id: 0, title: "文章", icon: "/static/MaterialSymbolsArticleOutlineRounded.svg" },
@@ -25,6 +34,15 @@ Component({
       { id: 0, title: "账号", rightIcon: "/static/MaterialSymbolsLightChevronRightRounded.svg" },
       { id: 1, title: "关于", rightIcon: "/static/MaterialSymbolsLightChevronRightRounded.svg" },
     ],
+  },
+  lifetimes: {
+    created() {
+      console.log("mine")
+    }
+  },
+  pageLifetimes: {
+    show() {
+    }
   },
   methods: {
     // 去登录
@@ -98,7 +116,7 @@ Component({
     },
     // 退出登录
     f_signOut() {
-      apiSignOut();
+      // apiSignOut();
     },
   },
 });

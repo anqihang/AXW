@@ -1,4 +1,13 @@
 Component({
+  properties: {
+    hidden: {
+      type: Boolean,
+      value: false,
+      observer(e) {
+        console.log("home", e)
+      }
+    },
+  },
   /**
    * 页面的初始数据
    */
@@ -22,7 +31,6 @@ Component({
       { id: 9, text: "帖子" },
     ],
     selectCategoryId: 1,
-
     // 列表
     textList: [
       {
@@ -91,10 +99,18 @@ Component({
     ],
   },
   lifetimes: {
-    created() {},
+    created() {
+      console.log("home")
+    },
+    attached() {
+    },
+    ready() {
+    }
   },
   pageLifetimes: {
-    show: function () {},
+    show() {
+    },
+    hide() { }
   },
   methods: {
     changeSelect(e: any) {

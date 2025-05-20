@@ -1,11 +1,10 @@
 <!--pages/min/mine.wxml-->
-<!-- <navigation-bar title="我的" back="{{false}}" background="linear-gradient(45deg,#9000ff,#5e00ff)" color="white"></navigation-bar> -->
-<view class="MineView flex-1 overflow">
-  <scroll-view class="h-full" scroll-y type="custom" enable-flex show-scrollbar="{{false}}" padding="{{[16,0,16,0]}}">
+<view hidden="{{hidden}}" class="Mine">
+  <scroll-view class="h-full" scroll-y type="custom" enable-flex show-scrollbar="{{false}}">
     <nav-top></nav-top>
-    <view class="flex px-32 justify-between items-center" bindtap="f_goUserInfo">
+    <view class="flex px-16 justify-between items-center" bindtap="f_toUserInfo">
       <view class="flex">
-        <image class="avatar w-32 rounded-full" src="{{avatar}}" mode="aspectFill" />
+        <image class="w-56 h-56 rounded-full" src="{{avatar}}" mode="aspectFill" />
         <view class="ml-16 flex flex-col justify-center">
           <view class="flex text-lg text-gray-500 font-bold" wx:if="{{!isLogin}}">
             <text class="text-lg" bindtap="f_goSignIn">登录</text>
@@ -22,26 +21,28 @@
           </block>
         </view>
       </view>
-      <view class="w-32 h-32" bindtap="f_userInfo" wx:if="{{isLogin}}">
+      <!-- <view class="w-16 h-16" bindtap="f_userInfo" wx:if="{{isSignin}}">
         <image class="h-full" src="/static/MaterialSymbolsLightChevronRightRounded.svg" mode="aspectFit" />
-      </view>
+      </view> -->
     </view>
-    <view class="Grid px-16 mt-16">
+    <!--  -->
+    <view class="px-16 mt-12">
       <view class="bg-white flex flex-wrap rounded-4 py-8 grid-cols-4">
-        <view class="item items-center flex flex-col py-12" wx:for="{{gridList}}" wx:key="{{index}}" bindtap="f_gradTap" data-id="{{item.id}}">
+        <view class="item items-center flex flex-col py-8" wx:for="{{gridList}}" wx:key="id" bindtap="f_gradTap" data-id="{{item.id}}">
           <view class="ax-icon">
-            <image class="h-full" src="{{item.icon}}" mode="aspectFit" />
+            <image src="{{item.icon}}" mode="aspectFit" />
           </view>
-          <view class="mt-4">{{item.title}}</view>
+          <view class="mt-4 text-sm">{{item.title}}</view>
         </view>
       </view>
     </view>
-    <view class="list px-16 mt-16">
+    <!--  -->
+    <view class="px-16 mt-12">
       <view class="rounded-4 overflow bg-white">
-        <view class="flex ax-list justify-between" wx:for="{{list}}" wx:key="index">
+        <view class="flex ax-list_item justify-between" wx:for="{{list}}" wx:key="index">
           <view class="flex items-center">
             <view class="ax-icon mr-8" wx:if="{{item.leftIcon}}">
-              <image class="h-full" src="{{item.leftIcon}}" mode="aspectFit" />
+              <image src="{{item.leftIcon}}" mode="aspectFit" />
             </view>
             <text class="">{{item.title}}</text>
           </view>
@@ -50,8 +51,8 @@
           </view>
         </view>
       </view>
-      <view class="bg-white rounded-4 mt-16 flex" wx:if="{{isLogin}}">
-        <button class="w-full flex-1 py-8" bindtap="f_signOut">退出</button>
+      <view class="bg-white rounded-4 mt-12 flex">
+        <button class="flex-1" bindtap="f_signOut">退出</button>
       </view>
     </view>
   </scroll-view>
