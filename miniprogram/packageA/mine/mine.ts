@@ -47,7 +47,7 @@ Component({
   methods: {
     // 去登录
     f_goSignIn() {
-      wx.reLaunch({
+      wx.navigateTo({
         url: "/packageA/signIn/signIn",
       });
     },

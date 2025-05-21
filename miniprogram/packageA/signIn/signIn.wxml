@@ -1,19 +1,22 @@
 <!--packageA/login/login.wxml-->
-<view class="page flex justify-center items-center">
-    <view class="ax-card rounded-4 bg-white">
-        <!-- <form type="submit" bindsubmit="f_submit" class="">
-            <view>
-              <text class="text-xl font-bold">登 录</text>
-            </view>
-            <block>
-                <label></label>
-                <input />
-            <block>
-             <block>
-                <label></label>
-                <input />
-            <block>
+<view class="SignIn page ">
+  <nav-bar title=""></nav-bar>
+  <view class="bg-red flex-1 px-16">
+    <view class="bg-green">
 
-        </form> -->
     </view>
+    <view class="bg-purple">
+      <image src="" mode="" />
+    </view>
+    <view class="bg-blue flex">
+    <button class="bg-yellow flex-1 rounded-full">手机号快速验证</button>
+    </view>
+    <view class="bg-orange text-center py-8">手机号码登录</view>
+    <checkbox-group bindchange="f_changeCheck" class="mt-16">
+      <label class="flex items-center">
+        <checkbox value="agreement" />
+        <text class="break-all text-sm flex-1">我已阅读并同意<text class="text-blue">《用户服务协议》</text><text class="text-blue">《隐私权战国策》</text>，未注册手机号将咋登录后自动为您创建账号。</text>
+      </label>
+    </checkbox-group>
+  </view>
 </view>

@@ -1,13 +1,16 @@
 @import "./_var";
 
 .text {
+
   // 字号
-  @each $class, $value in $fontSize {
+  @each $class,
+  $value in $fontSize {
     &-#{$class},
     &-#{$value} {
       font-size: #{$value * 2}rpx;
     }
   }
+
   // 换行
   // @each $type in $textWrap {
   //   &-#{$type} {
@@ -17,8 +20,23 @@
 }
 
 // 字重
-@each $type, $value in $fontWeight {
+@each $type,
+$value in $fontWeight {
   .font-#{$type} {
     font-weight: $value;
+  }
+}
+
+.break-all {
+  word-break: break-all;
+}
+
+.wrap-anywhere {
+  overflow-wrap: anywhere;
+}
+
+@each $dir in (left,right,center){
+  .text-#{$dir}{
+    text-align: #{$dir};
   }
 }

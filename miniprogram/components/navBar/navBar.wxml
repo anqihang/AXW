@@ -5,7 +5,7 @@
         <!-- 返回上一页 -->
         <block wx:if="{{backButton}}">
           <view class="">
-            <view bind:tap="back" class="button" hover-class="active" hover-stay-time="100" aria-role="button" aria-label="返回">
+            <view bind:tap="back" class="button" hover-class="active" hover-stay-time="100" aria-role="button" aria-label="返回" bind:tap="f_goBack">
               <view class="btn-back"></view>
             </view>
           </view>
@@ -13,7 +13,7 @@
         <!-- 返回首页 -->
         <block wx:if="{{homeButton}}">
           <view class="">
-            <view bind:tap="home" class="button" hover-class="active" hover-stay-time="100" aria-role="button" aria-label="首页">
+            <view bind:tap="home" class="button" hover-class="active" hover-stay-time="100" aria-role="button" aria-label="首页" bind:tap="f_goHome">
               <view class="btn-home"></view>
             </view>
           </view>

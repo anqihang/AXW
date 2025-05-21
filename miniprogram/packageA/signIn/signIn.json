@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
-  "styleIsolation": "apply-shared"
+  "usingComponents": {
+    "nav-top":"/components/nav-top/nav-top",
+    "nav-bar":"/components/navBar/navBar"
+  }
 }

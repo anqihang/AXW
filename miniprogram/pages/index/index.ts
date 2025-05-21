@@ -8,8 +8,13 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad() {
-    console.log("index");
+  onLoad(options) {
+    console.log("index",options);
+    if(options.page==="home"){
+      this.setData({
+        cur:1
+      })
+    }
     // const page = this.selectComponent(`#page${this.data.cur}`);
     // page.onLoad();
   },

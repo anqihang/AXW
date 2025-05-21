@@ -14,10 +14,10 @@
             <text class="" bind:tap="f_goSignUp">注册</text>
           </view>
           <block wx:else>
-          <text class="text-xl font-bold">{{username}}</text>
-          <view class="flex items-center">
-            <view class="mr-8 ax-tag" wx:for="{{identity}}" wx:key="index">{{item}}</view>
-          </view>
+            <text class="text-xl font-bold">{{username}}</text>
+            <view class="flex items-center">
+              <view class="mr-8 ax-tag" wx:for="{{identity}}" wx:key="index">{{item}}</view>
+            </view>
           </block>
         </view>
       </view>

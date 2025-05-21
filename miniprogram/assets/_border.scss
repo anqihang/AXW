@@ -25,6 +25,12 @@
       }
     }
 
+    @if(type-of($size)=="string") {
+      &-#{$size} {
+        border-radius: 9999px;
+      }
+    }
+
     @each $dir,
     $list in ("t": ("top-left",
         "top-right",
