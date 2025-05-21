@@ -1,4 +1,4 @@
-@import "./var.scss";
+@import "./var";
 
 @each $color, $value in $colors {
   .text-#{$color} {

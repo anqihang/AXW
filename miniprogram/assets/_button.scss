@@ -1,4 +1,4 @@
-// @import "./_var";
+@import "./_var";
 
 button {
   background-color: transparent;
@@ -16,4 +16,7 @@ button {
   text-decoration: none;
   overflow: visible;
   box-sizing: content-box;
+}
+.btn-hover {
+  background: $gray-a;
 }

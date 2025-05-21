@@ -3,9 +3,10 @@
 interface IAppOption {
   globalData: {
     userInfo: WechatMiniprogram.UserInfo | any; // 微信用户信息
-    deviceInfo: any;
-    windowInfo: WechatMiniprogram.WindowInfo | any; // 窗口信息
-    systemInfo: (WechatMiniprogram.SystemInfo & { ios: Boolean }) | any; // 系统信息
+    accountInfo: { username: string; gender: number; age: number; phone: string } | {};
+    systemInfo: WechatMiniprogram.SystemInfo | {}; // 系统信息
+    deviceInfo: { platform: string };
+    windowInfo: WechatMiniprogram.WindowInfo | {}; // 窗口信息
     defaultAvatarUrl: String; // 默认头像
     location?: any; // 位置信息 经度longitude 纬度latitude
   };

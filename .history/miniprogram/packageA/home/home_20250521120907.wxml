@@ -18,7 +18,7 @@
           <scroll-view enhanced="{{true}}" show-scrollbar="{{false}}" enable-flex type="custom" scroll-x class="scroll">
             <list-view>
               <block wx:for="{{categories}}" wx:key="id">
-                <button hover-class="none" class="{{selectCategoryId===item.id?'select':''}}" style="width:auto;padding:0 32rpx;" bind:tap="changeSelect" id="{{item.id}}">
+                <button hover-class="none" class="{{selectCategoryId===item.id?'select':''}}" style="width:auto;padding:0 32rpx;" bindtap="changeSelect" id="{{item.id}}">
                   {{item.text}}
                 </button>
               </block>
@@ -29,7 +29,7 @@
       <!-- 文章 -->
       <grid-view class="posts" type="masonry" cross-axis-count="2" main-axis-gap="8" cross-axis-gap="8" padding="{{[8,8,8,8]}}">
         <block wx:for="{{textList}}" wx:key="id">
-          <view class="bg-white pt-8 pr-8 pb-8 pl-8 rounded-t-4 rounded-b-4" data-id="{{item.id}}" bind:tap="f_goArticle">
+          <view class="bg-white pt-8 pr-8 pb-8 pl-8 rounded-t-4 rounded-b-4" data-id="{{item.id}}" bindtap="f_goArticle">
             <image src="{{item.cover}}" mode="widthFix" />
             <text class="text-md mt-8 font-bold" overflow="ellipsis" max-lines="{{2}}">{{item.title}}</text>
             <text class="text-xs mt-4">{{item.author}} {{item.subscribeTime}}</text>
