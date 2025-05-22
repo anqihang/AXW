@@ -55,9 +55,5 @@
         <button class="flex-1" hover-class="btn-hover" bind:tap="f_signOut">登 出</button>
       </view>
     </view>
-    <checkbox-group>
-      <checkbox class="ax-checkbox">
-      </checkbox>
-    </checkbox-group>
   </scroll-view>
 </view>
