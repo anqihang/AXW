@@ -1,6 +1,6 @@
 import { Request } from "./request";
 import storage from "../utils/storage";
-export function apiLogin() {
+export function apiLogin(): Promise<{ code: string }> {
   return new Promise((resolve, reject) => {
     // 登录
     wx.login({

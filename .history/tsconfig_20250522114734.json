@@ -20,7 +20,7 @@
     "typeRoots": ["./typings"],
     "baseUrl": "./",
     "paths": {
-      "/*": ["miniprogram/*"]
+      "MP/*": ["miniprogram/*"]
     }
   },
   "include": ["./**/*.ts"],

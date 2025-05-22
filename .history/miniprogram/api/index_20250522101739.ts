@@ -1,25 +1,15 @@
 import { Request } from "./request";
 import storage from "../utils/storage";
 export function apiLogin() {
-  return new Promise((resolve, reject) => {
-    // 登录
-    wx.login({
-      success: (res) => {
-        console.log("code", res);
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        Request("/login", "POST", { code: res.code })
-          .then((data: any) => {
-            resolve(data);
-            storage.set("openid", data.openid);
-          })
-          .catch((error) => {
-            reject(error);
-          });
-      },
-      fail(error) {
-        reject(error);
-      },
-    });
+  // 登录
+  wx.login({
+    success: (res) => {
+      console.log("login",res);
+      // 发送 res.code 到后台换取 openId, sessionKey, unionId
+      Request("/login", "POST", { code: res.code }).then((data: any) => {
+        storage.set("openid", data.openid);
+      });
+    },
   });
 }
 // 注册

@@ -1,5 +1,5 @@
 // packageA/login/login.ts
-import { apiLogin } from "/api/index";
+import { apiLogin } from "MP/api";
 
 Page({
   /**
