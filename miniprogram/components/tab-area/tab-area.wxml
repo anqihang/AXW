@@ -1,0 +1,4 @@
+<view class='tab-area'>
+  <image src='{{image}}' mode='aspectFit' class='tab-area-image'></image>
+  <canvas  id='tab-area-canvas' type="2d"></canvas>
+</view>

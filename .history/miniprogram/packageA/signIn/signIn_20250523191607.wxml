@@ -13,10 +13,17 @@
     <button class="bg-green text-white flex-1 rounded-full text-lg font-medium" open-type="getPhoneNumber">手机号快速验证</button>
     </view>
     <view class="text-center py-8 mt-6 text-lg text-black-6 font-medium" bind:tap="f_login">手机号码登录</view>
-      <ax-checkbox-group bind:checkChange="f_changeAgreement">
-      <ax-checkbox value="agreement">
+    <!-- <checkbox-group bind:change="f_changeAgreement" class="mt-16">
+      <label class="flex items-center">
+        <ax-checkbox value="agreement" checked="{{agreement}}"></ax-checkbox>
+        <span class="break-all text-sm flex-1 text-gray-a">我已阅读并同意<text class="text-blue text-sm">《用户服务协议》</text><text class="text-blue text-sm">《隐私权战国策》</text>，未注册手机号将咋登录后自动为您创建账号。</span>
+      </label> -->
+      <!-- <ax-checkbox-group bind:checkChange="f_checkChange"> -->
+        <label>
+          <ax-checkbox value="agreement"></ax-checkbox>
           <span class="break-all text-sm flex-1 text-gray-a">我已阅读并同意<text class="text-blue text-sm">《用户服务协议》</text><text class="text-blue text-sm">《隐私权战国策》</text>，未注册手机号将咋登录后自动为您创建账号。</span>
-          </ax-checkbox>
-      </ax-checkbox-group>
+        </label>
+      <!-- </ax-checkbox-group> -->
+    <!-- </checkbox-group> -->
   </view>
 </view>

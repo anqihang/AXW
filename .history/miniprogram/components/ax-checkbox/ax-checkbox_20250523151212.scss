@@ -1,0 +1,29 @@
+._checkbox {
+  &-icon {
+    border: 1px solid #ccc;
+    border-radius: 100%;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+  }
+  &-icon.checked {
+    border: 1px solid var(--color);
+    background-color: var(--color);
+  }
+
+  &-icon.checked::before {
+    content: "✓";
+    display: inline-block;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    position: absolute;
+    text-align: center;
+    line-height: 18px;
+    font-size: 14px;
+    color: white;
+  }
+}

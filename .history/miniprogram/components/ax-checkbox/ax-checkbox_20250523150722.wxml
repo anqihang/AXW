@@ -1,0 +1,6 @@
+<view class="_checkbox" style="--color:{{color}}">
+<radio value="{{value}}" checked="{{checked}}" disabled="{{disabled}}" color="{{color}}" />
+<view class="_checkbox-icon {{checked?'checked':''}}">
+<view _checkbox-icon_inner></view>
+</view>
+</view>
