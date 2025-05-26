@@ -58,7 +58,7 @@ Page({
   onShareAppMessage() {},
 
   data: {
-    cur: 5, // 选中的tabBarIndex
+    cur: 1, // 选中的tabBarIndex
     userInfo: {
       avatarUrl: defaultAvatarUrl,
       nickName: "",

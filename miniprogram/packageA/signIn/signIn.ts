@@ -55,6 +55,7 @@ Page({
     });
   },
   f_login() {
+    console.log("login");
     apiLogin().then((res) => {});
   },
 });

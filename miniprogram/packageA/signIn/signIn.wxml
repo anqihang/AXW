@@ -7,16 +7,18 @@
       <text class="text-md mt-4">登录后可进行，享受优质服务</text>
     </view>
     <view class="py-32">
-      <image src="" mode="" class="bg-orange" style="height:calc(90vw / 16 * 9)" />
+      <image src="" mode="" class="bg-light-orange" style="height:calc(90vw / 16 * 9)" />
     </view>
     <view class="flex">
-    <button class="bg-green text-white flex-1 rounded-full text-lg font-medium" open-type="getPhoneNumber">手机号快速验证</button>
+      <button class="bg-green text-white flex-1 rounded-full text-lg font-medium" open-type="getPhoneNumber">手机号快速验证</button>
     </view>
     <view class="text-center py-8 mt-6 text-lg text-black-6 font-medium" bind:tap="f_login">手机号码登录</view>
+    <view class="mt-12">
       <ax-checkbox-group bind:checkChange="f_changeAgreement">
-      <ax-checkbox value="agreement">
-          <span class="break-all text-sm flex-1 text-gray-a">我已阅读并同意<text class="text-blue text-sm">《用户服务协议》</text><text class="text-blue text-sm">《隐私权战国策》</text>，未注册手机号将咋登录后自动为您创建账号。</span>
-          </ax-checkbox>
+        <ax-checkbox value="agreement" color="#39b54a">
+          <span class="break-all text-sm flex-1 text-gray-a ml-4">我已阅读并同意<text class="text-blue text-sm">《用户服务协议》</text><text class="text-blue text-sm">《隐私权战国策》</text>，未注册手机号将咋登录后自动为您创建账号。</span>
+        </ax-checkbox>
       </ax-checkbox-group>
+    </view>
   </view>
 </view>

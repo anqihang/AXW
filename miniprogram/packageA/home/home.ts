@@ -12,9 +12,11 @@ Component({
    * 页面的初始数据
    */
   data: {
+    swiperHeight:0,
     // 轮播图
     swiperList: [
-      { id: 1, url: "https://picsum.photos/370/210" },
+      { id: 1, url: "/static/test/test.jpg" },
+      { id: 2, url: "/static/test/test.jpg" },
       // { id: 2, url: "https://picsum.photos/370/210" },
       // { id: 3, url: "https://picsum.photos/370/210" },
     ],
@@ -35,76 +37,35 @@ Component({
     textList: [
       {
         id: 1,
-        cover: "https://picsum.photos/200/200",
+        cover: "/static/test/test.jpg",
+        title: "这里是标题，应该有两行的最多显示出来，多余的省略号处理",
+        author: "这里是作者信息",
+        subscribeTime: "2024年7月1日",
+      }, 
+      {
+        id: 2,
+        cover: "/static/test/test.jpg",
         title: "这里是标题，应该有两行的最多显示出来，多余的省略号处理",
         author: "这里是作者信息",
         subscribeTime: "2024年7月1日",
       },
-      // {
-      //   id: 2,
-      //   cover: "https://picsum.photos/200/100",
-      //   title: "这里是标题，应该有两行的最多显示出来，多余的省略号处理",
-      //   author: "这里是作者信息",
-      //   subscribeTime: "2024年7月1日",
-      // },
-      // {
-      //   id: 3,
-      //   cover: "https://picsum.photos/200/150",
-      //   title: "这里是标题，应该有两行的最多显示出来，多余的省略号处理",
-      //   author: "这里是作者信息",
-      //   subscribeTime: "2024年7月1日",
-      // },
-      // {
-      //   id: 4,
-      //   cover: "https://picsum.photos/200/200",
-      //   title: "这里是标题，应该有两行的最多显示出来，多余的省略号处理",
-      //   author: "这里是作者信息",
-      //   subscribeTime: "2024年7月1日",
-      // },
-      // {
-      //   id: 5,
-      //   cover: "https://picsum.photos/200/200",
-      //   title: "这里是标题，应该有两行的最多显示出来，多余的省略号处理",
-      //   author: "这里是作者信息",
-      //   subscribeTime: "2024年7月1日",
-      // },
-      // {
-      //   id: 6,
-      //   cover: "https://picsum.photos/200/200",
-      //   title: "这里是标题，应该有两行的最多显示出来，多余的省略号处理",
-      //   author: "这里是作者信息",
-      //   subscribeTime: "2024年7月1日",
-      // },
-      // {
-      //   id: 7,
-      //   cover: "https://picsum.photos/200/200",
-      //   title: "这里是标题，应该有两行的最多显示出来，多余的省略号处理",
-      //   author: "这里是作者信息",
-      //   subscribeTime: "2024年7月1日",
-      // },
-      // {
-      //   id: 8,
-      //   cover: "https://picsum.photos/200/200",
-      //   title: "这里是标题，应该有两行的最多来，多余的省略号处理",
-      //   author: "这里是作者信息",
-      //   subscribeTime: "2024年7月1日",
-      // },
-      // {
-      //   id: 9,
-      //   cover: "https://picsum.photos/200/200",
-      //   title: "这里是标题，应该有两行的最多显示出来，多余的省略号处理",
-      //   author: "这里是作者信息",
-      //   subscribeTime: "2024年7月1日",
-      // },
     ],
   },
   lifetimes: {
     created() {
       console.log("home")
+      
     },
     attached() {
     },
     ready() {
+      const query = this.createSelectorQuery();
+      query.select("#banner").boundingClientRect((rect)=>{
+        console.log(rect,'项目');
+        this.setData({
+          swiperHeight: rect?.width / 2.4
+        })
+      }).exec();
     }
   },
   pageLifetimes: {
@@ -113,6 +74,9 @@ Component({
     hide() { }
   },
   methods: {
+    getRect(){
+     
+    },
     changeSelect(e: any) {
       console.log(e);
       this.setData({

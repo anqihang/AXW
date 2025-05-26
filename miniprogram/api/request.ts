@@ -1,4 +1,5 @@
 import storage from "../utils/storage";
+import { apiConfig } from "./config";
 
 const { globalData } = getApp();
 export function Request(
@@ -7,9 +8,12 @@ export function Request(
   data: WechatMiniprogram.RequestOption["data"] = {},
   header: WechatMiniprogram.RequestOption["header"] = {}
 ) {
+  console.log(url)
+  console.log(data)
   return new Promise((resolve, reject) => {
     wx.request({
-      url,
+      // url: apiConfig.baseUrl + url,
+      url: "http://localhost:8080/login",
       method,
       header: {
         Authorization: storage.get("Authorization"),
@@ -56,7 +60,7 @@ export function Request(
         reject(error);
       },
       complete() {
-        console.log(url + "::complete");
+        // console.log(url + "::complete");
       },
     });
   });
@@ -72,7 +76,7 @@ export function SSE(
   onClose: () => void
 ) {
   const requestTask = wx.request({
-    url,
+    url: apiConfig.baseUrl + url,
     method,
     header: {
       Authorization: storage.get("Authorization"),
@@ -82,12 +86,12 @@ export function SSE(
     useHighPerformanceMode: globalData.platform == "android" ? true : false, // 仅android
     data,
     enableChunked: true,
-    success: (res) => {},
+    success: (res) => { },
     fail: (err) => {
       onError(err);
       onClose();
     },
-    complete: (res) => {},
+    complete: (res) => { },
   });
   requestTask.onHeadersReceived((res) => {
     if (res.statusCode == 200) {
