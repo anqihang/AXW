@@ -16,8 +16,6 @@ export function Request(
   data: WechatMiniprogram.RequestOption["data"] = {},
   header: WechatMiniprogram.RequestOption["header"] = {}
 ) {
-  console.log(url)
-  console.log(data)
   return new Promise((resolve, reject) => {
     const baseUrl = apiConfig.baseUrl[globalData.accountInfo.miniProgram.envVersion];
     wx.request({
@@ -91,7 +89,7 @@ export function SSE(
   onClose: () => void
 ) {
   const requestTask = wx.request({
-    url: apiConfig.baseUrl + url,
+    url,
     method,
     header: {
       Authorization: storage.get("Authorization"),
@@ -101,12 +99,12 @@ export function SSE(
     useHighPerformanceMode: globalData.deviceInfo.platform == "android" ? true : false, // 仅android
     data,
     enableChunked: true,
-    success: (res) => { },
+    success: (res) => {},
     fail: (err) => {
       onError(err);
       onClose();
     },
-    complete: (res) => { },
+    complete: (res) => {},
   });
   requestTask.onHeadersReceived((res) => {
     if (res.statusCode == 200) {
