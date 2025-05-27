@@ -41,13 +41,36 @@ export function Request<T>(
         if (res.statusCode >= 200 && res.statusCode < 300) {
           resolve(res.data as T);
         } else if (res.statusCode === 403) {
-          refreshToken(url, method, { data, header })
-            .then((data) => {
-              resolve(data as T);
-            })
-            .catch((error) => {
-              reject(error);
+          storage.remove("Authorization");
+          // 刷新token
+          if (storage.get("refreshAuthorization")) {
+            wx.request({
+              url: baseUrl + "/refreshAuthorization",
+              method: "POST",
+              header: {
+                refreshAuthorization: storage.get("refreshAuthorization"),
+              },
+              success(res: any) {
+                if (res.statusCode >= 200 && res.statusCode < 300) {
+                  storage.set("Authorization", res.data?.Authorization);
+                  storage.set("refreshAuthorization", res.data?.refreshAuthorization);
+                  //$ 重新请求
+                  Request(url, method, { data, header })
+                    .then((data) => {
+                      resolve(data as T);
+                    })
+                    .catch((error) => {
+                      reject(error);
+                    });
+                }
+              },
+              fail(error) {
+                console.error("refreshAuthorization::" + error);
+                storage.clear();
+                reject(error);
+              },
             });
+          }
         }
       },
       fail(error) {
@@ -58,42 +81,6 @@ export function Request<T>(
         console.log("complete" + url);
       },
     });
-  });
-}
-function refreshToken(url?: WechatMiniprogram.RequestOption["url"], method?: WechatMiniprogram.RequestOption["method"], options?: BasicProps) {
-  return new Promise((resolve, reject) => {
-    storage.remove("Authorization");
-    // 刷新token
-    if (storage.get("refreshAuthorization")) {
-      wx.request({
-        url: baseUrl + "/refreshAuthorization",
-        method: "POST",
-        header: {
-          refreshAuthorization: storage.get("refreshAuthorization"),
-        },
-        success(res: any) {
-          if (res.statusCode >= 200 && res.statusCode < 300) {
-            storage.set("Authorization", res.data?.Authorization);
-            storage.set("refreshAuthorization", res.data?.refreshAuthorization);
-            //$ 重新请求
-            if (url) {
-              Request(url, method, { data: options?.data, header: options?.header })
-                .then((data) => {
-                  resolve(data);
-                })
-                .catch((error) => {
-                  reject(error);
-                });
-            }
-          }
-        },
-        fail(error) {
-          console.error("refreshAuthorization::" + error);
-          storage.clear();
-          reject(error);
-        },
-      });
-    }
   });
 }
 export function SSE(
