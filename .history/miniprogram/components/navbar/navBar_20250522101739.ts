@@ -24,7 +24,6 @@ Component({
       type: Boolean,
       value: true,
     },
-    // 一直显示home按钮
     homeButton: {
       type: Boolean,
       value: true,
@@ -46,14 +45,14 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    f_goBack() {
+    f_goBack(){
       wx.navigateBack();
     },
-    f_goHome() {
+    f_goHome(){
       wx.reLaunch({
-        url: "/pages/index/index?page=home",
-      });
-    },
+        url:"/pages/index/index?page=home"
+      })
+    }
   },
   /**
    * 组件生命周期
@@ -69,20 +68,20 @@ Component({
           });
         },
       });
-      //
+      // 
       const pages = getCurrentPages();
-      if (pages.length > 0) {
+      if(pages.length>0){
         this.setData({
-          backButton: true,
-          homeButton: this.properties.homeButton ? true : false,
-        });
-      } else {
+          backButton:true,
+          homeButton:false
+        })
+      }else{
         this.setData({
-          backButton: false,
-          homeButton: true,
-        });
+          backButton:false,
+          homeButton:true
+        })
       }
-      console.log(pages, "yeman");
+      console.log(pages,'yeman')
     },
     attached() {},
   },
