@@ -22,15 +22,14 @@ Component({
     ],
     // 分类
     categories: [
-      { id: 1, text: "热门" },
-      { id: 2, text: "推荐" },
-      { id: 3, text: "帖子" },
-      { id: 4, text: "帖子" },
-      { id: 5, text: "帖子" },
-      { id: 6, text: "帖子" },
-      { id: 7, text: "帖子" },
-      { id: 8, text: "帖子" },
-      { id: 9, text: "帖子" },
+      { id: 1, title: "热门" },
+      { id: 2, title: "推荐" },
+      { id: 3, title: "帖子" },
+      { id: 4, title: "帖子" },
+      { id: 5, title: "帖子" },
+      { id: 6, title: "帖子" },
+      { id: 7, title: "帖子" },
+      { id: 8, title: "帖子" },
     ],
     selectCategoryId: 1,
     // 列表
@@ -50,6 +49,7 @@ Component({
         subscribeTime: "2024年7月1日",
       },
     ],
+    
   },
   lifetimes: {
     created() {

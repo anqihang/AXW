@@ -1,5 +1,5 @@
 <!--pages/home/home.wxml-->
-<view hidden="{{hidden}}" class="Home flex flex-col">
+<view hidden="{{hidden}}" class="Home page">
   <nav-bar title="首页" back="{{false}}" backButton="{{false}}" homeButton="{{false}}" color="white" background="linear-gradient(45deg,#0081ff,#1cbbb4)"></nav-bar>
   <scroll-view scroll-y enable-flex type="custom" show-scrollbar="{{false}}" class="flex-1">
     <!-- <nav-top></nav-top> -->
@@ -23,16 +23,30 @@
       </view>
     </view>
     <!--  -->
-    <view class="px-16">
-      <view class="bg-red">
-        <view>
-          <view class="overflow-hidden rounded-full w-24 h-24 bg-green">
-            <image src="" mode=""/>
+    <view class="px-16 py-12">
+      <view class="bg-green grid-cols-4 category">
+        <view wx:for="{{categories}}" wx:key="id" wx:for-index="idx" class="{{idx>=4?'mt-6':''}}">
+          <view class="flex flex-col items-center">
+            <view class="overflow-hidden w-24 h-24 bg-green">
+              <image src="/static/test/test.jpg" mode="" />
+            </view>
+            <text class="text-xs">新鲜蔬菜{{idx}}</text>
           </view>
-          <text>新鲜蔬菜</text>
         </view>
       </view>
     </view>
+    <!-- <scroll-view scroll-x>
+      <grid-view type="aligned">
+        <block wx:for="{{categories}}" wx:key="id">
+          <view class="flex flex-col items-center">
+            <view class="overflow-hidden w-24 h-24 bg-green">
+              <image src="/static/test/test.jpg" mode="" />
+            </view>
+            <text class="text-xs">新鲜蔬菜</text>
+          </view>
+          </bloc>
+      </grid-view>
+    </scroll-view> -->
     <!-- 分类 -->
     <!-- <view class="category">
           <scroll-view enhanced="{{true}}" show-scrollbar="{{false}}" enable-flex type="custom" scroll-x class="scroll">
@@ -47,7 +61,7 @@
         </view> -->
     <!-- </sticky-header> -->
     <!-- 文章 -->
-    <grid-view class="posts" type="masonry" cross-axis-count="2" main-axis-gap="8" cross-axis-gap="8" padding="{{[8,8,8,8]}}">
+    <grid-view class="posts" type="masonry" main-axis-gap="8" cross-axis-gap="8" padding="{{[8,8,8,8]}}">
       <block wx:for="{{textList}}" wx:key="id">
         <view class="bg-white pt-8 pr-8 pb-8 pl-8 rounded-t-4 rounded-b-4" data-id="{{item.id}}" bind:tap="f_goArticle">
           <image src="{{item.cover}}" mode="widthFix" />

@@ -18,9 +18,9 @@
     "strictPropertyInitialization": true,
     "lib": ["ES2020"],
     "typeRoots": ["./typings"],
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
-      "/*": ["miniprogram/*"]
+      "@/*": ["miniprogram/*"]
     }
   },
   "include": ["./**/*.ts"],

@@ -1,33 +1,34 @@
 /* pages/home/home.wxss */
-@import '../../app.scss';
-
 .Home {
-  flex: 1;
-  overflow: hidden;
+  // flex: 1;
 
-  .swiper {
-    height: calc(90vw / 16 * 9);
-    overflow: hidden;
-  }
+//   .swiper {
+//     height: calc(90vw / 16 * 9);
+//     overflow: hidden;
+//   }
 
-  .category {
-    padding:8rpx 0;
-    background-color: white;
+.category{
+  display: grid;
+  gap:10px;
+}
+//   .category {
+//     padding:8rpx 0;
+//     background-color: white;
     
-    .scroll {
-      height: 64rpx;
-    }
+//     .scroll {
+//       height: 64rpx;
+//     }
 
-    .select {
-      color: $green;
-    }
-  }
+//     .select {
+//       color: $green;
+//     }
+//   }
 
-  .posts {
+//   .posts {
 
-    .postsItem {
-      display: flex;
-      flex-direction: column;
-    }
-  }
+//     .postsItem {
+//       display: flex;
+//       flex-direction: column;
+//     }
+//   }
 }

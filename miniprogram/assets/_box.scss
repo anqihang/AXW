@@ -49,13 +49,11 @@
     }
   }
 }
-// 显示方式
-@each $type in $display {
-  .#{$type} {
-    display: #{$type};
-  }
+.mx-auto{
+  margin-left:auto;
+  margin-right:auto;
 }
-
+// 定位
 @each $type in $positions {
   .#{$type} {
     position: #{$type};
@@ -67,9 +65,20 @@
     & > text,
     & > block {
       width: #{100% / $size};
+      display: inline-block;
     }
   }
 }
+.content-center{
+  align-content:center;
+}
+// 显示方式
+@each $type in $display {
+  .#{$type} {
+    display: #{$type};
+  }
+}
+
 // 盒模型类型
 .border-box {
   box-sizing: border-box;

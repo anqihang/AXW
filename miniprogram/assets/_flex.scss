@@ -24,7 +24,6 @@
 
   @each $name, $value in ("col": column) {
     &-#{$name} {
-      display: flex;
       flex-direction: $value;
     }
   }
