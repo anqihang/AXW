@@ -2,7 +2,7 @@
 <view hidden="{{hidden}}" class="Mine page">
   <scroll-view class="h-full" scroll-y type="custom" enable-flex show-scrollbar="{{false}}">
     <nav-top></nav-top>
-    <view class="flex px-12 justify-between items-center" bind:tap="f_toUserInfo">
+    <view class="flex px-16 justify-between items-center" bind:tap="f_toUserInfo">
       <view class="flex">
         <image class="w-56 h-56 rounded-full" src="{{avatar}}" mode="aspectFill" />
         <view class="ml-16 flex flex-col justify-center">
@@ -26,7 +26,7 @@
       </view>
     </view>
     <!--  -->
-    <view class="px-12 mt-12">
+    <view class="px-16 mt-12">
       <view class="bg-white flex flex-wrap rounded-4 py-8 grid-cols-4 grid-rows-2">
         <view class="items-center flex flex-col py-8" wx:for="{{gridList}}" wx:key="id" bind:tap="f_gradTap" data-id="{{item.id}}">
           <view class="ax-icon">
@@ -37,7 +37,7 @@
       </view>
     </view>
     <!--  -->
-    <view class="px-12 mt-12">
+    <view class="px-16 mt-12">
       <view class="rounded-4 overflow bg-white">
         <view class="flex ax-list_item justify-between" wx:for="{{list}}" wx:key="index">
           <view class="flex items-center">

@@ -16,7 +16,7 @@
       </swiper>
     </view>
     <!-- 消息/活动/公告 -->
-    <view class="px-12 mt-12">
+    <view class="px-16 mt-12">
       <view class="bg-green rounded-4 overflow-hidden" style="height:calc((100vw - 21px) / 5)">
         <text></text>
         
@@ -24,7 +24,7 @@
       </view>
     </view>
     <!--  -->
-    <view class="px-12 mt-12">
+    <view class="px-16 mt-12">
       <view class="grid-cols-4 flex flex-wrap">
         <view wx:for="{{categories}}" wx:key="id" wx:for-index="idx" class="py-4 flex flex-col items-center">
             <view class="overflow-hidden w-32 h-32 bg-green">
