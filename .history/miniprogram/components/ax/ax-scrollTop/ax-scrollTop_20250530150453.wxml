@@ -1,0 +1,5 @@
+<root-portal enable="true" class="bottom:calc(env(safe-area-inset-bottom) / 2 + 32rpx);right:24rpx">
+    <view class="ScrollTop rounded-full overflow-hidden p-8" style="background:{{backgroundColor}}" bind:tap="f_scrollTop">
+        <view class=""></view>
+    </view>
+</root-portal>

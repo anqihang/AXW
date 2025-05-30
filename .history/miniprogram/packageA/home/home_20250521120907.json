@@ -2,6 +2,6 @@
   "usingComponents": {
     "nav-bar":"/components/navBar/navBar",
     "navigation-bar":"/components/navigation-bar/navigation-bar",
-    "fake-nav":"/components/fake-nav/fake-nav"
+    "nav-top":"/components/nav-top/nav-top"
   }
 }

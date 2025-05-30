@@ -1,0 +1,17 @@
+/* components/navTop/navTop.wxss */
+.FakeNav {
+  --height: 44px;
+
+  .android {
+    --height: 48px;
+  }
+
+  .content {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: calc(var(--height) + env(safe-area-inset-top));
+    padding-top: env(safe-area-inset-top);
+    box-sizing: border-box;
+  }
+}

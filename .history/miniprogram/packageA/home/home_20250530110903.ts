@@ -2,11 +2,9 @@ Component({
   properties: {
     hidden: {
       type: Boolean,
-      value: true,
+      value: false,
       observer(e) {
-        if (!e) {
-          console.log("home加载");
-        }
+        console.log("home", e);
       },
     },
   },
@@ -14,7 +12,6 @@ Component({
    * 页面的初始数据
    */
   data: {
-    scrollTop: 0,
     swiperHeight: 0,
     // 轮播图
     swiperList: [
@@ -32,6 +29,7 @@ Component({
       { id: 7, title: "帖子" },
       { id: 8, title: "帖子" },
     ],
+    selectCategoryId: 1,
     // 列表
     textList: [
       {
@@ -52,19 +50,15 @@ Component({
   },
   lifetimes: {
     created() {
-      // hidden true
+      console.log("home");
     },
-    attached() {
-      // hidden false
-      if (!this.properties.hidden) {
-        this.f_init();
-      }
-    },
+    attached() {},
     ready() {
       const query = this.createSelectorQuery();
       query
         .select("#banner")
         .boundingClientRect((rect) => {
+          console.log(rect, "项目");
           this.setData({
             swiperHeight: rect?.width / 2.4,
           });
@@ -77,17 +71,11 @@ Component({
     hide() {},
   },
   methods: {
-    f_init() {},
-    f_refresh() {},
-    f_scroll(e: any) {
+    getRect() {},
+    changeSelect(e: any) {
       console.log(e);
       this.setData({
-        scrollTop: e.detail.scrollTop,
-      });
-    },
-    f_scrollTop() {
-      this.setData({
-        scrollTop: 0,
+        selectCategoryId: Number(e.currentTarget.id),
       });
     },
     f_goArticle(e: any) {

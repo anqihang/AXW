@@ -1,11 +1,12 @@
 <!--pages/home/home.wxml-->
 <view hidden="{{hidden}}" class="Home page">
   <nav-bar title="首页" back="{{false}}" backButton="{{false}}" homeButton="{{false}}" color="white" background="linear-gradient(45deg,#0081ff,#1cbbb4)"></nav-bar>
-  <scroll-view scroll-y enable-flex type="custom" show-scrollbar="{{false}}" class="flex-1" scroll-top="{{scrollTop}}" 	bind:refresherrefresh="f_refresh" bind:scroll="f_scroll">
+  <scroll-view scroll-y enable-flex type="custom" show-scrollbar="{{false}}" class="flex-1">
+    <!-- <nav-top></nav-top> -->
     <!-- <sticky-section> -->
     <!-- <sticky-header> -->
     <!-- 轮播图 -->
-    <view class="px-12 mt-12 overflow-hidden" >
+    <view class="px-12 mt-12 overflow-hidden" bind:tap="getRect">
       <swiper class="swiper bg-white rounded-4 overflow-hidden" id="banner" style="height:{{swiperHeight}}px" indicator-dots autoplay circular indicator-type="scroll">
         <block wx:for="{{swiperList}}" wx:key="id">
           <swiper-item>
@@ -17,31 +18,33 @@
     <!-- 消息/活动/公告 -->
     <view class="px-12 mt-12">
       <view class="bg-green rounded-4 overflow-hidden" style="height:calc((100vw - 21px) / 5)">
+        <text></text>
+        
+        <text></text>
       </view>
     </view>
     <!--  -->
     <view class="px-12 mt-12">
-      <view class="grid-cols-4 bg-white rounded-4 flex flex-wrap p-8">
-        <view wx:for="{{categories}}" wx:key="id" wx:for-index="index" class="py-4 flex flex-col items-center">
+      <view class="grid-cols-4 bg-white rounded-4 flex flex-wrap">
+        <view wx:for="{{categories}}" wx:key="id" wx:for-index="idx" class="py-4 flex flex-col items-center">
             <view class="overflow-hidden w-32 h-32 bg-green">
-              <image src="{{item.src}}" mode="" />
+              <image src="/static/test/rain.jpg" mode="" />
             </view>
-            <text class="text-xs">{{item.title}}</text>
+            <text class="text-xs">新鲜蔬菜{{idx}}</text>
         </view>
       </view>
     </view>
     <!-- </sticky-header> -->
     <!-- 文章 -->
-    <grid-view class="posts" type="masonry" main-axis-gap="8" cross-axis-gap="8" padding="{{[12,12,0,12]}}">
+    <grid-view class="posts" type="masonry" main-axis-gap="8" cross-axis-gap="8" padding="{{[0,0,0,0]}}">
       <block wx:for="{{textList}}" wx:key="id">
-        <view class="bg-white p-8 rounded-4" data-id="{{item.id}}" bind:tap="f_goArticle">
-          <image src="{{item.cover}}" mode="widthFix" class="mb-8"/>
-          <text class="text-md font-bold" overflow="ellipsis" max-lines="{{2}}">{{item.title}}</text>
+        <view class="bg-white pt-8 pr-8 pb-8 pl-8 rounded-t-4 rounded-b-4" data-id="{{item.id}}" bind:tap="f_goArticle">
+          <image src="{{item.cover}}" mode="widthFix" />
+          <text class="text-md mt-8 font-bold" overflow="ellipsis" max-lines="{{2}}">{{item.title}}</text>
           <text class="text-xs mt-4">{{item.author}} {{item.subscribeTime}}</text>
         </view>
       </block>
     </grid-view>
     <!-- </sticky-section> -->
   </scroll-view>
-  <scroll-top bind:scrollTop="f_scrollTop"></scroll-top>
 </view>

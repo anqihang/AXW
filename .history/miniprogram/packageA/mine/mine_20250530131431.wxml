@@ -6,12 +6,13 @@
       <view class="flex">
         <image class="w-56 h-56 rounded-full" src="{{avatar}}" mode="aspectFill" />
         <view class="ml-16 flex flex-col justify-center">
-          <view wx:if="{{!isSignIn}}" class="flex text-lg text-gray-500 font-bold" >
+          <view class="flex text-lg text-gray-500 font-bold" wx:if="{{!isSignIn}}">
+            <!-- <text class="text-lg" bind:tap="f_goSignIn">登录</text> -->
             <navigator url="" open-type="navigate" class="text-lg">登录</navigator>
             <view class="py-4">
               <view class="w-1 h-full py-4 bg-gray mx-8"></view>
             </view>
-            <navigator url="" open-type="reLaunch" >注册</navigator>
+            <text class="" bind:tap="f_goSignUp">注册</text>
           </view>
           <block wx:else>
             <text class="text-xl font-bold">{{username}}</text>

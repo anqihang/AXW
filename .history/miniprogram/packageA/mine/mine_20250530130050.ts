@@ -8,7 +8,7 @@ Component({
   properties: {
     hidden: {
       type: Boolean,
-      value: true,
+      value: false,
       observer(e) {
         if (!e) console.log("加载mine");
       },
@@ -37,8 +37,7 @@ Component({
   },
   lifetimes: {
     created() {
-    },
-    attached() {
+      console.log("mine");
     },
   },
   pageLifetimes: {

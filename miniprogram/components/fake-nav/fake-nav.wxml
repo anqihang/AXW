@@ -1,0 +1,4 @@
+<!--components/navTop/navTop.wxml-->
+<view class="FakeNav {{platform==='ios' ? 'ios' : 'android'}}">
+  <view class="content"></view>
+</view>
