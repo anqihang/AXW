@@ -43,7 +43,7 @@ Component({
       },
       {
         id: 2,
-        cover: "/static/test/rain.jpg",
+        cover: "/static/test/rain.webp",
         title: "这里是标题，应该有两行的最多显示出来，多余的省略号处理",
         author: "这里是作者信息",
         subscribeTime: "2024年7月1日",
