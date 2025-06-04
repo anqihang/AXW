@@ -11,7 +11,7 @@
             <view class="py-4">
               <view class="w-1 h-full py-4 bg-gray mx-8"></view>
             </view>
-            <navigator url="" open-type="reLaunch" >注册</navigator>
+            <navigator url="" open-type="reLaunch" class="text-lg" >注册</navigator>
           </view>
           <block wx:else>
             <text class="text-xl font-bold">{{username}}</text>

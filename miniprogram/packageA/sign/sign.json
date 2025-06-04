@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "navigation-bar": "/components/navigation-bar/navigation-bar",
+        "fake-nav": "/components/fake-nav/fake-nav",
+        "nav-bar": "/components/navBar/navBar",
+        "ax-checkbox": "/components/ax/ax-checkbox/ax-checkbox"
+    }
+}

@@ -1,10 +1,43 @@
-import { buf2hex, hex2Str } from "@/utils/util";
+// function req(r) {
+//   return new Promise((resolve, reject) => {
+//     wx.request({
+//       success(res) {
+//         if (res.statusCode === 200) {
+//           resolve(res.data);
+//         } else if (res.statusCode === 403) {
+//           if (!isRefreshing) {
+//             isRefreshing = true;
+//             refresh();
+//           } else {
+//             new Promise((resolve1, reject) => {
+//               arrList.push({ options, fn: (res) => resolve1(res) });
+//             }).then((data) => {
+//               resolve(data);
+//             });
+//           }
+//         }
+//       },
+//     });
+//   });
+// }
+// function refresh1() {
+//   wx.request({
+//     url: "/refresh",
+
+//     success(res) {
+//       isRefreshing = false;
+//       arrList.forEach((item) => {
+//         req(item.options).then((data) => item.fn(data));
+//       });
+//     },
+//   });
 import storage from "../utils/storage";
 import { apiConfig } from "./config";
 
 const { globalData } = getApp<IAppOption>();
 const baseUrl = apiConfig.baseUrl[globalData.accountInfo.miniProgram.envVersion];
 
+// }
 type BasicProps = {
   data?: WechatMiniprogram.RequestOption["data"];
   header?: WechatMiniprogram.RequestOption["header"];
@@ -15,8 +48,8 @@ type SSEEvent = {
   onClose: () => void;
   onError: (e: any) => void;
 };
-type RequestOptions = BasicProps & (({ enableChunked: true } & SSEEvent) | ({ enableChunked?: false } & Partial<SSEEvent>));
-type SSEObj = { abort: () => void; task: WechatMiniprogram.RequestTask };
+type RequestOptions = (BasicProps & ({ enableChunked: true } & SSEEvent)) | (BasicProps & { enableChunked?: false } & Partial<SSEEvent>);
+
 let reqList: any[] = [];
 let isRefreshing = false;
 
@@ -88,9 +121,9 @@ export function refreshToken() {
       success(res: any) {
         if (res.statusCode >= 200 && res.statusCode < 300) {
           storage.set("Authorization", res.data?.Authorization);
-          isRefreshing = false;
+
           reqList.forEach(({ options, callback_resolve, callback_reject }) => {
-            RequestSSE(options.url, options.method, options)
+            Request(options.url, options.method, { data: options.data, header: options.header })
               .then((data) => {
                 callback_resolve(data);
               })
@@ -101,9 +134,7 @@ export function refreshToken() {
           resolve(true);
         }
       },
-      fail(error) {
-        reject(error);
-      },
+      fail() {},
       complete() {},
     });
   });
@@ -111,18 +142,7 @@ export function refreshToken() {
 export function RequestSSE(
   url: WechatMiniprogram.RequestOption["url"],
   method: WechatMiniprogram.RequestOption["method"],
-  options: RequestOptions & { enableChunked?: false }
-): Promise<any>;
-export function RequestSSE(
-  url: WechatMiniprogram.RequestOption["url"],
-  method: WechatMiniprogram.RequestOption["method"],
-  options: RequestOptions & { enableChunked: true }
-): Promise<SSEObj>;
-
-export function RequestSSE(
-  url: WechatMiniprogram.RequestOption["url"],
-  method: WechatMiniprogram.RequestOption["method"],
-  { data, header, enableChunked, onMessage, onConnect, onError, onClose }: RequestOptions = { enableChunked: false }
+  { data, header, enableChunked = false, onMessage, onConnect, onError, onClose }: RequestOptions
 ) {
   return new Promise((resolve, reject) => {
     let requestTask = wx.request({
@@ -146,12 +166,6 @@ export function RequestSSE(
             resolve(res.data);
           } else {
             let sse = {
-              abort() {
-                requestTask.abort();
-                requestTask.offHeadersReceived();
-                requestTask.offChunkReceived();
-                onClose && onClose();
-              },
               task: requestTask,
             };
             resolve(sse);
@@ -161,7 +175,7 @@ export function RequestSSE(
             if (isRefreshing) {
               new Promise((resolve, reject) => {
                 reqList.push({
-                  options: { url, method, data, header, enableChunked, onMessage, onConnect, onError, onClose },
+                  options: { url, method, data, header },
                   callback_resolve: (data: any) => resolve(data),
                   callback_reject: (error: any) => reject(error),
                 });
@@ -175,21 +189,11 @@ export function RequestSSE(
             } else {
               isRefreshing = true;
               refreshToken().then(() => {
-                RequestSSE(url, method, {
-                  data,
-                  header,
-                  ...(enableChunked ? { onMessage, onConnect, onError, onClose } : {}),
-                }).then((data) => {
+                Request(url, method, { data, header }).then((data) => {
                   if (!enableChunked) {
                     resolve(data);
                   } else {
                     let sse = {
-                      abort() {
-                        requestTask.abort();
-                        requestTask.offHeadersReceived();
-                        requestTask.offChunkReceived();
-                        onClose && onClose();
-                      },
                       task: requestTask,
                     };
                     resolve(sse);
@@ -202,29 +206,19 @@ export function RequestSSE(
       },
       fail(error) {
         reject(error);
-        if (enableChunked) {
-          onError && onError(error);
-          onClose && onClose();
-        }
       },
-      complete() {
-        if (enableChunked) {
-          onClose && onClose();
-        }
-      },
+      complete() {},
     });
-    if (enableChunked) {
-      requestTask.onHeadersReceived((res) => {
-        if (res.statusCode == 200) {
-          onConnect && onConnect();
-        } else {
-          onError && onError(res);
-        }
-      });
-      requestTask.onChunkReceived((res) => {
-        const text = hex2Str(buf2hex(res.data));
-        onMessage && onMessage(text);
-      });
-    }
+    requestTask.onHeadersReceived((res) => {
+      if (res.statusCode == 200) {
+        onConnect && onConnect();
+      } else {
+        onError && onError(res);
+      }
+    });
+    requestTask.onChunkReceived((res) => {
+      const text = hex2Str(buf2hex(res.data));
+      onMessage && onMessage(text);
+    });
   });
 }

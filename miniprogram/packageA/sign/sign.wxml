@@ -1,0 +1,27 @@
+<view class="Sign page">
+    <view></view>
+    <view>
+    <view>
+            <label>
+            <text>账号</text>
+                <input type="string"  checked="true" />
+            </label>
+            <view>
+            <text></text>
+            </view>
+            </view>
+
+    <view>
+            <label>
+            <text>{{""}}</text>
+                <input type="string"  checked="true" />
+            </label>
+            <view>
+            <text></text>
+            </view>
+            </view>
+    </view>
+    <view>
+      <button class="bg-green text-white flex-1 rounded-full text-lg font-medium">{{}}</button>
+    </view>
+</view>
