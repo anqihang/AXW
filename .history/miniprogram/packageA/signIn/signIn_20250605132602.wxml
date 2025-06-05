@@ -1,5 +1,5 @@
 <!--packageA/login/login.wxml-->
-<view class="SignIn page">
+<view class="SignIn page ">
   <nav-bar title=""></nav-bar>
   <view class="bg-white flex-1 px-16">
     <view class="pt-16">

@@ -1,0 +1,32 @@
+<view class="Sign page">
+  <fake-nav></fake-nav>
+  <view></view>
+  <view class="px-16">
+    <view>
+      <label>
+        <text>账号</text>
+        <input type="string" checked="true" />
+      </label>
+      <view>
+        <text></text>
+      </view>
+    </view>
+
+    <view>
+      <label>
+        <text>密码</text>
+        <input type="string" checked="true" />
+      </label>
+      <view>
+        <text></text>
+      </view>
+    </view>
+
+    <view></view>
+
+  </view>
+  <view class="px-16">
+    <button class="bg-green text-white flex-1 rounded-full text-lg font-medium">{{isAgreement?'登录':'同意协议并登录'}}</button>
+  </view>
+  <view></view>
+</view>

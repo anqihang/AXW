@@ -1,7 +1,6 @@
 // const { globalData } = getApp<IAppOption>();
 Component({
   data: {
-    isAccount: false,
     isSignIn: true,
     account: "",
     password: "",
@@ -9,7 +8,6 @@ Component({
     agreement: false,
   },
   methods: {
-    f_switchAccount() {},
     f_switchMode() {
       this.setData({ isSignIn: !this.data.isSignIn });
     },
