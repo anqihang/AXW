@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "nav-bar": "/components/navBar/navBar",
+        "fake-nav": "/components/fake-nav/fake-nav"
+    }
+}

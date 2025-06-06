@@ -1,0 +1,17 @@
+<view class="ax_input">
+    <block wx:if="{{isLeftIcon}}">
+    <view class="l_slot">
+        <slot name="left"></slot>
+    </view>
+    <view class="lContent"></view>
+    </block>
+    <block>
+        <slot name="center"></slot>
+    </block>
+    <block wx:if="{{isRightIcon}}">
+    <view class="r_slot">
+        <slot name="right"></slot>
+    </view>
+    <view class="rContent"></view>
+    </block>
+</view>

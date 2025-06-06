@@ -1,4 +1,4 @@
-packageA/login/login.wxml
+<!--packageA/login/login.wxml-->
 <view class="SignIn page">
   <nav-bar title=""></nav-bar>
   <view class="bg-white flex-1 px-16">

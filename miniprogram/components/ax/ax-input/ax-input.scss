@@ -1,0 +1,14 @@
+.ax_input {
+  .l_slot:empty + .left {
+    display: block;
+  }
+  .left {
+    display: none;
+  }
+  .r_slot:empty + .right {
+    display: block;
+  }
+  .right {
+    display: none;
+  }
+}

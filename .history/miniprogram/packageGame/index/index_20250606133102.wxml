@@ -1,0 +1,11 @@
+<view id="GameIndex page">
+    <nav-bar title="" color="white"></nav-bar>
+    <view>
+        
+    </view>
+    <scroll-view scroll-y class="flex-1">
+        <grid-view type="aligned">
+            <block wx:for="{{gameList}}" wx:key="id"></block>
+        </grid-view>
+    </scroll-view>
+</view>
