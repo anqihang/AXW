@@ -40,8 +40,10 @@
           <text class="text-xs mt-4">{{item.author}} {{item.subscribeTime}}</text>
         </view>
       </block>
-    </grid-view>1
+    </grid-view>
     <!-- </sticky-section> -->
-    <ax-input></ax-input>
+    1<ax-input></ax-input>2
+        <span class="icon--tabler icon--tabler--search text-md bg-black"></span>
+
   </scroll-view>
 </view>

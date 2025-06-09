@@ -10,6 +10,7 @@ import { locate } from "@iconify/json";
 const icons = {
   mdi: ["search", "home", "menu"],
   "mdi-light": ["alert-circle", "circle", "help-circle"],
+  tabler: ["search"],
 };
 
 // Parse each icon set

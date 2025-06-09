@@ -3,8 +3,8 @@
     <view class="l_slot">
         <slot name="left"></slot>
     </view>
-    <view class="left">1
-        <span class="icon--mdi icon--mdi--search"></span>
+    <view class="left">
+        <span class="icon--tabler icon--tabler--search text-md bg-black"></span>
     </view>
     </block>
     <block>
