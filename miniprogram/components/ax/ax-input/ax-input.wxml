@@ -1,19 +1,35 @@
 <view class="ax_input">
-    <block wx:if="{{isLeftIcon}}">
+  <block>
     <view class="l_slot">
-        <slot name="left"></slot>
+      <slot name="left"></slot>
     </view>
     <view class="left">
+      <block wx:if="{{password||type=='password'}}">
+        <view wx:if="{{value.length}}" bind:tap="f_switchPassword">
+          <span wx:if="{{showPassword}}" class="text-md bg-black icon--mdi icon--mdi--eye-outline"></span>
+          <span wx:else class="text-md bg-black icon--mdi icon--mdi--eye-off"></span>
+        </view>
+        <span wx:else class="text-md bg-black icon--mdi icon--mdi--password-outline"></span>
+      </block>
+      <block wx:if="{{search}}">
         <span class="icon--tabler icon--tabler--search text-md bg-black"></span>
+      </block>
     </view>
-    </block>
-    <block>
-        <slot name="center"></slot>
-    </block>
-    <block wx:if="{{isRightIcon}}">
+  </block>
+  <block>
+    <view class="c_slot">
+      <slot name="center"></slot>
+    </view>
+    <view class="center">
+      <input type="{{type}}" value="{{value}}" placeholder="{{placeholder}}" cursor-color="{{cursorColor}}" password="{{password}}" bind:input="f_input" />
+    </view>
+  </block>
+  <block>
     <view class="r_slot">
-        <slot name="right"></slot>
+      <slot name="right"></slot>
     </view>
-    <view class="right"></view>
-    </block>
+    <view class="right" bind:tap="f_clear" wx:if="{{value.length}}">
+      <span class="text-md bg-black icon--gg icon--gg--close-o"></span>
+    </view>
+  </block>
 </view>

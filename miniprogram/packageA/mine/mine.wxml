@@ -6,12 +6,8 @@
       <view class="flex">
         <image class="w-56 h-56 rounded-full" src="{{avatar}}" mode="aspectFill" />
         <view class="ml-16 flex flex-col justify-center">
-          <view wx:if="{{!isSignIn}}" class="flex text-lg text-gray-500 font-bold" >
-            <navigator url="/packageA/signIn/signIn" open-type="navigate" class="text-lg">登录</navigator>
-            <view class="py-4">
-              <view class="w-1 h-full py-4 bg-gray mx-8"></view>
-            </view>
-            <navigator url="/packageA/sign/sign" open-type="reLaunch" class="text-lg" >注册</navigator>
+          <view wx:if="{{!isSignIn}}" class="flex text-lg text-gray-500 font-bold">
+            <navigator url="/packageA/sign/sign" open-type="navigate" class="text-lg">登录</navigator>
           </view>
           <block wx:else>
             <text class="text-xl font-bold">{{username}}</text>

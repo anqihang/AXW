@@ -3,7 +3,7 @@
   "subPackages": [
     {
       "root": "packageA",
-      "pages": ["home/home", "mine/mine", "signIn/signIn"]
+      "pages": ["home/home", "mine/mine", "signIn/signIn","sign/sign"]
     }
   ],
   "window": {

@@ -8,9 +8,10 @@ import { locate } from "@iconify/json";
  * @type {Record<string, string[]>}
  */
 const icons = {
-  mdi: ["search", "home", "menu"],
+  mdi: ["search", "home", "menu","account-outline","password-outline","form-textbox-password","eye-outline","eye-off"],
   "mdi-light": ["alert-circle", "circle", "help-circle"],
   tabler: ["search"],
+  "gg":["close-o"],
 };
 
 // Parse each icon set
@@ -31,5 +32,5 @@ for (const prefix in icons) {
 }
 
 // Save CSS file
-await writeFile("miniprogram/assets/icon.css", code, "utf8");
+await writeFile("miniprogram/assets/icon.scss", code, "utf8");
 console.log(`Saved CSS (${code.length} bytes)`);

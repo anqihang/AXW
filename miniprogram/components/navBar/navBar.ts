@@ -74,7 +74,7 @@ Component({
       if (pages.length > 0) {
         this.setData({
           backButton: true,
-          homeButton: this.properties.homeButton ? true : false,
+          homeButton: false,
         });
       } else {
         this.setData({

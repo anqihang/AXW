@@ -1,14 +1,51 @@
 .ax_input {
-  .l_slot:empty + .left {
-    display: block;
+  border: 1px solid black;
+  border-radius: 8rpx;
+  overflow: hidden;
+  padding: 8rpx 12rpx;
+  display: flex;
+
+  .l_slot:empty+.left {
+    display: flex;
   }
+
+  .l_slot {
+    display: flex;
+    align-items: center;
+  }
+
   .left {
     display: none;
+    align-items: center;
+    margin-right: 12rpx;
   }
-  .r_slot:empty + .right {
-    display: block;
+
+  .c_slot:empty+.center {
+    display: flex;
   }
+
+  .center {
+    display: none;
+    flex: 1;
+
+    input {
+      width: 100%;
+      font-size: 28rpx;
+    }
+  }
+
+  .r_slot:empty+.right {
+    display: flex;
+  }
+
+  .r_slot {
+    display: flex;
+    align-items: center;
+  }
+
   .right {
     display: none;
+    align-items: center;
+    margin-left: 12rpx;
   }
 }

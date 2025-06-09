@@ -24,6 +24,13 @@
     "miniprogram": {
       "list": [
         {
+          "name": "packageA/sign/sign",
+          "pathName": "packageA/sign/sign",
+          "query": "",
+          "scene": null,
+          "launchMode": "default"
+        },
+        {
           "name": "packageA/signIn/signIn",
           "pathName": "packageA/signIn/signIn",
           "query": "",
