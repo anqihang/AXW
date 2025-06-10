@@ -1,0 +1,35 @@
+._checkbox {
+  display: flex;
+  align-items: center;
+
+  &-icon {
+    border: 1px solid #ccc;
+    border-radius: 100%;
+    width: 18px;
+    height: 18px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .icon {
+      width: 14px;
+      height: 16px;
+      font-size: 12px;
+
+      -webkit-mask: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E  %3Cpath  fill='#000000' fill-rule='evenodd' stroke='#060101' clip-rule='evenodd' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m4 24l5-5l10 10L39 9l5 5l-25 25z'/%3E%3C/svg%3E")
+        no-repeat 50% 50%;
+      mask: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E  %3Cpath  fill='#000000' fill-rule='evenodd' stroke='#060101' clip-rule='evenodd' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m4 24l5-5l10 10L39 9l5 5l-25 25z'/%3E%3C/svg%3E")
+      no-repeat 50% 50%;
+      
+      -webkit-mask-size: cover;
+      mask-size: cover;
+      background-color:rgba(255,255,255);
+    }
+  }
+
+  &-icon.checked {
+    border: 1px solid var(--color);
+    background-color: var(--color);
+  }
+}

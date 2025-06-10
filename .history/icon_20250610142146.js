@@ -13,7 +13,6 @@ const icons = {
   tabler: ["search"],
   gg: ["close-o"],
   ep: ["select"],
-  "line-md": ["confirm"],
 };
 
 // Parse each icon set

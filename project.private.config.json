@@ -27,8 +27,8 @@
           "name": "packageA/sign/sign",
           "pathName": "packageA/sign/sign",
           "query": "",
-          "scene": null,
-          "launchMode": "default"
+          "launchMode": "default",
+          "scene": null
         },
         {
           "name": "packageA/signIn/signIn",
