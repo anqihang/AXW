@@ -6,13 +6,13 @@
     <view class="left">
       <block wx:if="{{password||type=='password'}}">
         <view wx:if="{{value.length}}" bind:tap="f_switchPassword">
-          <span wx:if="{{showPassword}}" class="text-md bg-black icon--mdi icon--mdi--eye-outline"></span>
-          <span wx:else class="text-md bg-black icon--mdi icon--mdi--eye-off"></span>
+          <span wx:if="{{showPassword}}" class="text-lg bg-black icon--mdi icon--mdi--eye-outline"></span>
+          <span wx:else class="text-lg bg-black icon--mdi icon--mdi--eye-off"></span>
         </view>
-        <span wx:else class="text-md bg-black icon--mdi icon--mdi--password-outline"></span>
+        <span wx:else class="text-lg bg-black icon--mdi icon--mdi--password-outline"></span>
       </block>
       <block wx:if="{{search}}">
-        <span class="icon--tabler icon--tabler--search text-md bg-black"></span>
+        <span class="icon--tabler icon--tabler--search text-lg bg-black"></span>
       </block>
     </view>
   </block>
@@ -29,7 +29,7 @@
       <slot name="right"></slot>
     </view>
     <view class="right" bind:tap="f_clear" wx:if="{{value.length}}">
-      <span class="text-md bg-black icon--gg icon--gg--close-o"></span>
+      <span class="text-lg bg-black icon--gg icon--gg--close-o"></span>
     </view>
   </block>
 </view>

@@ -1,8 +1,7 @@
 // const { globalData } = getApp<IAppOption>();
 Component({
   data: {
-    isAccount: true,
-    isSignIn: true,
+    isAccount: false,
     account: "",
     password: "",
     captcha: "",
@@ -10,11 +9,7 @@ Component({
   },
   methods: {
     f_switchAccount() {
-      console.log(12,this.data.isAccount)
       this.setData({ isAccount: !this.data.isAccount });
-    },
-    f_switchMode() {
-      this.setData({ isSignIn: !this.data.isSignIn });
     },
     f_checkAccount() {},
     f_getCaptcha() {},
@@ -22,7 +17,6 @@ Component({
     f_switchAgreement() {
       this.setData({ agreement: !this.data.agreement });
     },
-    f_signIn() {},
-    f_signUp() {},
+    f_sign(){},
   },
 });
