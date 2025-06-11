@@ -4,7 +4,8 @@ interface IAppOption {
   globalData: {
     userInfo: WechatMiniprogram.UserInfo | any; // 微信用户信息
     defaultAvatarUrl: String; // 默认头像
-    accountInfo: WechatMiniprogram.AccountInfo;
+    accountInfo: WechatMiniprogram.AccountInfo; // 小程序账号信息（线上）
+    appBaseInfo: WechatMiniprogram.AppBaseInfo; // 小程序基础信息
     systemInfo: WechatMiniprogram.SystemInfo; // 系统信息
     deviceInfo: WechatMiniprogram.DeviceInfo; // 设备信息
     windowInfo: WechatMiniprogram.WindowInfo; // 窗口信息

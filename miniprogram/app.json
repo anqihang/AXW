@@ -3,14 +3,13 @@
   "subPackages": [
     {
       "root": "packageA",
-      "pages": ["home/home", "mine/mine", "signIn/signIn","sign/sign"]
+      "pages": ["home/home", "mine/mine", "sign/sign"]
     }
   ],
   "window": {
     "navigationBarTextStyle": "black",
     "navigationStyle": "custom",
-    "enablePullDownRefresh": false,
-    "disableScroll": true
+    "enablePullDownRefresh": false
   },
   "style": "v2",
   "renderer": "skyline",

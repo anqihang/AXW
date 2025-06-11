@@ -1,5 +1,5 @@
 <view class="navBarComponent {{extClass}}">
-  <view class="content {{platform != 'android' ? 'ios' : 'android'}}" style="color:{{color}};background:{{background}};{{contentPaddingRight}}">
+  <view class="content {{platform=='ios'?'ios':'android'}}" style="color:{{color}};background:{{background}};{{contentPaddingRight}}">
     <view class="left" wx:if="{{existLeft}}" style="{{leftWidth}}">
       <block wx:if="{{backButton || homeButton}}">
         <!-- 返回上一页 -->

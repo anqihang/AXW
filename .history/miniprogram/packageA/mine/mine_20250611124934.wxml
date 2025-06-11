@@ -1,0 +1,56 @@
+<!--pages/min/mine.wxml-->
+<view hidden="{{hidden}}" class="Mine page">
+  <scroll-view class="h-full relative" scroll-y type="custom" enable-flex show-scrollbar="{{false}}">
+    <fake-nav></fake-nav>
+    <view class="flex px-12 justify-between items-center">
+      <view class="flex">
+        <image class="w-56 h-56 rounded-full" src="{{avatar}}" mode="aspectFill" />
+        <view class="ml-16 flex flex-col justify-center">
+          <view wx:if="{{!isSignIn}}" class="flex text-lg text-gray-500 font-bold">
+            <navigator url="/packageA/sign/sign" open-type="navigate" class="text-lg px-8">登录</navigator>
+          </view>
+          <block wx:else>
+            <text class="text-xl font-bold">{{username}}</text>
+            <view class="flex items-center">
+              <view class="mr-8 ax-tag" wx:for="{{identity}}" wx:key="index">{{item}}</view>
+            </view>
+          </block>
+        </view>
+      </view>
+      <view class="h-full px-4" bind:tap="f_goRouter('userInfo')" wx:if="{{isSignIn}}">
+        <span class="icon--park-outline icon--park-outline--right text-lg text-black"></span>
+      </view>
+    </view>
+    <!--  -->
+    <view class="px-12 mt-12">
+      <view class="bg-white flex flex-wrap rounded-4 py-8 grid-cols-4 grid-rows-2">
+        <view class="items-center flex flex-col py-8" wx:for="{{gridList}}" wx:key="id" bind:tap="f_goRouter('grid')" data-id="{{item.id}}">
+          <view class="ax-icon">
+            <image src="{{item.icon}}" mode="aspectFit" />
+          </view>
+          <view class="mt-4 text-sm">{{item.title}}</view>
+        </view>
+      </view>
+    </view>
+    <!--  -->
+    <view class="px-12 mt-12">
+      <view class="rounded-4 overflow bg-white">
+        <view class="flex ax-list_item justify-between" wx:for="{{list}}" wx:key="index">
+          <view class="flex items-center">
+            <view class="ax-icon mr-8" wx:if="{{item.leftIcon}}">
+              <image src="{{item.leftIcon}}" mode="aspectFit" />
+            </view>
+            <text class="">{{item.title}}</text>
+          </view>
+          <view class="ax-icon" wx:if="{{item.rightIcon}}">
+            <image src="{{item.rightIcon}}" mode="" />
+          </view>
+        </view>
+      </view>
+      <view class="bg-white rounded-4 mt-12 flex">
+        <button class="" hover-class="btn-hover" bind:tap="f_signOut">登 出</button>
+      </view>
+    </view>
+    <view class="absolute bottom-0 text-center">{{globalData.accontInfo}} - {{globalData.deviceInfo.platform}}</view>
+  </scroll-view>
+</view>
