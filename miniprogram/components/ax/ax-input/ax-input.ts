@@ -27,6 +27,22 @@ Component({
       type: Boolean,
       value: false,
     },
+    background: {
+      type: String,
+      value: "white"
+    },
+    borderColor: {
+      type: String,
+      value: "black"
+    },
+    rounded: {
+      type: Number,
+      value: 4,
+    },
+    borderWidth: {
+      type: Number,
+      value: 0
+    }
   },
   data: {
     showPassword: false,
@@ -39,9 +55,7 @@ Component({
       this.triggerEvent("focus");
     },
     f_input(e: { detail: { value: any } }) {
-      this.setData({
-        value: e.detail.value,
-      });
+      this.triggerEvent('input', e.detail.value)
     },
     f_blur() {
       this.triggerEvent("blur");

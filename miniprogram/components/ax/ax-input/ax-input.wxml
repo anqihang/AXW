@@ -1,4 +1,4 @@
-<view class="ax_input">
+<view class="ax_input" style="background:{{background}};border-width:{{borderWidth}}px;border-color:{{borderColor}};border-radius: {{rounded*2}}rpx;padding-left:{{(rounded>16?12:rounded)*2}}rpx;padding-right:{{(rounded>16?12:rounded)*2}}rpx">
   <block>
     <view class="l_slot">
       <slot name="left"></slot>

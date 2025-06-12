@@ -1,45 +1,48 @@
 <view id="Sign" class="page">
-  <nav-bar title=""></nav-bar>
-  <view class="bg-white flex-1 px-16">
+  <nav-bar title="" background="transparent"></nav-bar>
+  <view class="flex-1 px-16">
     <view class="pt-16">
       <text class="text-3xl font-bold">欢迎使用 安 许</text>
       <text class="text-md mt-4">登录后可使用，享受优质服务</text>
     </view>
-      <block wx:if="{{isAccount}}">
-        <view class="py-32">
-          <label>
-            <view>
-              <text>账 号:</text>
-              <ax-input bind:input="f_input('account')">
-                <span slot="left" class="text-lg bg-black icon--mdi icon--mdi--account-outline mr-6"></span>
-              </ax-input>
-              <text>{{accountPrompt}}</text>
+    <block wx:if="{{isAccount}}">
+      <view class="py-48">
+        <label>
+          <view>
+            <ax-input data-id="account" bind:input="f_input" rounded="30" placeholder="请输入手机号或邮箱">
+              <span slot="left" class="text-lg bg-black icon--mdi icon--mdi--account-outline mr-6"></span>
+            </ax-input>
+            <view class="flex">
+              <view class="text-xs opacity-0">1</view>
+              <text class="text-xs">{{accountPrompt}}</text>
             </view>
-          </label>
-          <label>
-            <view class="mt-12">
-              <text>密 码:</text>
-              <ax-input password="{{true}}" bind:input="f_input('password')" bind:blur="f_checkAccount">
-              </ax-input>
-              <text>{{passwordPrompt}}</text>
+          </view>
+        </label>
+        <label>
+          <view class="mt-4">
+            <ax-input password="{{true}}" rounded="30" placeholder="请输入密码" data-id="password" bind:input="f_input" bind:blur="f_checkAccount">
+            </ax-input>
+            <view class="flex">
+              <view class="text-xs opacity-0">1</view>
+              <text class="text-xs">{{passwordPrompt}}</text>
             </view>
-          </label>
-          <label>
-            <view class="mt-12">
-              <text>验证码:</text>
-              <ax-input bind:input="f_input('captcha')">
-                <span slot="left" class="text-lg bg-black icon--mdi icon--mdi--form-textbox-password mr-6"></span>
-              </ax-input>
-              <text></text>
-            </view>
-          </label>
-        </view>
-      </block>
-      <block wx:else>
-        <view class="py-32">
-          <image src="" mode="" class="bg-light-orange" style="height:calc(90vw / 16 * 9)" />
-        </view>
-      </block>
+          </view>
+        </label>
+        <label>
+          <view class="mt-4">
+            <ax-input data-id="captcha" placeholder="请输入验证码" rounded="30" bind:input="f_input">
+              <span slot="left" class="text-lg bg-black icon--mdi icon--mdi--form-textbox-password mr-6"></span>
+            </ax-input>
+            <span class="text-xs"></span>
+          </view>
+        </label>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="py-32">
+        <image src="" mode="" class="bg-light-orange" style="height:calc(90vw / 16 * 9)" />
+      </view>
+    </block>
     <view class="flex">
       <button class="bg-green text-white flex-1 rounded-full text-lg font-medium" open-type="{{isAccount?'':'getPhoneNumber'}}" bind:tap="{{isAccount?f_sign():''}}">
         {{isAccount?"注册并登录":"手机号快速验证"}}
