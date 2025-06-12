@@ -35,10 +35,16 @@ Component({
     f_clear() {
       this.setData({ value: "" });
     },
+    f_focus() {
+      this.triggerEvent("focus");
+    },
     f_input(e: { detail: { value: any } }) {
       this.setData({
         value: e.detail.value,
       });
+    },
+    f_blur() {
+      this.triggerEvent("blur");
     },
     f_switchPassword() {
       console.log(1);
@@ -56,7 +62,6 @@ Component({
           password: true,
         });
       }
-      console.log(this.data.type);
     },
   },
 });

@@ -21,7 +21,7 @@
       <slot name="center"></slot>
     </view>
     <view class="center">
-      <input type="{{type}}" value="{{value}}" placeholder="{{placeholder}}" cursor-color="{{cursorColor}}" password="{{password}}" bind:input="f_input" />
+      <input type="{{type}}" value="{{value}}" placeholder="{{placeholder}}" cursor-color="{{cursorColor}}" password="{{password}}" bind:focus="f_focus" bind:input="f_input" bind:blur="f_blur" />
     </view>
   </block>
   <block>

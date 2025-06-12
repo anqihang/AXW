@@ -5,29 +5,30 @@
       <text class="text-3xl font-bold">欢迎使用 安 许</text>
       <text class="text-md mt-4">登录后可使用，享受优质服务</text>
     </view>
+    <view style="transition:all 3s;{{isAccount?'max-height:1000px;':'max-height:'+phoneHeight}}">
       <block wx:if="{{isAccount}}">
-        <view class="py-32">
+        <view class="py-32 account">
           <label>
             <view>
               <text>账 号:</text>
-              <ax-input bind:input="f_input('account')">
+              <ax-input>
                 <span slot="left" class="text-lg bg-black icon--mdi icon--mdi--account-outline mr-6"></span>
               </ax-input>
-              <text>{{accountPrompt}}</text>
+              <text></text>
             </view>
           </label>
           <label>
             <view class="mt-12">
               <text>密 码:</text>
-              <ax-input password="{{true}}" bind:input="f_input('password')" bind:blur="f_checkAccount">
+              <ax-input password="{{true}}">
               </ax-input>
-              <text>{{passwordPrompt}}</text>
+              <text></text>
             </view>
           </label>
           <label>
             <view class="mt-12">
               <text>验证码:</text>
-              <ax-input bind:input="f_input('captcha')">
+              <ax-input>
                 <span slot="left" class="text-lg bg-black icon--mdi icon--mdi--form-textbox-password mr-6"></span>
               </ax-input>
               <text></text>
@@ -36,10 +37,11 @@
         </view>
       </block>
       <block wx:else>
-        <view class="py-32">
+        <view class="py-32 phone">
           <image src="" mode="" class="bg-light-orange" style="height:calc(90vw / 16 * 9)" />
         </view>
       </block>
+    </view>
     <view class="flex">
       <button class="bg-green text-white flex-1 rounded-full text-lg font-medium" open-type="{{isAccount?'':'getPhoneNumber'}}" bind:tap="{{isAccount?f_sign():''}}">
         {{isAccount?"注册并登录":"手机号快速验证"}}

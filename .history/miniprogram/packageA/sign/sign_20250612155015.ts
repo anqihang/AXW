@@ -3,22 +3,25 @@ Component({
   data: {
     isAccount: false,
     account: "",
-    accountPrompt: "",
     password: "",
-    passwordPrompt: "",
     captcha: "",
     agreement: false,
+    phoneHeight: "0px",
   },
   lifetimes: {
     created() {},
-    attached() {},
+    attached() {
+      wx.createSelectorQuery()
+        .select(".phone")
+        .boundingClientRect((res) => {
+          this.setData({ phoneHeight: `${res.height}px` });
+        })
+        .exec();
+    },
   },
   methods: {
     f_switchAccount() {
       this.setData({ isAccount: !this.data.isAccount });
-    },
-    f_input(e, type: "account" | "password" | "captcha") {
-      this.setData({ [type]: e.detail.value });
     },
     f_checkAccount() {},
     f_getCaptcha() {},
