@@ -1,0 +1,5 @@
+<view class="ax_toast">
+    <root-portal enable="{{true}}">
+    
+    </root-portal>
+</view>

@@ -9,16 +9,15 @@
       <view class="py-48">
         <label>
           <view>
-            <ax-input data-id="account" rounded="30"  showPrompt prompt="{{accountPrompt}}" placeholder="请输入手机号或邮箱" bind:input="f_input" bind:blur="f_blur">
+            <ax-input data-id="account" rounded="30"  showPrompt prompt="{{accountPrompt}}" placeholder="请输入手机号或邮箱" bind:input="f_input" >
               <span slot="left" class="text-lg bg-black icon--mdi icon--mdi--account-outline mr-6"></span>
             </ax-input>
           </view>
         </label>
         <label>
           <view class="mt-4">
-            <ax-input password="{{true}}" rounded="30" showPrompt prompt="{{passwordPrompt}}" placeholder="请输入密码" data-id="password" bind:input="f_input" >
+            <ax-input password="{{true}}" rounded="30" showPrompt prompt="{{passwordPrompt}}" placeholder="请输入密码" data-id="password" bind:input="f_input" bind:blur="f_checkAccount">
             </ax-input>
-            </view>
         </label>
         <label>
           <view class="mt-4">
