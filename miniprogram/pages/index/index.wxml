@@ -1,13 +1,13 @@
 <!--index.wxml-->
 <view class="Index">
   <!-- 首页 -->
-  <home class="main" hidden="{{cur!==1}}" style="position:{{cur!==1?'absolute':'relative'}}"></home>
+  <home class="main" hidden="{{cur!==1}}" style="position:{{cur!==1?'absolute':'relative'}};"></home>
   <!-- 动态 -->
   <!-- <dynamic class="main" wx:if="{{cur===2}}"></dynamic> -->
   <!-- <login class="main" wx:if="{{cur===3}}"></login> -->
   <!-- 实验 -->
   <!-- <experiment class="main" wx:if="{{cur===4}}"></experiment> -->
   <!-- 我的 -->
-  <mine class="main" hidden="{{cur!==5}}" style="position:{{cur!==5?'absolute':'relative'}}"></mine>
+  <mine class="main" hidden="{{cur!==5}}" style="position:{{cur!==5?'absolute':'relative'}};"></mine>
 </view>
-<tab-bar bindchangeTabBar="f_changeTab"></tab-bar>
+<tab-bar bind:changeTabBar="f_changeTab"></tab-bar>
