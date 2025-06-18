@@ -8,7 +8,7 @@
           <image class="w-56 h-56 rounded-full" src="{{avatar}}" mode="aspectFill" />
           <view class="ml-16 flex flex-col justify-center">
             <view wx:if="{{!isSignIn}}" class="flex text-lg text-gray-500 font-bold">
-              <navigator url="/packageA/sign/sign" open-type="navigate" class="text-lg px-8">登录</navigator>
+              <navigator url="/packageA/sign/sign" open-type="navigate" class="text-lg px-8" hover-class="hover-sign">登录</navigator>
             </view>
             <block wx:else>
               <text class="text-xl font-bold">{{username}}</text>
