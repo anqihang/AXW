@@ -30,6 +30,9 @@
 
   &-icon.checked {
     border: 1px solid var(--color);
-    background-color: var(--color);
+    background-color: var(--color)!important;
+    .icon{
+      background: #ffffff;
+    }
   }
 }

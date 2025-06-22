@@ -23,7 +23,7 @@ export function apiLogin() {
   });
 }
 export function apiCheckAccount(account: string) {
-  return RequestSSE("/checkAccount", "POST", { data: { account } });
+  return RequestSSE("/checkAccount", "GET", { data: { account } });
 }
 // 注册
 export function apiSignUp() {
