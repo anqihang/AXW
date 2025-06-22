@@ -1,6 +1,6 @@
 import { Request, RequestSSE } from "./request";
 import storage from "../utils/storage";
-import { Account } from "typings/api";
+import { ACCOUNT, API_Account } from "typings/api.";
 export function apiLogin() {
   return new Promise((resolve, reject) => {
     // 登录
@@ -44,5 +44,5 @@ export function apiSignOut() {
   });
 }
 export function apiGetAccountInfo(params: { id: number }) {
-  return RequestSSE<Account>("/user", "GET", { data: { id: params.id } }).then((data) => {});
+  return RequestSSE<ACCOUNT>("/user", "GET", { data: { id: params.id } }).then((data) => {});
 }

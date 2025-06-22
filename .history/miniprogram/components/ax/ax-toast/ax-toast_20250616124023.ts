@@ -37,21 +37,21 @@ Component({
         case "error":
           {
             this.setData({
-              iconName: "icon--codicon icon--codicon--error",
+              iconName: "icon--codicon icon--codicon--error-error",
             });
           }
           break;
         case "warn":
           {
             this.setData({
-              iconName: "icon--iconoir icon--iconoir--warning-circle",
+              iconName: "icon--iconoir icon-iconoir:warning-circle",
             });
           }
           break;
         case "info":
           {
             this.setData({
-              iconName: "icon--iconoir icon--iconoir--info-circle",
+              iconName: "info",
             });
           }
           break;

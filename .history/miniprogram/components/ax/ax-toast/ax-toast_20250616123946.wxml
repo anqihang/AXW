@@ -1,0 +1,7 @@
+<root-portal enable="{{show}}">
+    <view class="ax_toast {{boxStyle}}">
+        <view class="ax_toast_mask" style="{{maskStyle}}"></view>
+        <view class="ax_toast_icon {{icon}}"></view>
+        <view class="ax_toast_text">{{text}}</view>
+    </view>
+</root-portal>
