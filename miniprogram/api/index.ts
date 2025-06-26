@@ -32,8 +32,8 @@ export function apiSignUp() {
 }
 // 登录
 export function apiSignIn() {
-  return Request("/signIn", "POST", { data: { username: "", password: "", captcha: "" } }).then((data: any) => {
-    storage.set("Authorization", data.Authorization); // 短期 1 天
+  return Request("/signIn", "POST", { data: { username: "", password: "", captcha: "" } }).then((data) => {
+    storage.set("Authorization", data.Authorization); // 短期 1 小时
     storage.set("refreshAuthorization", data.refreshAuthorization); // 长期30天
   });
 }

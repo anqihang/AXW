@@ -1,7 +1,6 @@
 import { buf2hex, hex2Str } from "/utils/util";
 import storage from "../utils/storage";
 import { apiConfig } from "./config";
-import { ERRNO } from "./net_error";
 
 const { globalData } = getApp<IAppOption>();
 const baseUrl = apiConfig.BASE_URL;
@@ -9,10 +8,9 @@ const baseUrl = apiConfig.BASE_URL;
 type BasicProps = {
   data?: WechatMiniprogram.RequestOption["data"];
   header?: WechatMiniprogram.RequestOption["header"];
-  hideModal?: Boolean;
 };
 type SSEEvent = {
-  onMessage: (e: String) => void;
+  onMessage: (e: any) => void;
   onConnect: () => void;
   onClose: () => void;
   onError: (e: any) => void;
@@ -79,63 +77,33 @@ export function Request(
     });
   });
 }
-/**
- * @Description 刷新访问令牌的函数。当请求返回 403 状态码时，会调用此函数来刷新访问令牌。
- * @Description 刷新成功后，会重新发起之前因令牌过期而被暂存的请求。
- * @returns {Promise<boolean>} 一个 Promise，刷新成功时 resolve 为 true，失败时 reject 错误信息。
- */
 export function refreshToken() {
   return new Promise((resolve, reject) => {
-    // 发起微信小程序的网络请求，用于刷新访问令牌
     wx.request({
-      // 请求的 URL，使用基础 URL 加上刷新令牌的路径
       url: baseUrl + "/refresh",
-      // 请求方法为 POST
       method: "POST",
-      // 请求头，携带刷新令牌
       header: {
         refreshAuthorization: storage.get("refreshAuthorization"),
       },
-      /**
-       * 请求成功的回调函数
-       * @param {any} res - 请求成功的响应对象
-       */
       success(res: any) {
-        // 检查响应状态码是否在 200 到 299 之间，表示请求成功
         if (res.statusCode >= 200 && res.statusCode < 300) {
-          // 将新的访问令牌存储到本地
           storage.set("Authorization", res.data?.Authorization);
-          // 标记刷新过程结束
           isRefreshing = false;
-          // 遍历暂存的请求列表
           reqList.forEach(({ options, callback_resolve, callback_reject }) => {
-            // 重新发起之前因令牌过期而被暂存的请求
             RequestSSE(options.url, options.method, options)
               .then((data) => {
-                // 调用暂存请求的 resolve 回调函数
                 callback_resolve(data);
               })
-              .catch((error) => {
-                // 调用暂存请求的 reject 回调函数
-                callback_reject(error);
-              });
+              .catch((error) => callback_reject(error));
           });
 
-          // 清空暂存的请求列表
           reqList = [];
-          // 表示刷新令牌成功
           resolve(true);
         }
       },
-      /**
-       * 请求失败的回调函数
-       * @param {any} error - 请求失败的错误信息
-       */
       fail(error) {
-        // 请求失败，将错误信息 reject 出去
         reject(error);
       },
-      // 请求完成的回调函数，无论成功或失败都会执行
       complete() {},
     });
   });
@@ -156,7 +124,7 @@ export function RequestSSE(
 export function RequestSSE(
   url: WechatMiniprogram.RequestOption["url"],
   method: WechatMiniprogram.RequestOption["method"],
-  { data, header, enableChunked, hideModal, onMessage, onConnect, onError, onClose }: RequestOptions = { hideModal: true, enableChunked: false }
+  { data, header, enableChunked, onMessage, onConnect, onError, onClose }: RequestOptions = { enableChunked: false }
 ) {
   return new Promise((resolve, reject) => {
     let requestTask = wx.request({
@@ -235,15 +203,6 @@ export function RequestSSE(
         }
       },
       fail(error) {
-        if (hideModal) {
-          wx.showModal({
-            title: "",
-            content: ERRNO[error.errno],
-            showCancel: false,
-            confirmText: "",
-            success(res) {},
-          });
-        }
         reject(error);
         if (enableChunked) {
           onError && onError(error);
