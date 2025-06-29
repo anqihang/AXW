@@ -12,17 +12,19 @@ Component({
     agreement: false,
   },
   lifetimes: {
-    created() {},
-    attached() {},
+    created() { },
+    attached() {
+      // wx.showModal({
+      //   title:"123",
+      //   content:"内容"
+      // })
+    },
   },
   methods: {
     f_switchAccount() {
       this.setData({ isAccount: !this.data.isAccount });
     },
     f_input(e: WechatMiniprogram.BaseEvent) {
-      // this.setData({
-      //   [e.currentTarget.dataset.id]: e.detail,
-      // });
     },
     f_blur(e: WechatMiniprogram.BaseEvent) {
       const id = e.currentTarget.dataset.id;
@@ -37,11 +39,18 @@ Component({
       } else if (id === "password") {
       }
     },
-    f_getCaptcha() {},
+    f_getCaptcha() { },
     f_switchAgreement(e) {
-      console.log(e);
-      this.setData({ agreement: !this.data.agreement });
+      console.log(e.detail?.detail);
+      this.setData({ agreement: e.detail.detail });
     },
-    f_sign() {},
+    f_sign() {
+      if (!this.data.agreement) {
+        const modal = this.selectComponent(".modal");
+        modal.showModal({
+          content: "请先阅读并同意《用户服务协议》《隐私政策》"
+        });
+      }
+    },
   },
 });

@@ -68,9 +68,6 @@ Page({
   onShareAppMessage() {},
   // 去登录
   f_goSignIn() {
-    wx.reLaunch({
-      url: "/packageA/signIn/signIn",
-    });
   },
   // 去注册
   f_goSignUp() {

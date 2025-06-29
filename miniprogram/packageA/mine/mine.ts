@@ -48,9 +48,6 @@ Component({
   methods: {
     // 去登录
     f_goSignIn() {
-      wx.navigateTo({
-        url: "/packageA/signIn/signIn",
-      });
     },
     // 去注册
     f_goSignUp() {

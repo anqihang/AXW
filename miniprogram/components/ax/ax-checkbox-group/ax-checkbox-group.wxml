@@ -1,5 +1,3 @@
-<view>
-    <view bind:change="f_checkChange">
-    <slot />
-    </view>
+<view bind:change="f_checkChange">
+  <slot></slot>
 </view>

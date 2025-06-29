@@ -1,3 +1,5 @@
+const { globalData } = getApp<IAppOption>();
+
 const URL = {
   develop: "localhost:8080",
   trial: "1",

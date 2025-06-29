@@ -1,9 +1,15 @@
 .ax_modal {
   width: 80vw;
   max-height: 60vh;
-  border-radius: 8rpx;
-  background-color: ##ffffff;
+  border-radius: 16rpx;
+  background-color: #ffffff;
   overflow: hidden;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 44rpx 0 0;
+  transition: all 0.2s ease-in-out;
 
   @mixin flex-center {
     display: flex;
@@ -13,24 +19,53 @@
 
   .header {
     @include flex-center;
+    font-size: 36rpx;
+    font-weight: 800;
+    padding: 10rpx 32rpx 0;
   }
 
   .content {
     display: none;
   }
-  .content_slot:empty + .content {
-    display: block;
+
+  .content_slot:empty+.content {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 36rpx;
+    padding: 40rpx 44rpx;
+    margin: 0 0 16rpx;
+    color: #666666;
   }
 
   .footer {
+    display: flex;
+
     .cancel {
       border-right: 1px solid #eeeeee;
       border-top: 1px solid #eeeeee;
+      width: 50%;
+      padding: 32rpx 0;
+      font-size: 36rpx;
+      font-weight: 800;
       @include flex-center;
     }
+
     .confirm {
       border-top: 1px solid #eeeeee;
+      width: 50%;
+      padding: 32rpx 0;
+      font-size: 36rpx;
+      font-weight: 800;
+      color: #4c6875;
       @include flex-center;
     }
   }
+}
+
+.mask {
+  width: 100vw;
+  height: 100vh;
+  background-color: #00000099;
+  transition: all 0.2s ease-in-out;
 }

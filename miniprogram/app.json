@@ -9,7 +9,8 @@
   "window": {
     "navigationBarTextStyle": "black",
     "navigationStyle": "custom",
-    "enablePullDownRefresh": false
+    "enablePullDownRefresh": false,
+    "disabledScroll":true
   },
   "style": "v2",
   "renderer": "skyline",

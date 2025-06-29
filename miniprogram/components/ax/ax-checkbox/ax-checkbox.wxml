@@ -1,5 +1,5 @@
 <view class="_checkbox" style="--color:{{color}}" bind:tap="f_checkChange">
-  <view class="_checkbox-icon {{checked?'checked':''}}" value="{{value}}">
+  <view class="_checkbox-icon {{checked?'checked':''}}">
     <span class="icon"></span>
   </view>
   <slot></slot>

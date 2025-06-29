@@ -1,15 +1,18 @@
-<view class="ax_modal" wx:if="{{isShow}}">
-    <view class="header">
-        {{title}}
+<root-portal enable="true">
+  <view class="ax_modal" style="opacity: {{isShow?1:0}};visibility: {{isShow?'visible':'hidden'}};">
+    <view class="header" wx:if="{{title.length}}">
+      {{title}}
     </view>
     <view class="content_slot">
-        <slot></slot>
+      <slot></slot>
     </view>
-    <view class="content">
-        <view><view>
+    <view class="content {{contentClass}}">
+      {{content}}
     </view>
     <view class="footer">
-        <view class="cancel">{{cancelText}}</view>
-        <view class="confirm">{{confirmText}}</view>
+      <view class="cancel {{cancelClass}}" bind:tap="cancel">{{cancelText}}</view>
+      <view class="confirm {{confirmClass}}" bind:tap="confirm">{{confirmText}}</view>
     </view>
-</view>
+  </view>
+  <view class="mask" style="opacity: {{isShow?1:0}};visibility: {{isShow?'visible':'hidden'}};"></view>
+</root-portal>

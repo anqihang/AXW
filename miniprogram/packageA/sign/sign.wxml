@@ -6,7 +6,7 @@
       <text class="text-md mt-4">登录后可使用，享受优质服务</text>
     </view>
     <block wx:if="{{isAccount}}">
-      <view class="py-48">
+      <view class="pt-48 pb-32">
         <label>
           <view>
             <ax-input data-id="account" rounded="30"  showPrompt prompt="{{accountPrompt}}" placeholder="请输入手机号或邮箱" model:value="{{account}}" bind:input="f_input" bind:blur="f_blur">
@@ -35,7 +35,7 @@
       </view>
     </block>
     <view class="flex">
-      <button class="bg-green text-white flex-1 rounded-full text-lg font-medium" open-type="{{isAccount?'':'getPhoneNumber'}}" bind:tap="{{isAccount?f_sign():''}}">
+      <button class="bg-green text-white flex-1 rounded-full text-lg font-medium" open-type="{{isAccount?'':'getPhoneNumber'}}" bind:tap="{{isAccount?'f_sign':''}}">
         {{isAccount?"注册并登录":"手机号快速验证"}}
       </button>
     </view>
@@ -45,9 +45,10 @@
     <view class="mt-12">
       <ax-checkbox-group bind:checkChange="f_switchAgreement">
         <ax-checkbox value="agreement" color="#39b54a">
-          <span class="break-all text-sm flex-1 text-gray-a ml-4">我已阅读并同意<text class="text-blue text-sm">《用户服务协议》</text><text class="text-blue text-sm">《隐私权国策》</text>，未注册手机号将在登录时自动为您创建账号。</span>
+          <span class="break-all text-sm flex-1 text-gray-a ml-4">我已阅读并同意<text class="text-blue text-sm">《用户服务协议》</text><text class="text-blue text-sm">《隐私政策》</text>，未注册手机号将在登录时自动为您创建账号。</span>
         </ax-checkbox>
       </ax-checkbox-group>
     </view>
   </view>
 </view>
+<ax-modal class="modal"></ax-modal>

@@ -29,13 +29,6 @@
           "query": "",
           "launchMode": "default",
           "scene": null
-        },
-        {
-          "name": "packageA/signIn/signIn",
-          "pathName": "packageA/signIn/signIn",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
         }
       ]
     }

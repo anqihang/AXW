@@ -1,8 +1,11 @@
 Component({
+  options: {
+    multipleSlots: true
+  },
   properties: {
     value: {
-      type: Boolean,
-      value: false,
+      type: String,
+      value: "",
     },
     disabled: {
       type: Boolean,
@@ -12,6 +15,10 @@ Component({
       type: String,
       value: "#39b54a",
     },
+    name1: {
+      type: String,
+      value: ""
+    }
   },
   data: {
     checked: false
@@ -19,10 +26,9 @@ Component({
   methods: {
     f_checkChange() {
       this.setData({
-          checked: !this.data.checked
+        checked: !this.data.checked
       })
-      console.log(this.data.checked)
-      this.triggerEvent("change", this.properties.value, { bubbles: true, composed: true });
+      this.triggerEvent("change", this.data.checked ? this.properties.value : '', { bubbles: true, composed: true });
     },
   },
 });
