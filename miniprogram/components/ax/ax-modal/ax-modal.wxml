@@ -1,0 +1,15 @@
+<view class="ax_modal" wx:if="{{isShow}}">
+    <view class="header">
+        {{title}}
+    </view>
+    <view class="content_slot">
+        <slot></slot>
+    </view>
+    <view class="content">
+        <view><view>
+    </view>
+    <view class="footer">
+        <view class="cancel">{{cancelText}}</view>
+        <view class="confirm">{{confirmText}}</view>
+    </view>
+</view>

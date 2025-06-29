@@ -1,0 +1,6 @@
+// 页面元素递级延迟显示
+@for $i from 0 through 12 {
+  .transition-#{$i} {
+    transition: all 0.2s ease-in-out #{0.05 * $i}s;
+  }
+}
