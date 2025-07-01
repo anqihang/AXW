@@ -9,7 +9,7 @@ const baseUrl = apiConfig.BASE_URL;
 type BasicProps = {
   data?: WechatMiniprogram.RequestOption["data"];
   header?: WechatMiniprogram.RequestOption["header"];
-  hideModal?: Boolean;
+  hideModal?: boolean;
 };
 type SSEEvent = {
   onMessage: (e: String) => void;
@@ -20,73 +20,13 @@ type SSEEvent = {
 type RequestOptions = BasicProps & (({ enableChunked: true } & SSEEvent) | ({ enableChunked?: false } & Partial<SSEEvent>));
 type SSEObj = { abort: () => void; task: WechatMiniprogram.RequestTask };
 let reqList: {
-  options: {
-    url: string;
-    method: WechatMiniprogram.RequestOption["method"];
-    data: WechatMiniprogram.RequestOption["data"];
-    header: WechatMiniprogram.RequestOption["header"];
-  };
+  url: string;
+  method: WechatMiniprogram.RequestOption["method"];
+  options: BasicProps & Partial<SSEEvent> & { enabedChunked?: boolean };
   callback_resolve: (data: any) => void;
   callback_reject: (error: any) => void;
 }[] = [];
 let isRefreshing = false;
-export function Request(
-  url: WechatMiniprogram.RequestOption["url"],
-  method: WechatMiniprogram.RequestOption["method"],
-  { data, header }: BasicProps
-) {
-  return new Promise((resolve, reject) => {
-    wx.request({
-      url: baseUrl + url,
-      method,
-      header: {
-        Authorization: storage.get("Authorization"),
-        ...header,
-      },
-      timeout: 1000 * (apiConfig.TIMEOUT || 20),
-      useHighPerformanceMode: globalData.deviceInfo.platform == "android" ? true : false, // 仅android
-      data,
-      success(res) {
-        console.log(url + "请求成功", res);
-        // 网络调试信息
-        const profile = res.profile;
-        const statusCode = res.statusCode;
-        if (statusCode >= 200 && statusCode < 300) {
-          resolve(res.data);
-        } else if (statusCode >= 400 && statusCode < 500) {
-          if (statusCode === 401) {
-            if (isRefreshing) {
-              new Promise((resolve, reject) => {
-                reqList.push({
-                  options: { url, method, data, header },
-                  callback_resolve: (data: any) => resolve(data),
-                  callback_reject: (error: any) => reject(error),
-                });
-              })
-                .then((data) => {
-                  resolve(data);
-                })
-                .catch((error) => {
-                  reject(error);
-                });
-            } else {
-              isRefreshing = true;
-              refreshToken().then(() => {
-                Request(url, method, { data, header }).then((data) => {
-                  resolve(data);
-                });
-              });
-            }
-          }
-        }
-      },
-      fail(error) {
-        reject(error);
-      },
-      complete() {},
-    });
-  });
-}
 /**
  * @Description 刷新访问令牌的函数。当请求返回 403 状态码时，会调用此函数来刷新访问令牌。
  * @Description 刷新成功后，会重新发起之前因令牌过期而被暂存的请求。
@@ -116,9 +56,9 @@ export function refreshToken(): Promise<Boolean> {
           // 标记刷新过程结束
           isRefreshing = false;
           // 遍历暂存的请求列表
-          reqList.forEach(({ options, callback_resolve, callback_reject }) => {
+          reqList.forEach(({ url, method, options, callback_resolve, callback_reject }) => {
             // 重新发起之前因令牌过期而被暂存的请求
-            RequestSSE<T>(options.url, options.method, options)
+            RequestSSE(url, method, options)
               .then((data) => {
                 // 调用暂存请求的 resolve 回调函数
                 callback_resolve(data);
@@ -183,64 +123,76 @@ export function RequestSSE<T>(
         // 网络调试信息
         const profile = res.profile;
         const statusCode = res.statusCode;
-        if (statusCode >= 200 && statusCode < 300) {
-          if (!enableChunked) {
-            resolve(res.data);
-          } else {
-            let sse = {
-              abort() {
-                requestTask.abort();
-                requestTask.offHeadersReceived();
-                requestTask.offChunkReceived();
-                onClose && onClose();
-              },
-              task: requestTask,
-            };
-            resolve(sse);
-          }
-        } else if (statusCode >= 300 && statusCode < 400) {
-          if (statusCode === 403) {
-            if (isRefreshing) {
-              new Promise<T>((resolve, reject) => {
-                reqList.push({
-                  options: { url, method, data, header, enableChunked, onMessage, onConnect, onError, onClose },
-                  callback_resolve: (data: any) => resolve(data),
-                  callback_reject: (error: any) => reject(error),
-                });
-              })
-                .then((data) => {
-                  resolve(data);
-                })
-                .catch((error) => {
-                  reject(error);
-                });
-            } else {
-              isRefreshing = true;
-              refreshToken().then(() => {
-                RequestSSE<T>(url, method, {
-                  data,
-                  header,
-                  ...(enableChunked ? { onMessage, onConnect, onError, onClose } : {}),
-                }).then((data) => {
-                  if (!enableChunked) {
-                    resolve(data);
-                  } else {
-                    let sse = {
-                      abort() {
-                        requestTask.abort();
-                        requestTask.offHeadersReceived();
-                        requestTask.offChunkReceived();
-                        onClose && onClose();
-                      },
-                      task: requestTask,
-                    };
-                    resolve(sse);
-                  }
-                });
-              });
-            }
-          }
-        }
+        // if (statusCode >= 200 && statusCode < 300) {
+        //   if (!enableChunked) {
+        //     resolve(res.data);
+        //   } else {
+        //     let sse = {
+        //       abort() {
+        //         requestTask.abort();
+        //         requestTask.offHeadersReceived();
+        //         requestTask.offChunkReceived();
+        //         onClose && onClose();
+        //       },
+        //       task: requestTask,
+        //     };
+        //     resolve(sse);
+        //   }
+        // } else if (statusCode >= 300 && statusCode < 400) {
+        //   if (statusCode === 403) {
+        //     if (isRefreshing) {
+        //       new Promise((resolve, reject) => {
+        //         reqList.push({
+        //           url,
+        //           method,
+        //           options: {
+        //             data,
+        //             header,
+        //             hideModal,
+        //             ...(enableChunked !== undefined ? { enableChunked } : {}),
+        //             ...(onMessage !== undefined ? { onMessage } : {}),
+        //             ...(onConnect !== undefined ? { onConnect } : {}),
+        //             ...(onError !== undefined ? { onError } : {}),
+        //             ...(onClose !== undefined ? { onClose } : {}),
+        //           },
+        //           callback_resolve: (data: any) => resolve(data),
+        //           callback_reject: (error: any) => reject(error),
+        //         });
+        //         console.log("🚀 ~ success ~ method:", method);
+        //       })
+        //         .then((data) => {
+        //           resolve(data);
+        //         })
+        //         .catch((error) => {
+        //           reject(error);
+        //         });
+        //     } else {
+        //       isRefreshing = true;
+        //       refreshToken().then(() => {
+        //         RequestSSE<T>(url, method, {
+        //           data,
+        //           header,
+        //           ...(enableChunked ? { onMessage, onConnect, onError, onClose } : {}),
+        //         }).then((data) => {
+        //           if (!enableChunked) {
+        //             resolve(data);
+        //           } else {
+        //             let sse = {
+        //               abort() {
+        //                 requestTask.abort();
+        //                 requestTask.offHeadersReceived();
+        //                 requestTask.offChunkReceived();
+        //                 onClose && onClose();
+        //               },
+        //               task: requestTask,
+        //             };
+        //             resolve(sse);
+        //           }
+        //         });
+        //       });
+        //     }
+        //   }
+        // }
         f_disposeStatusCode<T>({
           res,
           statusCode,
@@ -249,6 +201,7 @@ export function RequestSSE<T>(
           method,
           data,
           header,
+          hideModal,
           enableChunked,
           onMessage,
           onConnect,
@@ -263,7 +216,7 @@ export function RequestSSE<T>(
         if (hideModal) {
           wx.showModal({
             title: "",
-            content: ERRNO[error.errno],
+            content: ERRNO[error.errno.toString() as keyof typeof ERRNO],
             showCancel: false,
             confirmText: "",
             success(res) {},
@@ -304,6 +257,7 @@ function f_disposeStatusCode<T>({
   method,
   data,
   header,
+  hideModal,
   enableChunked,
   onMessage,
   onConnect,
@@ -317,8 +271,9 @@ function f_disposeStatusCode<T>({
   requestTask: WechatMiniprogram.RequestTask;
   url: string;
   method: WechatMiniprogram.RequestOption["method"];
-  data: WechatMiniprogram.RequestOption["data"];
-  header: WechatMiniprogram.RequestOption["header"];
+  data: WechatMiniprogram.RequestOption["data"] | undefined;
+  header: WechatMiniprogram.RequestOption["header"] | undefined;
+  hideModal: boolean | undefined;
   enableChunked: boolean | undefined;
   resolve: (data: string | WechatMiniprogram.IAnyObject | ArrayBuffer) => void;
   reject: (data: string | WechatMiniprogram.IAnyObject | ArrayBuffer) => void;
@@ -343,10 +298,22 @@ function f_disposeStatusCode<T>({
       if (isRefreshing) {
         new Promise((resolve, reject) => {
           reqList.push({
-            options: { url, method, data, header, enableChunked, onMessage, onConnect, onError, onClose },
+            url,
+            method,
+            options: {
+              data,
+              header,
+              hideModal,
+              ...(enableChunked !== undefined ? { enableChunked } : {}),
+              ...(onMessage !== undefined ? { onMessage } : {}),
+              ...(onConnect !== undefined ? { onConnect } : {}),
+              ...(onError !== undefined ? { onError } : {}),
+              ...(onClose !== undefined ? { onClose } : {}),
+            },
             callback_resolve: (data: any) => resolve(data),
             callback_reject: (error: any) => reject(error),
           });
+          console.log("🚀 ~ success ~ method:", method);
         })
           .then((data) => {
             resolve(data);
@@ -357,7 +324,7 @@ function f_disposeStatusCode<T>({
       } else {
         isRefreshing = true;
         refreshToken().then(() => {
-          RequestSSE(url, method, {
+          RequestSSE<T>(url, method, {
             data,
             header,
             ...(enableChunked ? { onMessage, onConnect, onError, onClose } : {}),
