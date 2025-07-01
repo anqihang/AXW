@@ -19,17 +19,9 @@ type SSEEvent = {
 };
 type RequestOptions = BasicProps & (({ enableChunked: true } & SSEEvent) | ({ enableChunked?: false } & Partial<SSEEvent>));
 type SSEObj = { abort: () => void; task: WechatMiniprogram.RequestTask };
-let reqList: {
-  options: {
-    url: string;
-    method: WechatMiniprogram.RequestOption["method"];
-    data: WechatMiniprogram.RequestOption["data"];
-    header: WechatMiniprogram.RequestOption["header"];
-  };
-  callback_resolve: (data: any) => void;
-  callback_reject: (error: any) => void;
-}[] = [];
+let reqList: any[] = [];
 let isRefreshing = false;
+
 export function Request(
   url: WechatMiniprogram.RequestOption["url"],
   method: WechatMiniprogram.RequestOption["method"],
@@ -92,7 +84,7 @@ export function Request(
  * @Description 刷新成功后，会重新发起之前因令牌过期而被暂存的请求。
  * @returns {Promise<boolean>} 一个 Promise，刷新成功时 resolve 为 true，失败时 reject 错误信息。
  */
-export function refreshToken(): Promise<Boolean> {
+export function refreshToken<T>() {
   return new Promise((resolve, reject) => {
     // 发起微信小程序的网络请求，用于刷新访问令牌
     wx.request({
@@ -106,9 +98,9 @@ export function refreshToken(): Promise<Boolean> {
       },
       /**
        * 请求成功的回调函数
-       * @param  res - 请求成功的响应对象
+       * @param {any} res - 请求成功的响应对象
        */
-      success(res: WechatMiniprogram.RequestSuccessCallbackResult<{ Authorization: string }>) {
+      success(res: any) {
         // 检查响应状态码是否在 200 到 299 之间，表示请求成功
         if (res.statusCode >= 200 && res.statusCode < 300) {
           // 将新的访问令牌存储到本地
@@ -201,7 +193,7 @@ export function RequestSSE<T>(
         } else if (statusCode >= 300 && statusCode < 400) {
           if (statusCode === 403) {
             if (isRefreshing) {
-              new Promise<T>((resolve, reject) => {
+              new Promise((resolve, reject) => {
                 reqList.push({
                   options: { url, method, data, header, enableChunked, onMessage, onConnect, onError, onClose },
                   callback_resolve: (data: any) => resolve(data),
@@ -241,7 +233,7 @@ export function RequestSSE<T>(
             }
           }
         }
-        f_disposeStatusCode<T>({
+        f_disposeStatusCode({
           res,
           statusCode,
           requestTask,
@@ -296,7 +288,7 @@ export function RequestSSE<T>(
     }
   });
 }
-function f_disposeStatusCode<T>({
+function f_disposeStatusCode({
   res,
   statusCode,
   requestTask,

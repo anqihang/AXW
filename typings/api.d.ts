@@ -1,3 +1,7 @@
+export interface BaseResponse {
+  status: boolean;
+  message: string;
+}
 export interface Account {
   id: number;
   username: string;
