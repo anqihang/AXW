@@ -1,5 +1,7 @@
 /// <reference path="./types/index.d.ts" />
 
+import { Account } from "./api";
+
 interface IAppOption {
   globalData: {
     userInfo: WechatMiniprogram.UserInfo | any; // 微信用户信息
@@ -10,6 +12,8 @@ interface IAppOption {
     deviceInfo: WechatMiniprogram.DeviceInfo; // 设备信息
     windowInfo: WechatMiniprogram.WindowInfo; // 窗口信息
     location?: any; // 位置信息 经度longitude 纬度latitude
+
+    userAccount: Account;
   };
   userInfoReadyCallback?: WechatMiniprogram.GetUserInfoSuccessCallback;
 }
