@@ -1,5 +1,5 @@
 <!--pages/min/mine.wxml-->
-<view style="opacity:{{hidden?0:1}};visibility:{{hidden?'hidden':'visible'}};transition:all 1s" class="Mine page">
+<view style="opacity:{{hidden?0:1}};visibility:{{hidden?'hidden':'visible'}};" class="Mine page transition-0">
   <scroll-view class="h-full overflow-hidden" scroll-y type="custom" enable-flex show-scrollbar="{{false}}">
     <view class="relative h-full">
       <fake-nav></fake-nav>

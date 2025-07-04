@@ -5,41 +5,41 @@
       <text class="text-3xl font-bold">欢迎使用 安 许</text>
       <text class="text-md mt-4">登录后可使用，享受优质服务</text>
     </view>
-    <block wx:if="{{isAccount}}">
+    <view style="opacity:{{isAccount?1:0}};visibility: {{isAccount?'visibility':'hidden'}};{{isAccount?'':'position:absolute'}}" class="transition-0">
       <view class="pt-48 pb-32">
         <label>
           <view>
-            <ax-input data-id="account" rounded="30"  showPrompt prompt="{{accountPrompt}}" placeholder="请输入手机号或邮箱" model:value="{{account}}" bind:input="f_input" bind:blur="f_blur">
+            <ax-input data-id="account" rounded="30" showPrompt prompt="{{accountPrompt}}" placeholder="请输入手机号或邮箱" model:value="{{account}}" bind:input="f_input" bind:blur="f_blur">
               <span slot="left" class="text-lg bg-black icon--mdi icon--mdi--account-outline mr-6"></span>
             </ax-input>
           </view>
         </label>
         <label>
           <view class="mt-4">
-            <ax-input password="{{true}}" rounded="30" showPrompt prompt="{{passwordPrompt}}" placeholder="请输入密码" data-id="password" model:value="{{password}}" bind:input="f_input" >
+            <ax-input password="{{true}}" rounded="30" showPrompt prompt="{{passwordPrompt}}" placeholder="请输入密码" data-id="password" model:value="{{password}}" bind:input="f_input">
             </ax-input>
-            </view>
+          </view>
         </label>
         <label>
           <view class="mt-4">
-            <ax-input data-id="captcha" placeholder="请输入验证码" rounded="30" model:value="{{captcha}}"  bind:input="f_input">
+            <ax-input data-id="captcha" placeholder="请输入验证码" rounded="30" model:value="{{captcha}}" bind:input="f_input">
               <span slot="left" class="text-lg bg-black icon--mdi icon--mdi--form-textbox-password mr-6"></span>
             </ax-input>
           </view>
         </label>
       </view>
-    </block>
-    <block wx:else>
+    </view>
+    <view style="opacity:{{!isAccount?1:0}};visibility: {{!isAccount?'visibility':'hidden'}};{{!isAccount?'':'position:absolute'}}" class="transition-0">
       <view class="py-32">
         <image src="" mode="" class="bg-light-orange" style="height:calc(90vw / 16 * 9)" />
       </view>
-    </block>
+    </view>
     <view class="flex">
       <button class="bg-green text-white flex-1 rounded-full text-lg font-medium" open-type="{{isAccount?'':'getPhoneNumber'}}" bind:tap="{{isAccount?'f_sign':''}}">
         {{isAccount?"注册并登录":"手机号快速验证"}}
       </button>
     </view>
-    <view class="text-center py-8 mt-6 text-lg text-black-6 font-medium" bind:tap="f_switchAccount">
+    <view class="text-center py-8 mt-6 text-lg text-black-6 font-medium " bind:tap="f_switchAccount">
       {{isAccount?"手机号码登录":"账号密码登录"}}
     </view>
     <view class="mt-12">
