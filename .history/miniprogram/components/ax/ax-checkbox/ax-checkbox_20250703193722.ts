@@ -28,7 +28,7 @@ Component({
       this.setData({
         checked: !this.data.checked,
       });
-      this.triggerEvent("change", { value: this.properties.value, checked: this.data.checked }, { bubbles: true, composed: true });
+      this.triggerEvent("change", { [this.properties.value]: this.data.checked ? true : false }, { bubbles: true, composed: true });
     },
   },
 });

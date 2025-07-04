@@ -35,12 +35,6 @@ App<IAppOption>({
     this.globalData.windowInfo = wx.getWindowInfo();
     console.log(this.globalData.windowInfo, "windowInfo");
 
-    wx.getSetting({
-      withSubscriptions:true,
-      success(res){
-        console.log(res);
-      }
-    })
     // 获取局域网ip地址
     // wx.getLocalIPAddress({
     //   success: (res) => {
