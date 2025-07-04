@@ -7,7 +7,7 @@
     </view>
 
     <block wx:if="{{isAccount}}">
-      <view class="pt-48 pb-32" style="height:0px;">
+      <view class="pt-48 pb-32" style="min-height">
         <label>
           <view>
             <ax-input data-id="username" rounded="30"  showPrompt prompt="{{usernamePrompt}}" placeholder="请输入手机号或邮箱" model:value="{{username}}" bind:input="f_input" bind:blur="f_blur">
@@ -31,7 +31,7 @@
       </view>
     </block>
     <block wx:else>
-      <view class="py-32" style="height:0px;">
+      <view class="py-32">
         <image src="" mode="" class="bg-light-orange" style="height:calc(90vw / 16 * 9)" />
       </view>
     </block>
