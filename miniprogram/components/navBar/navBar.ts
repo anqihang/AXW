@@ -82,7 +82,6 @@ Component({
           homeButton: true,
         });
       }
-      console.log(pages, "yeman");
     },
     attached() {},
   },

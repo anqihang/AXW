@@ -34,6 +34,7 @@
         <image src="" mode="" class="bg-light-orange" style="height:calc(90vw / 16 * 9)" />
       </view>
     </view>
+    
     <view class="flex">
       <button class="bg-green text-white flex-1 rounded-full text-lg font-medium" open-type="{{isAccount?'':'getPhoneNumber'}}" bind:tap="{{isAccount?'f_sign':''}}">
         {{isAccount?"注册并登录":"手机号快速验证"}}

@@ -1,5 +1,4 @@
 import { IAppOption } from "typings";
-import { apiLogin } from "./api";
 
 // app.ts
 App<IAppOption>({
