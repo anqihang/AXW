@@ -45,15 +45,9 @@ Component({
   },
   methods: {
     // 跳转到用户信息
-    f_goTo(path: string, type: "navigateTo" = "navigateTo", params: any) {
+    f_goUserAccount() {
       wx.navigateTo({
-        url:
-          path + params
-            ? "?" +
-              Object.entries(params)
-                .map((i) => i.join("="))
-                .join("&")
-            : "",
+        url: "/packageA/userInfo/userInfo",
       });
     },
     //

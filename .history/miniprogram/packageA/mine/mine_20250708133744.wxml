@@ -3,7 +3,7 @@
   <scroll-view class="h-full overflow-hidden" scroll-y type="custom" enable-flex show-scrollbar="{{false}}">
     <view class="relative h-full">
       <fake-nav></fake-nav>
-      <view class="flex px-12 justify-between items-center" bind:tap="{{isSignIn?f_goUserAccount():''}}">
+      <view class="flex px-12 justify-between items-center" bind:tap="{{isSignIn?f_goRouter('userInfo'):''}}">
         <view class="flex">
           <view>
             <image class="w-56 h-56 rounded-full" src="{{avatar}}" mode="aspectFill" />
@@ -27,7 +27,7 @@
       <!--  -->
       <view class="px-12 mt-12">
         <view class="bg-white flex flex-wrap rounded-4 py-8 grid-cols-4 grid-rows-2">
-          <view class="items-center flex flex-col py-8" wx:for="{{gridList}}" wx:key="id" bind:tap="" data-id="{{item.id}}">
+          <view class="items-center flex flex-col py-8" wx:for="{{gridList}}" wx:key="id" bind:tap="f_goRouter('grid')" data-id="{{item.id}}">
             <view class="ax-icon">
               <image src="{{item.icon}}" mode="aspectFit" />
             </view>
