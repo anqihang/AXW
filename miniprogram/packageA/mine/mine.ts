@@ -19,7 +19,7 @@ Component({
    */
   data: {
     globalData,
-    isSignIn: storage.get("Authorization"),
+    isSignIn: !!storage.get("Authorization"),
     nickName: "安琦航",
     avatar: globalData.defaultAvatarUrl,
     identity: ["Lv.1", "VIP", "SVIP"],
@@ -45,8 +45,8 @@ Component({
   },
   methods: {
     // 跳转到用户信息
-    f_goTo(path: string, type: "navigateTo" = "navigateTo", params: any) {
-      wx.navigateTo({
+    f_goTo(path: string, params?: any) {
+      wx.navigateTo({  
         url:
           path + params
             ? "?" +

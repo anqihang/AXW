@@ -9,7 +9,7 @@
       <view class="pt-48 pb-32">
         <label>
           <view>
-            <ax-input data-id="account" rounded="30" showPrompt prompt="{{accountPrompt}}" placeholder="请输入手机号或邮箱" model:value="{{account}}" bind:input="f_input" bind:blur="f_blur">
+            <ax-input data-id="username" rounded="30" showPrompt prompt="{{usernamePrompt}}" placeholder="请输入手机号或邮箱" model:value="{{username}}" bind:input="f_input" bind:blur="f_blur">
               <span slot="left" class="text-lg bg-black icon--mdi icon--mdi--account-outline mr-6"></span>
             </ax-input>
           </view>

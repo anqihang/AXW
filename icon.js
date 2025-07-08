@@ -8,15 +8,13 @@ import { locate } from "@iconify/json";
  * @type {Record<string, string[]>}
  */
 const icons = {
-  mdi: ["search", "home", "menu", "account-outline", "password-outline", "form-textbox-password", "eye-outline", "eye-off"],
-  "mdi-light": ["alert-circle", "circle", "help-circle"],
+  mdi: ["home", "menu", "account-outline", "password-outline", "form-textbox-password", "eye-outline", "eye-off"],
+  "mdi-light": ["circle", "help-circle"],
   tabler: ["search"],
   gg: ["close-o"],
-  ep: ["select"],
-  "line-md": ["confirm"],
+  "line-md": ["confirm"],// 对号
   "icon-park-outline": ["right"],
   "material-symbols-light": ["error-outline"],
-  weui: ["error-filled"],
   codicon: ["error"],
   iconoir: ["warning-circle", "info-circle"],
 };

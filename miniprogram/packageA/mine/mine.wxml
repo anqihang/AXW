@@ -3,7 +3,7 @@
   <scroll-view class="h-full overflow-hidden" scroll-y type="custom" enable-flex show-scrollbar="{{false}}">
     <view class="relative h-full">
       <fake-nav></fake-nav>
-      <view class="flex px-12 justify-between items-center" bind:tap="{{isSignIn?f_goUserAccount():''}}">
+      <view class="flex px-12 justify-between items-center" bind:tap="{{isSignIn?f_goTo('/packageB/accountSetting/accountSetting'):''}}">
         <view class="flex">
           <view>
             <image class="w-56 h-56 rounded-full" src="{{avatar}}" mode="aspectFill" />
@@ -13,7 +13,7 @@
               <navigator url="/packageA/sign/sign" open-type="navigate" class="text-lg px-8" hover-class="hover-sign">登录</navigator>
             </view>
             <block wx:else>
-              <text class="text-xl font-bold">{{username}}</text>
+              <text class="text-xl font-bold">{{nickName}}</text>
               <view class="flex items-center">
                 <view class="mr-8 ax-tag" wx:for="{{identity}}" wx:key="index">{{item}}</view>
               </view>
@@ -21,7 +21,7 @@
           </view>
         </view>
         <view class="h-full px-4" wx:if="{{isSignIn}}">
-          <span class="icon--park-outline icon--park-outline--right text-lg text-black"></span>
+          <span class="icon--icon-park-outline icon--icon-park-outline--right text-lg text-black bg-black"></span>
         </view>
       </view>
       <!--  -->
