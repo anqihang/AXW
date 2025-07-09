@@ -2,7 +2,7 @@
 <view style="opacity:{{hidden?0:1}};visibility:{{hidden?'hidden':'visible'}};" class="Mine page transition-0">
   <scroll-view class="h-full overflow-hidden" scroll-y type="custom" enable-flex show-scrollbar="{{false}}">
     <view class="relative h-full">
-      <view class="bg-gradual-blue absolute w-full h-1/4" style="mask-image:url('/static/tabbar/component.png')"></view>
+      <view class="bg-gradual-blue absolute w-full h-1/4"></view>
       <fake-nav></fake-nav>
       <view class="flex px-12 justify-between items-center" bind:tap="{{isSignIn?f_goTo('/packageB/accountSetting/accountSetting'):''}}">
         <view class="flex">

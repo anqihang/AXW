@@ -12,11 +12,11 @@
 @for $i from 3 through 10 {
   $end: $i - 1;
   @for $j from 1 to $end + 1 {
-    .w-#{$j}\/#{$i} {
-      width: #{$j / $i * 100%};
+    .w-#{$j}\\\/#{$i} {
+      //   width: #{$j / $i * 100}%;
     }
-    .h-#{$j}\/#{$i} {
-      height: #{$j / $i * 100%};
+    .h-#{$j}\\\/#{$i} {
+      // height: #{$j / $i * 100}%;
     }
   }
 }
