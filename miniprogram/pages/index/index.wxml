@@ -10,4 +10,4 @@
   <!-- 我的 -->
   <mine class="main" hidden="{{cur!==5}}" style="position:{{cur!==5?'absolute':'relative'}};"></mine>
 </view>
-<tab-bar bind:changeTabBar="f_changeTab"></tab-bar>
+<tab-bar bind:changeTabBar="f_changeTab" cur="{{cur}}"></tab-bar>

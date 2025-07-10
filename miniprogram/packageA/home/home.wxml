@@ -23,7 +23,7 @@
     <view class="px-12 mt-12">
       <view class="grid-cols-4 bg-white rounded-4 flex flex-wrap p-8">
         <view wx:for="{{categories}}" wx:key="id" wx:for-index="index" class="py-4 flex flex-col items-center">
-          <view class="overflow-hidden w-32 h-32 bg-green">
+          <view class="overflow-hidden w-32 h-32 bg-green rounded-4">
             <image src="{{item.src}}" mode="" />
           </view>
           <text class="text-xs">{{item.title}}</text>

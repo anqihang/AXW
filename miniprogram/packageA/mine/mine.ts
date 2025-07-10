@@ -1,5 +1,7 @@
 // import { apiSignOut } from "../../api";
+import { IAppOption } from "typings";
 import storage from "../../utils/storage";
+import { apiSignOut } from "/api/index";
 
 // pages/min/mine.ts
 const { globalData } = getApp<IAppOption>();
@@ -109,7 +111,7 @@ Component({
     },
     // 退出登录
     f_signOut() {
-      // apiSignOut();
+      apiSignOut();
     },
   },
 });

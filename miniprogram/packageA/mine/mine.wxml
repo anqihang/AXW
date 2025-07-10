@@ -2,7 +2,7 @@
 <view style="opacity:{{hidden?0:1}};visibility:{{hidden?'hidden':'visible'}};" class="Mine page transition-0">
   <scroll-view class="h-full overflow-hidden" scroll-y type="custom" enable-flex show-scrollbar="{{false}}">
     <view class="relative h-full">
-      <view class="bg-gradual-blue absolute w-full h-1/4" style="mask-image:url('/static/tabbar/component.png')"></view>
+      <view class="bg-gradual-blue absolute w-full h-1/4"></view>
       <fake-nav></fake-nav>
       <view class="flex px-12 justify-between items-center" bind:tap="{{isSignIn?f_goTo('/packageB/accountSetting/accountSetting'):''}}">
         <view class="flex">
@@ -11,7 +11,7 @@
           </view>
           <view class="ml-16 flex flex-col justify-center">
             <view wx:if="{{!isSignIn}}" class="flex text-lg text-gray-500 font-bold">
-              <navigator url="/packageA/sign/sign" open-type="navigate" class="text-lg px-8" hover-class="hover-sign">登录</navigator>
+              <navigator url="/packageA/sign/sign" open-type="navigate" class="text-lg px-8 text-white" hover-class="hover-sign">登录</navigator>
             </view>
             <block wx:else>
               <text class="text-xl font-bold">{{nickName}}</text>
@@ -23,6 +23,25 @@
         </view>
         <view class="h-full px-4" wx:if="{{isSignIn}}">
           <span class="icon--icon-park-outline icon--icon-park-outline--right text-lg text-black bg-black"></span>
+        </view>
+      </view>
+      <!--  -->
+      <view class="mt-12">
+        <view class="bg-white rounded-8 px-16 py-12 round-4 flex">
+          <view class="flex-1 text-center">
+            <text>2</text>
+            <text>动态</text>
+          </view>
+          <view class="w-1 bg-gray-e my-12"></view>
+          <view class="flex-1 text-center">
+            <text>3</text>
+            <text>关注</text>
+          </view>
+          <view class="w-1 bg-gray-e my-12"></view>
+          <view class="flex-1 text-center">
+            <text>4</text>
+            <text>粉丝</text>
+          </view>
         </view>
       </view>
       <!--  -->

@@ -65,6 +65,7 @@ Component({
       query
         .select("#banner")
         .boundingClientRect((rect) => {
+          console.log(rect,1)
           this.setData({
             swiperHeight: rect?.width / 2.4,
           });

@@ -1,4 +1,6 @@
 // index.ts
+import { IAppOption } from "typings";
+
 // 获取应用实例
 export {};
 const { globalData } = getApp<IAppOption>();
