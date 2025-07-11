@@ -35,11 +35,11 @@ App<IAppOption>({
     console.log(this.globalData.windowInfo, "windowInfo");
 
     wx.getSetting({
-      withSubscriptions:true,
-      success(res){
+      withSubscriptions: true,
+      success(res) {
         console.log(res);
-      }
-    })
+      },
+    });
     // 获取局域网ip地址
     // wx.getLocalIPAddress({
     //   success: (res) => {

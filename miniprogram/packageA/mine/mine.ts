@@ -26,12 +26,12 @@ Component({
     avatar: globalData.defaultAvatarUrl,
     identity: ["Lv.1", "VIP", "SVIP"],
     gridList: [
-      { id: 0, title: "文章", icon: "/static/MaterialSymbolsArticleOutlineRounded.svg" },
-      { id: 2, title: "收藏", icon: "/static/MiFavorite.svg" },
-      { id: 2, title: "关注", icon: "/static/EpCollectionTag.svg" },
-      { id: 3, title: "统计", icon: "/static/IonStatsBars.svg" },
-      { id: 4, title: "扫一扫", icon: "/static/TablerScan.svg" },
-      { id: 5, title: "小程序", icon: "/static/IconParkOutlineWeixinMiniApp.svg" },
+      { id: 0, title: "文章", icon: "" },
+      { id: 2, title: "收藏", icon: "" },
+      { id: 2, title: "关注", icon: "" },
+      { id: 3, title: "统计", icon: "" },
+      { id: 4, title: "扫一扫", icon: "" },
+      { id: 5, title: "小程序", icon: "" },
     ],
     list: [
       { id: 0, title: "账号", rightIcon: "" },
@@ -46,50 +46,38 @@ Component({
     show() {},
   },
   methods: {
-    // 跳转到用户信息
-    f_goTo(path: string, params?: any) {
-      wx.navigateTo({  
-        url:
-          path + params
-            ? "?" +
-              Object.entries(params)
-                .map((i) => i.join("="))
-                .join("&")
-            : "",
-      });
+    f_goTo(e: any, path?: string, params?: any) {
+      if (path) {
+        switch (e.detail.dataset.id) {
+          case 0:
+            wx.navigateTo({
+              url: `${path}?${params}`,
+            });
+            break;
+          case 1:
+            wx.scanCode({
+              success(res) {
+                console.log(res, "scan");
+              },
+            });
+            break;
+        }
+      } else {
+        wx.navigateTo({
+          url:
+            path + params
+              ? "?" +
+                Object.entries(params)
+                  .map((i) => i.join("="))
+                  .join("&")
+              : "",
+        });
+      }
     },
     //
     f_gradTap(e: any) {
       console.log(e, 1);
       switch (e.currentTarget.dataset.id) {
-        case 0:
-          {
-            wx.navigateTo({
-              url: "/packageA/article/article",
-            });
-          }
-          break;
-        case 1:
-          {
-            wx.navigateTo({
-              url: "/packageA/reply/reply",
-            });
-          }
-          break;
-        case 2:
-          {
-            wx.navigateTo({
-              url: "/packageA/collection/collection",
-            });
-          }
-          break;
-        case 3:
-          {
-            wx.navigateTo({
-              url: "/packageA/statistics/statistics",
-            });
-          }
-          break;
         // 扫码
         case 4:
           {
@@ -97,13 +85,6 @@ Component({
               success(res: any) {
                 console.log(res);
               },
-            });
-          }
-          break;
-        case 5:
-          {
-            wx.navigateTo({
-              url: "/packageA/miniProgram/miniProgram",
             });
           }
           break;
