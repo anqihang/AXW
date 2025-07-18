@@ -20,7 +20,8 @@
     "typeRoots": ["./typings"],
     "baseUrl": ".",
     "paths": {
-      "/*": ["miniprogram/*"]
+      "/m/*": ["miniprogram/*"],
+      "/*": ["miniprogram/*"],
     }
   },
   "include": ["./**/*.ts"],

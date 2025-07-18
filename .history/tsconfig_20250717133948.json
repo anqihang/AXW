@@ -16,11 +16,12 @@
     "noUnusedParameters": true,
     "strict": true,
     "strictPropertyInitialization": true,
-    "lib": ["ESNext"],
+    "lib": ["ES2020"],
     "typeRoots": ["./typings"],
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
-      "MP/*": ["miniprogram/*"]
+      "/m/*": ["miniprogram/*"],
+      "/*": ["miniprogram/*"],
     }
   },
   "include": ["./**/*.ts"],
