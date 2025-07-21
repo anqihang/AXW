@@ -76,6 +76,12 @@ Component({
           backButton: true,
           homeButton: false,
         });
+        // 深度大于3后也显示home键
+        if (pages.length > 3) {
+          this.setData({
+            homeButton: true,
+          });
+        }
       } else {
         this.setData({
           backButton: false,

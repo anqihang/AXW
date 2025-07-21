@@ -1,6 +1,6 @@
 <!--pages/home/home.wxml-->
 <view style="opacity:{{hidden?0:1}};visibility:{{hidden?'hidden':'visible'}};" class="Home page transition-0">
-  <nav-bar title="首页" back="{{false}}" backButton="{{false}}" homeButton="{{false}}" color="white" background="linear-gradient(45deg,#0081ff,#1cbbb4)"></nav-bar>
+  <nav-bar title="首页" backButton="{{false}}" homeButton="{{false}}" color="white" background="linear-gradient(45deg,#0081ff,#1cbbb4)"></nav-bar>
   <scroll-view scroll-y enable-flex type="custom" show-scrollbar="{{false}}" class="flex-1" scroll-top="{{scrollTop}}" bind:refresherrefresh="f_refresh" bind:scroll="f_scroll">
     <!-- <sticky-section> -->
     <!-- <sticky-header> -->

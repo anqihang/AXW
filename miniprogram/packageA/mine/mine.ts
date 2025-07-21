@@ -1,8 +1,7 @@
 // import { apiSignOut } from "../../api";
 import { IAppOption } from "typings";
-import storage from "../../utils/storage";
-import { PAGES } from "/m/router/pages";
-import {apiSignOut} from "/"
+import storage from "/utils/storage";
+import { PAGES } from "/router/pages";
 import { apiSignOut } from "/api/index";
 
 // pages/min/mine.ts

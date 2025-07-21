@@ -7,5 +7,6 @@
   "componentPlaceholder": {
     "home": "view",
     "mine": "view"
-  }
+  },
+  "disableScroll": true
 }

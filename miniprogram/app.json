@@ -10,7 +10,6 @@
     "navigationBarTextStyle": "black",
     "navigationStyle": "custom",
     "enablePullDownRefresh": false,
-    "disabledScroll": true,
     "useComponents": {
       "ax-modal": "/components/ax-modal/ax-modal"
     }
