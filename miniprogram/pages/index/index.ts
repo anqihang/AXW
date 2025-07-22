@@ -11,11 +11,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    console.log("index",options);
-    if(options.page==="home"){
-      this.setData({
-        cur:1
-      })
+    console.log("index", options);
+    switch (options.page) {
+      case "home":
+        {
+          this.setData({
+            cur: 1,
+          });
+        }
+        break;
+      case "mine":
+        {
+          this.setData({
+            cur: 5,
+          });
+        }
+        break;
     }
     // const page = this.selectComponent(`#page${this.data.cur}`);
     // page.onLoad();

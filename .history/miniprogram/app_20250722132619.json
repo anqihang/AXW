@@ -1,12 +1,14 @@
 {
-  "pages": ["packageB/index/index"],
+  "pages": ["pages/index/index", "pages/logs/logs"],
   "subPackages": [
     {
       "root": "packageA",
-      "pages": ["article/article", "articleList/articleList", "signIn/signIn"]
-    },
-    { "root": "pages", "pages": ["logs/logs"] }
+      "pages": ["home/home", "mine/mine", "sign/sign"]
+    }
   ],
+  "usingComponents": {
+    "ax-modal": "/components/ax/ax-modal/ax-modal"
+  },
   "window": {
     "navigationBarTextStyle": "black",
     "navigationStyle": "custom",
@@ -17,6 +19,10 @@
   "rendererOptions": {
     "skyline": {
       "defaultDisplayBlock": true,
+      "defaultContentBox": true,
+      "tagNameStyleIsolation": "legacy",
+      "enableScrollViewAutoSize": true,
+      "keyframeStyleIsolation": "legacy",
       "disableABTest": true,
       "sdkVersionBegin": "3.0.0",
       "sdkVersionEnd": "15.255.255"

@@ -6,13 +6,13 @@
       "pages": ["home/home", "mine/mine", "sign/sign"]
     }
   ],
+  "usingComponents": {
+    "ax-modal": "/components/ax/ax-modal/ax-modal"
+  },
   "window": {
     "navigationBarTextStyle": "black",
     "navigationStyle": "custom",
-    "enablePullDownRefresh": false,
-    "useComponents": {
-      "ax-modal": "/components/ax-modal/ax-modal"
-    }
+    "enablePullDownRefresh": false
   },
   "style": "v2",
   "renderer": "skyline",
@@ -21,6 +21,8 @@
       "defaultDisplayBlock": true,
       "defaultContentBox": true,
       "tagNameStyleIsolation": "legacy",
+      "enableScrollViewAutoSize": true,
+      "keyframeStyleIsolation": "legacy",
       "disableABTest": true,
       "sdkVersionBegin": "3.0.0",
       "sdkVersionEnd": "15.255.255"

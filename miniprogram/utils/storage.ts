@@ -2,7 +2,7 @@ const Key = "AXW_";
 /**
  * @param {string} _key
  * @param _value
- * @param {boolean} sync  是否异步
+ * @param {boolean} sync  是否同步
  * @returns {boolean | Promise<any>}
  */
 function set<T extends boolean>(_key: string, _value: any, sync: T = false as unknown as T): boolean | Promise<any> {

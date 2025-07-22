@@ -33,10 +33,6 @@ Component({
       type: Boolean,
       value: true,
     },
-    loading: {
-      type: Boolean,
-      value: false,
-    },
   },
   /**
    * 组件的初始数据

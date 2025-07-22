@@ -2,8 +2,8 @@ const Key = "AXW_";
 /**
  * @param {string} _key
  * @param _value
- * @param {boolean} sync  是否异步
- * @returns
+ * @param {boolean} sync  是否同步
+ * @returns {boolean | Promise<any>}
  */
 function set<T extends boolean>(_key: string, _value: any, sync: T = false as unknown as T): boolean | Promise<any> {
   const key = Key + _key;
@@ -31,6 +31,12 @@ function set<T extends boolean>(_key: string, _value: any, sync: T = false as un
     });
   }
 }
+/**
+ *
+ * @param _key
+ * @param sync
+ * @returns {Promise<any> | any}
+ */
 function get(_key: string, sync: boolean = false): Promise<any> | any {
   const key = Key + _key;
   if (!sync) {
@@ -53,6 +59,11 @@ function get(_key: string, sync: boolean = false): Promise<any> | any {
     });
   }
 }
+/**
+ *
+ * @param _key
+ * @returns {boolean}
+ */
 function remove(_key: string): boolean {
   const key = Key + _key;
   try {
@@ -63,6 +74,10 @@ function remove(_key: string): boolean {
   }
   return true;
 }
+/**
+ *
+ * @returns {boolean}
+ */
 function clear() {
   try {
     wx.clearStorageSync();

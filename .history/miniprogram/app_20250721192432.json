@@ -1,32 +1,26 @@
 {
-  "pages": [
-    "pages/index/index",
-    "pages/logs/logs",
-    "pages/home/home",
-    "pages/dynamic/dynamic",
-    "pages/experiment/experiment",
-    "pages/mine/mine"
-  ],
+  "pages": ["pages/index/index", "pages/logs/logs"],
   "subPackages": [
     {
       "root": "packageA",
-      "pages": [
-        "article/article",
-        "articleList/articleList",
-        "signIn/signIn"
-      ]
+      "pages": ["home/home", "mine/mine", "sign/sign"]
     }
   ],
   "window": {
     "navigationBarTextStyle": "black",
     "navigationStyle": "custom",
-    "enablePullDownRefresh": false
+    "enablePullDownRefresh": false,
+    "useComponents": {
+      "ax-modal": "/components/ax-modal/ax-modal"
+    }
   },
   "style": "v2",
   "renderer": "skyline",
   "rendererOptions": {
     "skyline": {
       "defaultDisplayBlock": true,
+      "defaultContentBox": true,
+      "tagNameStyleIsolation": "legacy",
       "disableABTest": true,
       "sdkVersionBegin": "3.0.0",
       "sdkVersionEnd": "15.255.255"

@@ -1,41 +1,91 @@
 // index.ts
+import { IAppOption } from "typings";
+
 // 获取应用实例
-const app = getApp<IAppOption>();
 export {};
-const defaultAvatarUrl = app.globalData.defaultAvatarUrl;
+const { globalData } = getApp<IAppOption>();
+const defaultAvatarUrl = globalData.defaultAvatarUrl;
 
 Page({
-  onLoad() {
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad(options) {
+    console.log("index", options);
+    switch (options.page) {
+      case "home":
+        {
+          this.setData({
+            cur: 1,
+          });
+        }
+        break;
+      case "mine":
+        {
+          this.setData({
+            cur: 5,
+          });
+        }
+        break;
+    }
     // const page = this.selectComponent(`#page${this.data.cur}`);
     // page.onLoad();
   },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady() {},
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow() {},
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
   onHide() {
-    const page = this.selectComponent(`#page${this.data.cur}`);
-    page.onLoad();
+    //  const page = this.selectComponent(`#page${this.data.cur}`);
+    //  page.onLoad();
   },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload() {},
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh() {},
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom() {},
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage() {},
+
   data: {
-    // motto: "Hello World",
+    cur: 1, // 选中的tabBarIndex
     userInfo: {
       avatarUrl: defaultAvatarUrl,
       nickName: "",
     },
-    hasUserInfo: false, // 判断是否登录
+    isSignIn: false, // 判断是否登录
     // canIUseGetUserProfile: wx.canIUse("getUserProfile"),
     // canIUseNicknameComp: wx.canIUse("input.type.nickname"),
-
-    cur: 1, // 选中的tabBarIndex
   },
   // 切换tabBar
   f_changeTab(e: any) {
-    console.log(e, 1);
-    // const page = this.selectComponent(`#page${e.detail}`);
-    // page.onLoad();
-
+    console.log(e.detail);
     this.setData({
       cur: Number(e.detail),
     });
-
-    // page.onShow();
   },
   // 事件处理函数
   bindViewTap() {
