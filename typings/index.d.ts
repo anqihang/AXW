@@ -13,8 +13,11 @@ interface IAppOption {
     windowInfo: WechatMiniprogram.WindowInfo; // 窗口信息
     location?: any; // 位置信息 经度longitude 纬度latitude
 
+    setting?: WechatMiniprogram.GetSettingSuccessCallbackResult;
     userAccount: Account;
+    // 获取小程序设置
   };
+  getSetting: () => void;
   userInfoReadyCallback?: WechatMiniprogram.GetUserInfoSuccessCallback;
 }
 type storage = {

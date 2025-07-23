@@ -12,11 +12,13 @@ App<IAppOption>({
     windowInfo: {} as WechatMiniprogram.WindowInfo,
     location: {},
 
+    setting: {} as WechatMiniprogram.GetSettingSuccessCallbackResult,
+    // 账号信息
     userAccount: {
       id: 0,
       username: "",
       nickName: "",
-      sex: 0,
+      sex: 0, // 0女 1男
       age: 0,
       phone: "",
       email: "",
@@ -34,12 +36,6 @@ App<IAppOption>({
     this.globalData.windowInfo = wx.getWindowInfo();
     console.log(this.globalData.windowInfo, "windowInfo");
 
-    wx.getSetting({
-      withSubscriptions: true,
-      success(res) {
-        console.log(res);
-      },
-    });
     // 获取局域网ip地址
     // wx.getLocalIPAddress({
     //   success: (res) => {
@@ -47,6 +43,16 @@ App<IAppOption>({
     //   },
     // });
     // 登录
-    // apiLogin();
+    apiLogin();
+  },
+  getSetting() {
+    const that = this;
+    wx.getSetting({
+      withSubscriptions: true,
+      success(res) {
+        console.log(res, "setting");
+        that.globalData.setting = res;
+      },
+    });
   },
 });

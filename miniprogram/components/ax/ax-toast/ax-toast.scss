@@ -6,6 +6,9 @@
   align-items: center;
   &_content {
     background: #000000f0;
+    max-width: 80vw;
+    max-height: 4em;
+    overflow:hidden;
     .icon {
       width: 64rpx;
       height: 64rpx;

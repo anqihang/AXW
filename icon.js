@@ -8,15 +8,16 @@ import { locate } from "@iconify/json";
  * @type {Record<string, string[]>}
  */
 const icons = {
-  mdi: ["home", "menu", "account-outline", "password-outline", "form-textbox-password", "eye-outline", "eye-off"],
-  "mdi-light": ["circle", "help-circle"],
-  tabler: ["search"],
-  gg: ["close-o"],
-  "line-md": ["confirm"],// 对号
-  "icon-park-outline": ["right"],
-  "material-symbols-light": ["error-outline"],
-  codicon: ["error"],
-  iconoir: ["warning-circle", "info-circle"],
+  mdi: ["home", "menu", "account-outline", "password-outline", "form-textbox-password", "eye-outline", "eye-off"],// 睁眼，闭眼
+  "mdi-light": ["circle", "help-circle"],// 圆圈，圆圈问号
+  tabler: ["search"], // 搜索
+  gg: ["close-o"], // 圆圈叉号
+  "line-md": ["confirm"], // 对号
+  "icon-park-outline": ["right"], // 右箭头
+  "material-symbols-light": ["error-outline"], // 圆圈叹号
+  codicon: ["error"], // 圆圈叉号
+  iconoir: ["warning-circle", "info-circle"], // 圆圈叹号，圆圈反叹号
+  bxs: ["like"], // 点赞
 };
 
 // Parse each icon set

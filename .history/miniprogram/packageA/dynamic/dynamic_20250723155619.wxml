@@ -1,0 +1,14 @@
+<!--pagesA/dynamic/dynamic.wxml-->
+<view class="Dynamic page transition-0" style="opacity:{{hidden?0:1}};visibility:{{hidden?'hidden':'visible'}};">
+  <nav-bar title="动态" backButton="{{false}}" homeButton="{{false}}" color="white" background="linear-gradient(45deg,#0081ff,#1cbbb4)"></nav-bar>
+  <scroll-view scroll-y type="custom" class="flex-1 overflow-hidden">
+    <grid-view type="masonry" main-axis-gap="8" cross-axis-gap="8" padding="[]">
+      <block wx:for="{{opusList}}" wx:key="id">
+          <view class="bg-white rounded-4 overflow-hidden">
+            <view></view>
+            <view></view>
+          </view>
+      </block>
+    </grid-view>
+  </scroll-view>
+</view>
