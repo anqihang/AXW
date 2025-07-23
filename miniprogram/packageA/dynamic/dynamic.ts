@@ -11,6 +11,6 @@ Component({
     },
   },
   data: {
-    opusList: [],
+    opusList: [{id:1,title:"title",nickName:"nickName",time:"time"},{id:2,title:"title"},{id:3,title:"title"}],
   },
 });

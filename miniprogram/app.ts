@@ -43,7 +43,7 @@ App<IAppOption>({
     //   },
     // });
     // 登录
-    apiLogin();
+    // apiLogin();
   },
   getSetting() {
     const that = this;

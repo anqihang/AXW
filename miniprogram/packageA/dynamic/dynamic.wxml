@@ -2,28 +2,26 @@
 <view class="Dynamic page transition-0" style="opacity:{{hidden?0:1}};visibility:{{hidden?'hidden':'visible'}};">
   <nav-bar title="动态" backButton="{{false}}" homeButton="{{false}}" color="white" background="linear-gradient(45deg,#0081ff,#1cbbb4)"></nav-bar>
   <scroll-view scroll-y type="custom" class="flex-1 overflow-hidden">
-    <grid-view type="masonry" main-axis-gap="8" cross-axis-gap="8" padding="[]">
+    <grid-view type="masonry" main-axis-gap="8" cross-axis-gap="8" padding="{{[12,12,12,12]}}">
       <block wx:for="{{opusList}}" wx:key="id">
-          <view class="bg-white rounded-4 overflow-hidden">
-            <view>
-              <image src="{{item.coverImg}}" class="w-full"></image>
-            </view>
-            <view class="flex align-center">
-              <view bind:tap="f_goUserHomePage">
-                <image src="{{item.avatar}}"></image>
-              <view>
-              <view class="flex-1">
-                <text overflow="ellipsis" max-lines="2">{{item.title}}</text>
-                <view class="text-dark-9 text-sm">
-                  <text overflow="ellipsis" max-lines="1">{{item.nickName}}</text>
-                  <text class="px-2">·</text>
-                  <text>{{item.time}}</text>
-                </view>
-              </view>
-              <view class="icon" bind:tap="f_upvote"></view>
-              <view class="icon" bind:tap="f_share"></view>
-            </view>
+        <view class="bg-white rounded-4 overflow-hidden">
+          <view>
+            <image src="{{item.coverImg}}" class="w-full"></image>
           </view>
+          <view class="flex align-center">
+              <image src="{{item.avatar}}" class="avatar"></image>
+                <view class="flex-1">
+                  <text overflow="ellipsis" max-lines="2">{{item.title}}</text>
+                  <view class="text-dark-9 text-sm flex">
+                    <text overflow="ellipsis" max-lines="1">{{item.nickName}}</text>
+                    <text class="px-2">·</text>
+                    <text>{{item.time}}</text>
+                  </view>
+                <view class="icon" bind:tap="f_upvote"></view>
+                <view class="icon" bind:tap="f_share"></view>
+              </view>
+          </view>
+        </view>
       </block>
     </grid-view>
   </scroll-view>

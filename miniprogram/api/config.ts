@@ -1,3 +1,5 @@
+import { IAppOption } from "typings";
+
 const { globalData } = getApp<IAppOption>();
 
 const URL = {
