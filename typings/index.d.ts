@@ -18,6 +18,7 @@ interface IAppOption {
     // 获取小程序设置
   };
   getSetting: () => void;
+  apiLogin: () => void;
   userInfoReadyCallback?: WechatMiniprogram.GetUserInfoSuccessCallback;
 }
 type storage = {

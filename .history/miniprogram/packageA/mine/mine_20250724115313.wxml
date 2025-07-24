@@ -1,8 +1,8 @@
 <!--pages/min/mine.wxml-->
 <view class="Mine page">
-  <view class="bg-gradual-blue absolute w-full h-full"></view>
   <scroll-view class="h-full overflow-hidden" scroll-y type="custom" enable-flex show-scrollbar="{{false}}">
-    <view class="relative h-full flex flex-col">
+    <view class="relative h-full">
+      <view class="bg-gradual-blue absolute w-full h-1_4"></view>
       <fake-nav></fake-nav>
       <view class="flex px-12 justify-between items-center" bind:tap="{{isSignIn?f_goTo('/packageB/accountSetting/accountSetting'):''}}">
         <view class="flex">
@@ -26,9 +26,8 @@
         </view>
       </view>
       <!--  -->
-      <view class="content flex-1 mt-12 rounded-t-8 overflow-hidden">
-      <view class="">
-        <view class="bg-white px-16 py-12 flex">
+      <view class="mt-12">
+        <view class="bg-white rounded-t-8 px-16 py-12 flex">
           <view class="flex-1 text-center">
             <text>2</text>
             <text>动态</text>
@@ -75,10 +74,7 @@
           <button class="flex-1" hover-class="btn-hover" bind:tap="f_signOut">登 出</button>
         </view>
       </view>
-      <view class="absolute w-full text-greyc-light bottom-4 text-center">
-        v{{globalData.appBaseInfo.version}} - {{globalData.deviceInfo.platform}}
-      </view>
-      </view>
+      <view class="absolute w-full text-greyc-light bottom-4 text-center">v{{globalData.appBaseInfo.version}} - {{globalData.deviceInfo.platform}}</view>
     </view>
   </scroll-view>
 </view>

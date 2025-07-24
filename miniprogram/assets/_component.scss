@@ -21,6 +21,16 @@
     height: 100%;
   }
 }
+.ax-icon-sm {
+  width: 36rpx;
+  height: 36rpx;
+  overflow: hidden;
+}
+.ax-icon-xs {
+  width: 24rpx;
+  height: 24rpx;
+  overflow: hidden;
+}
 
 .ax-image {
   overflow: hidden;
@@ -94,4 +104,3 @@ radio.ax-radio .wx-radio-input::before {
   transform: translate(-50%, -50%) scale(1);
   -webkit-transform: translate(-50%, -50%) scale(1);
 }
-

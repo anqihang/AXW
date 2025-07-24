@@ -20,13 +20,6 @@ Page({
           });
         }
         break;
-      case "dynamic":
-        {
-          this.setData({
-            cur: 2,
-          });
-        }
-        break;
       case "mine":
         {
           this.setData({

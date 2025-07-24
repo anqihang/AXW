@@ -1,0 +1,12 @@
+<!--index.wxml-->
+<view class="Index">
+  <!-- 首页 -->
+  <home class="main transition-0 {{cur!==1?'absolute z-0 opacity-0 visible':'relative z-1 opacity-10 visible'}}" hidden="{{cur!==1}}"></home>
+  <!-- 动态 -->
+  <dynamic class="main transition-0 {{cur!==2?'absolute z-0 opacity-0 visible':'relative z-1 opacity-10 visible'}}" hidden="{{cur!==2}}"></dynamic>
+  <!-- 实验 -->
+  <!-- <experiment class="main" wx:if="{{cur===4}}"></experiment> -->
+  <!-- 我的 -->
+  <mine class="main transition-0 {{cur!==5?'absolute z-0 opacity-0 visible':'relative z-1 opacity-10 visible'}}" hidden="{{cur!==5}}"></mine>
+</view>
+<tab-bar bind:changeTabBar="f_changeTab" cur="{{cur}}"></tab-bar>

@@ -7,20 +7,18 @@
           <view>
             <image src="{{item.coverImg}}" class="w-full"></image>
           </view>
-          <view class="flex items-center px-8">
-              <view class="mr-4">
-                <image src="{{item.avatar}}" class="avatar bg-gray-e"></image>
-              </view>
-              <view class="flex-1">
+          <view class="flex align-center">
+              <image src="{{item.avatar}}" class="avatar"></image>
+                <view class="flex-1">
                   <text overflow="ellipsis" max-lines="2">{{item.title}}</text>
                   <view class="text-dark-9 text-sm flex">
                     <text overflow="ellipsis" max-lines="1">{{item.nickName}}</text>
                     <text class="px-2">·</text>
-                    <text class="text-nowrap">{{item.time}}</text>
+                    <text>{{item.time}}</text>
                   </view>
+                <view class="icon" bind:tap="f_upvote"></view>
+                <view class="icon" bind:tap="f_share"></view>
               </view>
-              <span class="ax-icon-sm icon--bxs icon--bxs--like bg-gray-a ml-4" bind:tap="f_upvote"></span>
-              <span class="ax-icon-sm icon--carbon icon--carbon--overflow-menu-vertical bg-gray-a ml-4" bind:tap="f_share"></span>
           </view>
         </view>
       </block>
