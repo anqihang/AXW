@@ -17,12 +17,7 @@
     "minified": true,
     "enhance": true,
     "showShadowRootInWxmlPanel": false,
-    "packNpmRelationList": [
-      {
-        "packageJsonPath": "./package.json",
-        "miniprogramNpmDistDir": "./miniprogram/"
-      }
-    ],
+    "packNpmRelationList": [],
     "ignoreUploadUnusedFiles": true,
     "compileHotReLoad": false,
     "skylineRenderEnable": true,
@@ -34,7 +29,7 @@
     "minifyWXML": true,
     "minifyWXSS": true,
     "uploadWithSourceMap": true,
-    "packNpmManually": true,
+    "packNpmManually": false,
     "localPlugins": false,
     "disableUseStrict": false,
     "disableSWC": true
@@ -48,9 +43,9 @@
     "tabSize": 2
   },
   "libVersion": "trial",
-  "appid": "wx696cabc67851a6aa",
   "packOptions": {
     "ignore": [],
     "include": []
-  }
+  },
+  "appid": "wx696cabc67851a6aa"
 }

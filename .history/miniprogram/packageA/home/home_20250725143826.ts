@@ -2,16 +2,53 @@ Component({
   properties: {
     hidden: {
       type: Boolean,
-      value: false,
-      observer(e) {
-        console.log("home", e);
+      value: true,
+      observer(v) {
+        if (!v) {
+          console.log("home加载");
+        }
       },
     },
+  },
+  // 监视器
+  observers: {},
+  // 组件生命周期
+  lifetimes: {
+    created() {
+      console.log("home created");
+    },
+    attached() {
+      console.log("home attached");
+      if (!this.properties.hidden) {
+        const query = this.createSelectorQuery();
+        query
+          .select("#banner")
+          .boundingClientRect((rect) => {
+            console.log("home.banner", rect);
+            this.setData({
+              swiperHeight: rect?.width / 12 / 5,
+            });
+          })
+          .exec();
+
+        this.f_init();
+      }
+    },
+    ready() {},
+    moved() {},
+    detached() {},
+    error() {},
+  },
+  // 页面生命周期
+  pageLifetimes: {
+    show() {},
+    hide() {},
   },
   /**
    * 页面的初始数据
    */
   data: {
+    scrollTop: 0,
     swiperHeight: 0,
     // 轮播图
     swiperList: [
@@ -29,7 +66,6 @@ Component({
       { id: 7, title: "帖子" },
       { id: 8, title: "帖子" },
     ],
-    selectCategoryId: 1,
     // 列表
     textList: [
       {
@@ -41,41 +77,26 @@ Component({
       },
       {
         id: 2,
-        cover: "/static/test/rain.jpg",
+        cover: "/static/test/rain.webp",
         title: "这里是标题，应该有两行的最多显示出来，多余的省略号处理",
         author: "这里是作者信息",
         subscribeTime: "2024年7月1日",
       },
     ],
   },
-  lifetimes: {
-    created() {
-      console.log("home");
-    },
-    attached() {},
-    ready() {
-      const query = this.createSelectorQuery();
-      query
-        .select("#banner")
-        .boundingClientRect((rect) => {
-          console.log(rect, "项目");
-          this.setData({
-            swiperHeight: rect?.width / 2.4,
-          });
-        })
-        .exec();
-    },
-  },
-  pageLifetimes: {
-    show() {},
-    hide() {},
-  },
+
   methods: {
-    getRect() {},
-    changeSelect(e: any) {
+    f_init() {},
+    f_refresh() {},
+    f_scroll(e: any) {
       console.log(e);
       this.setData({
-        selectCategoryId: Number(e.currentTarget.id),
+        scrollTop: e.detail.scrollTop,
+      });
+    },
+    f_scrollTop() {
+      this.setData({
+        scrollTop: 0,
       });
     },
     f_goArticle(e: any) {

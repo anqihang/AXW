@@ -29,7 +29,7 @@ Component<Data, ComponentProp, ComponentMethod>({
     opusList: [
       { id: 1, title: "title", nickName: "nickName", time: new Date("2025-07-12"), timeTick: "" },
       { id: 2, title: "title", nickName: "nickName", time: new Date("2025-07-12"), timeTick: "" },
-      { id: 3, title: "title", nickName: "nickName", time: new Date("2024-01-01"), timeTick: "" },
+      { id: 3, title: "title", nickName: "nickName", time: new Date("2025-07-12"), timeTick: "" },
     ],
   },
   methods: {
@@ -37,9 +37,7 @@ Component<Data, ComponentProp, ComponentMethod>({
       this.setData({
         opusList: this.data.opusList.map((item) => {
           // console.log(u_timeTick(item.time));
-          //
-          console.log(item.time, 23);
-          item.timeTick = u_timeTick(item.time);
+          // item.timeTick = u_timeTick(item.time);
           return item;
         }),
       });

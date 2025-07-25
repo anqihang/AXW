@@ -1,5 +1,5 @@
 import { RequestSSE } from "./request";
-import storage from "/utils/storage";
+import storage from "/MP/utils/storage";
 import { Account, BaseResponse } from "typings/api";
 
 

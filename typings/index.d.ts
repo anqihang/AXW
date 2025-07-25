@@ -27,3 +27,9 @@ type storage = {
   remove(key: string): void;
   clear(): void;
 };
+interface ComponentProp {
+  [key: string]: any;
+}
+interface ComponentMethod {
+  [key: string]: (...args: any[]) => any;
+}

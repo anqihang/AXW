@@ -16,7 +16,7 @@
                   <view class="text-dark-9 text-sm flex">
                     <text overflow="ellipsis" max-lines="1">{{item.nickName}}</text>
                     <text class="px-2">·</text>
-                    <text max-lines="1">{{item.time}}</text>
+                    <text max-lines="1">{{f_timeTick(item.time)}}</text>
                   </view>
               </view>
               <span class="ax-icon-sm icon--bxs icon--bxs--like bg-gray-a ml-4" bind:tap="f_upvote"></span>

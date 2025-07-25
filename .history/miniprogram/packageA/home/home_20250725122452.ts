@@ -15,18 +15,20 @@ Component({
   // 组件生命周期
   lifetimes: {
     created() {
-      console.log("home created");
+      // hidden true
+      // 1
     },
     attached() {
-      console.log("home attached");
+      // hidden false
+      // 2
       if (!this.properties.hidden) {
         const query = this.createSelectorQuery();
         query
           .select("#banner")
           .boundingClientRect((rect) => {
-            console.log("home.banner", rect);
+            console.log("1home.banner", rect);
             this.setData({
-              swiperHeight: rect?.width / 12 / 5,
+              swiperHeight: rect?.width / 2.4,
             });
           })
           .exec();

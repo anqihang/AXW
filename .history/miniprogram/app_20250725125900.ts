@@ -1,7 +1,6 @@
 import { IAppOption } from "typings";
 import { URL } from "/api/url";
 
-import { differenceInMonths } from "date-fns";
 // app.ts
 App<IAppOption>({
   globalData: {

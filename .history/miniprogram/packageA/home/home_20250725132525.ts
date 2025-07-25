@@ -14,17 +14,14 @@ Component({
   observers: {},
   // 组件生命周期
   lifetimes: {
-    created() {
-      console.log("home created");
-    },
+    created() {},
     attached() {
-      console.log("home attached");
       if (!this.properties.hidden) {
         const query = this.createSelectorQuery();
         query
           .select("#banner")
           .boundingClientRect((rect) => {
-            console.log("home.banner", rect);
+            console.log("1home.banner", rect);
             this.setData({
               swiperHeight: rect?.width / 12 / 5,
             });
