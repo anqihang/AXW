@@ -42,7 +42,8 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady() {},
+  onReady() {
+  },
 
   /**
    * 生命周期函数--监听页面显示
@@ -89,7 +90,6 @@ Page({
   },
   // 切换tabBar
   f_changeTab(e: any) {
-    console.log(e.detail);
     this.setData({
       cur: Number(e.detail),
     });

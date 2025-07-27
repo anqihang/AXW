@@ -53,9 +53,9 @@ export function hex2Str(hex: string): string {
 export function uuid(userId: number) {
   return userId + "-" + new Date().getTime();
 }
-export function u_timeTick(_time: string) {
+export function u_timeTick(_time: Date) {
   console.log(_time, 12);
-  const dif = (Date.now() - new Date(_time).getTime()) / 1000;
+  const dif = (Date.now() - _time.getTime()) / 1000;
   // 生成文章显示的上传时间，按刚刚，1分钟前，3分钟前，1小时前，2小时前，3小时前，5小时前，半天前，1天前，3天前，7天前，半月前，1月前，3月前，4月前等等
   if (dif < 60) return "刚刚";
   if (dif < 60 * 60) return dayjs().diff(_time, "minutes") + "分钟前";
@@ -65,6 +65,6 @@ export function u_timeTick(_time: string) {
   if (dif < 60 * 60 * 24 * 30) return "半月前";
   if (dif < 60 * 60 * 24 * 30 * 6) return dayjs().diff(_time, "month") + "月前";
   if (dif < 60 * 60 * 24 * 30 * 12) return "半年前";
-  return "返回";
+  return dayjs().diff(_time, "year") + "年前";
   // return differenceInYears(new Date(), time) + "年前";
 }

@@ -24,7 +24,6 @@ Component({
   data: {
     globalData,
     pages: PAGES,
-    isSignIn: !!storage.get("Authorization"),
     nickName: "安琦航",
     avatar: globalData.defaultAvatarUrl,
     identity: ["Lv.1", "VIP", "SVIP"],
@@ -95,7 +94,12 @@ Component({
     },
     // 退出登录
     f_signOut() {
-      apiSignOut();
+      apiSignOut().then(()=>{
+        globalData.isSignIn = false;
+        wx.reLaunch({
+          url:PAGES['home'].path
+        })
+      });
     },
   },
 });

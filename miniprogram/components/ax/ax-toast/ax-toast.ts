@@ -1,9 +1,5 @@
 Component({
   properties: {
-    show: {
-      type: Boolean,
-      value: false,
-    },
     text: {
       type: String,
       value: "",
@@ -30,6 +26,7 @@ Component({
     },
   },
   data: {
+    isShow:false,
     iconName: "",
   },
   lifetimes: {

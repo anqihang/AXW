@@ -3,24 +3,28 @@
   <scroll-view scroll-y type="custom" class="flex-1 overflow-hidden">
     <grid-view type="masonry" main-axis-gap="8" cross-axis-gap="8" padding="{{[12,12,12,12]}}">
       <block wx:for="{{opusList}}" wx:key="id">
-        <view class="bg-white rounded-4 overflow-hidden">
+        <view class="bg-white rounded-4 overflow-hidden" bind:tap="f_getList">
           <view>
             <image src="{{item.coverImg}}" class="w-full"></image>
           </view>
-          <view class="flex items-center px-8">
-              <view class="mr-4">
-                <image src="{{item.avatar}}" class="avatar bg-gray-e"></image>
+          <view class="flex px-8">
+            <view class="mr-4">
+              <image src="{{item.avatar}}" class="avatar bg-gray-e rounded-full overflow-hidden"></image>
+            </view>
+            <view class="flex-1 overflow-hidden">
+              <text overflow="ellipsis" max-lines="2">{{item.title}}</text>
+              <view class="text-dark-9 flex">
+                <text overflow="ellipsis" max-lines="1" class="flex-1  text-sm">{{item.nickName}}</text>
+                <text class="px-2 text-sm">·</text>
+                <text max-lines="1" class="whitespace-nowrap  text-sm">{{item.timeTick}}</text>
               </view>
-              <view class="flex-1">
-                  <text overflow="ellipsis" max-lines="2">{{item.title}}</text>
-                  <view class="text-dark-9 text-sm flex">
-                    <text overflow="ellipsis" max-lines="1">{{item.nickName}}</text>
-                    <text class="px-2">·</text>
-                    <text max-lines="1">{{item.time}}</text>
-                  </view>
-              </view>
-              <span class="ax-icon-sm icon--bxs icon--bxs--like bg-gray-a ml-4" bind:tap="f_upvote"></span>
-              <span class="ax-icon-sm icon--carbon icon--carbon--overflow-menu-vertical bg-gray-a ml-4" bind:tap="f_share"></span>
+            </view>
+            <view class="ml-4 flex items-center">
+              <span class="ax-icon-sm icon--bxs icon--bxs--like bg-gray-a" bind:tap="f_upvote"></span>
+            </view>
+            <view class=" ml-4 flex items-center">
+              <span class="ax-icon-sm icon--carbon icon--carbon--overflow-menu-vertical bg-gray-a" bind:tap="f_share"></span>
+            </view>
           </view>
         </view>
       </block>

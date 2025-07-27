@@ -3,7 +3,7 @@
 <view  class="Home page">
   <nav-bar title="首页" backButton="{{false}}" homeButton="{{false}}" color="white" background="linear-gradient(45deg,#0081ff,#1cbbb4)"></nav-bar>
 
-  <scroll-view scroll-y enable-flex type="custom" show-scrollbar="{{false}}" class="flex-1" scroll-top="{{scrollTop}}" bind:refresherrefresh="f_refresh" bind:scroll="f_scroll">
+  <scroll-view scroll-y enable-flex type="custom" show-scrollbar="{{true}}" class="flex-1 overflow-hidden" scroll-top="{{scrollTop}}" bind:refresherrefresh="f_refresh" bind:scroll="f_scroll">
     <!-- <sticky-section> -->
     <!-- <sticky-header> -->
     <!-- 轮播图 -->
@@ -36,7 +36,7 @@
     <!-- 文章 -->
     <grid-view class="posts" type="masonry" main-axis-gap="8" cross-axis-gap="8" padding="{{[12,12,0,12]}}">
       <block wx:for="{{textList}}" wx:key="id">
-        <view class="bg-white p-8 rounded-4" data-id="{{item.id}}" bind:tap="f_goArticle">
+        <view class="bg-white p-8 rounded-4" data-id="{{item.id}}" bind:tap="f_login">
           <image src="{{item.cover}}" mode="widthFix" class="mb-8" />
           <text class="text-md font-bold" overflow="ellipsis" max-lines="{{2}}">{{item.title}}</text>
           <text class="text-xs mt-4">{{item.author}} {{item.subscribeTime}}</text>

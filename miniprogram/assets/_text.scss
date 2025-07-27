@@ -41,3 +41,8 @@
 .leading-1{
   line-height: 1;
 }
+@each $var in $whiteSpace {
+  .whitespace-#{$var}{
+    white-space:#{$var};
+  }
+}

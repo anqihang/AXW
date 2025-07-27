@@ -1,7 +1,7 @@
 import { IAppOption } from "typings";
+import storage from "./utils/storage";
 import { URL } from "/api/url";
 
-import { differenceInMonths } from "date-fns";
 // app.ts
 App<IAppOption>({
   globalData: {
@@ -27,6 +27,7 @@ App<IAppOption>({
       createTime: "",
       updateTime: "",
     },
+    isSignIn:false
   },
   onLaunch() {
     this.globalData.accountInfo = wx.getAccountInfoSync();
@@ -63,15 +64,17 @@ App<IAppOption>({
       success: (res) => {
         console.log("app.code", res);
         wx.request({
-          url: URL[this.globalData.accountInfo.miniProgram.envVersion] + "/login",
-          method: "GET",
+          url: "http://" + URL[this.globalData.accountInfo.miniProgram.envVersion] + "/login",
+          method: "POST",
           timeout: 1000 * 20,
           useHighPerformanceMode: this.globalData.deviceInfo.platform == "android" ? true : false, // 仅android
           data: {
             code: res.code,
           },
-          success(res) {
+          success({ data }: { data: { Authorization: string, RefreshAuthorization: string } }) {
             console.log("/login" + "请求成功", res);
+            storage.set("Authoriztion", data.Authorization);
+            storage.set("RefreshAuthorization", data.RefreshAuthorization);
           },
         });
       },

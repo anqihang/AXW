@@ -3,9 +3,29 @@ Component({
     checkedValue: {
       type: Array,
       value: [],
+      observer(v){
+        this.data.checkboxComp&&this.data.checkboxComp!.setData({
+          checked:v.includes(this.data.checkboxComp.data.value)
+        })
+      }
     },
   },
-  data: {},
+  relations: {
+    '../ax-checkbox/ax-checkbox': {
+      type: 'child',
+      linked(target) {
+        this.setData({
+          checkboxComp:target
+        })
+        target.setData({
+          checked:this.properties.checkedValue.includes(target.data.value)
+        })
+      }
+    }
+  },
+  data: {
+    checkboxComp:null
+  },
   methods: {
     f_checkChange(e: { detail: { value: string; checked: boolean } }) {
       if (e.detail.checked) {

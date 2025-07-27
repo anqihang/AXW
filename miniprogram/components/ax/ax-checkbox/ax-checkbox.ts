@@ -2,6 +2,14 @@ Component({
   options: {
     multipleSlots: true,
   },
+  relations:{
+    "../ax-checkbox-group/ax-checkbox-group":{
+      "type":"parent",
+      linked(target){
+        console.log(target)
+      }
+    }
+  },
   properties: {
     value: {
       type: String,
@@ -15,20 +23,19 @@ Component({
       type: String,
       value: "#39b54a",
     },
-    name1: {
-      type: String,
-      value: "",
-    },
+    checked:{
+      type:Boolean,
+      value:false
+    }
   },
   data: {
-    checked: false,
   },
   methods: {
     f_checkChange() {
       this.setData({
         checked: !this.data.checked,
       });
-      this.triggerEvent("change", { value: this.properties.value, checked: this.data.checked }, { bubbles: true, composed: true });
+      this.triggerEvent("change", { value: this.properties.value, checked: this.properties.checked }, { bubbles: true, composed: true });
     },
   },
 });

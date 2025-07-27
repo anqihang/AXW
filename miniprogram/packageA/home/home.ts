@@ -1,3 +1,5 @@
+import { login } from "/utils/util";
+
 Component({
   properties: {
     hidden: {
@@ -26,7 +28,7 @@ Component({
           .boundingClientRect((rect) => {
             console.log("home.banner", rect);
             this.setData({
-              swiperHeight: rect?.width / 12 / 5,
+              swiperHeight: rect?.width / 12 * 5,
             });
           })
           .exec();
@@ -82,6 +84,27 @@ Component({
         author: "这里是作者信息",
         subscribeTime: "2024年7月1日",
       },
+      {
+        id: 3,
+        cover: "/static/test/rain.webp",
+        title: "这里是标题，应该有两行的最多显示出来，多余的省略号处理",
+        author: "这里是作者信息",
+        subscribeTime: "2024年7月1日",
+      },
+      {
+        id: 4,
+        cover: "/static/test/rain.webp",
+        title: "这里是标题，应该有两行的最多显示出来，多余的省略号处理",
+        author: "这里是作者信息",
+        subscribeTime: "2024年7月1日",
+      },
+      {
+        id: 5,
+        cover: "/static/test/rain.webp",
+        title: "这里是标题，应该有两行的最多显示出来，多余的省略号处理",
+        author: "这里是作者信息",
+        subscribeTime: "2024年7月1日",
+      },
     ],
   },
 
@@ -89,10 +112,10 @@ Component({
     f_init() {},
     f_refresh() {},
     f_scroll(e: any) {
-      console.log(e);
-      this.setData({
-        scrollTop: e.detail.scrollTop,
-      });
+      // console.log("home.scroll",e);
+      // this.setData({
+      //   scrollTop: e.detail.scrollTop,
+      // });
     },
     f_scrollTop() {
       this.setData({
@@ -107,5 +130,8 @@ Component({
         },
       });
     },
+    f_login(){
+      login()
+    }
   },
 });

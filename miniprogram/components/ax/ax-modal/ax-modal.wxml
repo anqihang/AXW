@@ -10,9 +10,9 @@
       {{content}}
     </view>
     <view class="footer">
-      <view class="cancel {{cancelClass}}" bind:tap="cancel">{{cancelText}}</view>
-      <view class="confirm {{confirmClass}}" bind:tap="confirm">{{confirmText}}</view>
+      <view wx:if="{{showCancel}}" class="cancel {{cancelClass}}" bind:tap="f_cancel">{{cancelText}}</view>
+      <view wx:if="{{showConfirm}}" class="confirm {{confirmClass}}" bind:tap="confirm">{{confirmText}}</view>
     </view>
   </view>
-  <view class="mask" style="opacity: {{isShow?1:0}};visibility: {{isShow?'visible':'hidden'}};"></view>
+  <view class="mask" style="opacity: {{isShow?1:0}};visibility: {{isShow?'visible':'hidden'}};" bind:tap="f_cancel"></view>
 </root-portal>

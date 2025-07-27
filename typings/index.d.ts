@@ -15,6 +15,7 @@ interface IAppOption {
 
     setting?: WechatMiniprogram.GetSettingSuccessCallbackResult;
     userAccount: Account;
+    isSignIn:Boolean;
     // 获取小程序设置
   };
   getSetting: () => void;

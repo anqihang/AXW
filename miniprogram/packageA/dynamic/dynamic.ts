@@ -23,26 +23,26 @@ Component<Data, ComponentProp, ComponentMethod>({
       console.log("dynamic attached");
       this.f_getList();
     },
+    ready() {
+    }
   },
   pageLifetimes: {},
   data: {
     opusList: [
-      { id: 1, title: "title", nickName: "nickName", time: new Date("2025-07-12"), timeTick: "" },
-      { id: 2, title: "title", nickName: "nickName", time: new Date("2025-07-12"), timeTick: "" },
-      { id: 3, title: "title", nickName: "nickName", time: new Date("2024-01-01"), timeTick: "" },
+      { id: 1, title: "title", nickName: "nickName", time: null, timeTick: "" },
+      { id: 2, title: "title", nickName: "nickName", time: null, timeTick: "" },
+      { id: 3, title: "title", nickName: "nickName", time: null, timeTick: "" },
     ],
   },
   methods: {
     f_getList() {
       this.setData({
         opusList: this.data.opusList.map((item) => {
-          // console.log(u_timeTick(item.time));
-          //
-          console.log(item.time, 23);
+          item.time = new Date("2024-01-01");
           item.timeTick = u_timeTick(item.time);
           return item;
-        }),
-      });
+        })
+      })
     },
   },
 });

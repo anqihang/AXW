@@ -10,7 +10,7 @@
             <image class="w-56 h-56 rounded-full" src="{{avatar}}" mode="aspectFill" />
           </view>
           <view class="ml-16 flex flex-col justify-center">
-            <view wx:if="{{!isSignIn}}" class="flex text-lg text-gray-500 font-bold">
+            <view wx:if="{{!globalData.isSignIn}}" class="flex text-lg text-gray-500 font-bold">
               <navigator url="/packageA/sign/sign" open-type="navigate" class="text-lg px-8 text-white" hover-class="hover-sign">登录</navigator>
             </view>
             <block wx:else>
@@ -21,7 +21,7 @@
             </block>
           </view>
         </view>
-        <view class="h-full px-4" wx:if="{{isSignIn}}">
+        <view class="h-full px-4 flex items-center" wx:if="{{isSignIn}}">
           <span class="icon--icon-park-outline icon--icon-park-outline--right text-lg text-black bg-black"></span>
         </view>
       </view>

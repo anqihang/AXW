@@ -42,9 +42,9 @@
     display: flex;
 
     .cancel {
-      border-right: 1px solid #eeeeee;
       border-top: 1px solid #eeeeee;
       width: 50%;
+      flex:1;
       padding: 32rpx 0;
       font-size: 36rpx;
       font-weight: 800;
@@ -52,8 +52,10 @@
     }
 
     .confirm {
+      border-left: 1px solid #eeeeee;
       border-top: 1px solid #eeeeee;
       width: 50%;
+      flex:1;
       padding: 32rpx 0;
       font-size: 36rpx;
       font-weight: 800;

@@ -1,31 +1,53 @@
+import { ComponentMethod, ComponentProp, IAppOption } from "typings";
 import { apiCheckAccount, apiSignIn, apiSignUp } from "/api/index";
+import { PAGES } from "/router/pages";
 
-// const { globalData } = getApp<IAppOption>();
-Component({
+const { globalData } = getApp<IAppOption>();
+interface Data{
+  isAccount:Boolean,
+  username:string,
+  usernamePrompt:string,
+  isSignUp:Boolean,
+  password:string,
+  passwordPrompt:string,
+  captcha:string,
+  agreement:Boolean,
+  modal:WechatMiniprogram.Component.Instance<Record<string, any>, Record<string, any>, Record<string, any>, Record<string, any>, false>|null
+}
+Component<Data,ComponentProp,ComponentMethod>({
   data: {
-    isAccount: false,
-    username: "",
+    isAccount: true,
+    username: "15039579162",
     usernamePrompt: "",
     isSignUp: false,
-    password: "",
+    password: "1234567890",
     passwordPrompt: "",
     captcha: "",
     agreement: false,
+    modal:null,
   },
   lifetimes: {
-    created() {},
-    attached() {},
+    created() { },
+    attached() {
+      
+     },
+     ready(){
+      this.setData({
+        modal:this.selectComponent(".modal")
+      })
+     }
   },
   methods: {
     f_switchAccount() {
       this.setData({ isAccount: !this.data.isAccount });
     },
-    f_input(e: WechatMiniprogram.BaseEvent) {},
+    f_input(e: WechatMiniprogram.BaseEvent) { },
     f_blur(e: WechatMiniprogram.BaseEvent) {
       const id = e.currentTarget.dataset.id;
       if (id === "username") {
         this.f_check("username");
         apiCheckAccount(this.data.username).then((data) => {
+          console.log(data)
           this.setData({
             isSignUp: data.status,
           });
@@ -41,27 +63,42 @@ Component({
         this.f_check("captcha");
       }
     },
-    f_getCaptcha() {},
+    f_getCaptcha() { },
     f_switchAgreement(e: WechatMiniprogram.TouchEvent) {
       this.setData({ agreement: e.detail.checked });
     },
     async f_sign() {
-      if (!this.f_check()) return;
+      const ch = this.f_check();
+      console.log(ch)
+      if (!ch) return;
 
       if (!this.data.agreement) {
-        const modal = this.selectComponent(".modal");
-        modal.showModal({
+        this.data.modal!.showModal({
           content: "请先阅读并同意《用户服务协议》《隐私政策》",
           confirmText: "同意并登录",
-        });
+        }).then(() => {
+          this.setData({
+            agreement: true
+          })
+          this.sign();
+        }).catch(()=>{});
       } else {
-        if (!this.data.isSignUp) {
-          await apiSignUp({ username: this.data.username, password: this.data.password, captcha: this.data.captcha });
-        }
-        apiSignIn({ username: this.data.username, password: this.data.password }).then(() => {
-          wx.reLaunch({ url: "/pages/index/index" });
-        });
+        this.sign();
       }
+    },
+    async sign() {
+      if (!this.data.isSignUp) {
+       const isSignUp =  await apiSignUp({ username: this.data.username, password: this.data.password, captcha: this.data.captcha || void 0 });
+       if(!isSignUp){
+        this.data.modal!.showModal({
+          content:"注册失败",
+        }).catch(()=>{})
+       }
+      }
+      apiSignIn({ username: this.data.username, password: this.data.password }).then(() => {
+        globalData.isSignIn = true;
+        wx.reLaunch({ url: PAGES['home'].path });
+      });
     },
     f_check(type?: "username" | "password" | "captcha") {
       let pass = true;
@@ -112,9 +149,9 @@ Component({
           this.setData({
             captchaPrompt: prompt,
           });
+          console.log(3)
         }
       }
-
       return pass;
     },
   },

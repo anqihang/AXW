@@ -1,8 +1,6 @@
 // 字号
 $fontSize: ();
-$fontSize: map-merge(
-  (
-    xxs: 8,
+$fontSize: map-merge((xxs: 8,
     xs: 10,
     sm: 12,
     md: 14,
@@ -11,13 +9,10 @@ $fontSize: map-merge(
     2xl: 20,
     3xl: 22,
   ),
-  $fontSize
-);
+  $fontSize);
 // 字重
 $fontWeight: ();
-$fontWeight: map-merge(
-  (
-    thin: 100,
+$fontWeight: map-merge((thin: 100,
     extralight: 200,
     light: 300,
     normal: 400,
@@ -27,8 +22,7 @@ $fontWeight: map-merge(
     extrabold: 800,
     black: 900,
   ),
-  $fontWeight
-);
+  $fontWeight);
 // 主题色
 $red: #e54d42; // 嫣红
 $orange: #f37b1d; // 桔橙
@@ -60,9 +54,7 @@ $black: #333333; // 墨黑
 $white: #ffffff; // 雅白
 
 $colors: ();
-$colors: map-merge(
-  (
-    red: $red,
+$colors: map-merge((red: $red,
     orange: $orange,
     yellow: $yellow,
     olive: $olive,
@@ -77,8 +69,7 @@ $colors: map-merge(
     // grey会报错
     gray: $gray,
   ),
-  $colors
-);
+  $colors);
 //灰度
 $white: #ffffff;
 $gray-f: #f8f9fa;
@@ -99,9 +90,7 @@ $dark-1: #111111;
 $black: #000000;
 
 $grays: ();
-$grays: map-merge(
-  (
-    white: $white,
+$grays: map-merge((white: $white,
     gray-f: $gray-f,
     gray-e: $gray-e,
     gray-d: $gray-d,
@@ -110,13 +99,10 @@ $grays: map-merge(
     gray-a: $gray-a,
     gray: $gray-a,
   ),
-  $grays
-);
+  $grays);
 
 $darks: ();
-$darks: map-merge(
-  (
-    dark-9: $dark-9,
+$darks: map-merge((dark-9: $dark-9,
     dark-8: $dark-8,
     dark-7: $dark-7,
     dark-6: $dark-6,
@@ -127,24 +113,19 @@ $darks: map-merge(
     dark-1: $dark-1,
     black: $black,
   ),
-  $darks
-);
+  $darks);
 // 方向
-$directions: (
-  t: top,
+$directions: (t: top,
   r: right,
   b: bottom,
   l: left,
-  x: (
-    left,
+  x: (left,
     right,
   ),
-  y: (
-    top,
+  y: (top,
     bottom,
   ),
-  "": (
-    top,
+  "": (top,
     right,
     bottom,
     left,
@@ -156,3 +137,5 @@ $display: (block, inline, inline-block, flex, grid, none, inherit, initial, unse
 $positions: (static, relative, absolute, fixed, sticky);
 // 换行
 $textWrap: (wrap, nowrap, wrap-reverse);
+//
+$whiteSpace:(normal, nowrap, pre, pre-line, pre-wrap, 'break-spaces');
