@@ -1,4 +1,0 @@
-<!-- <view class="_checkbox" style="--color:{{color}}"> -->
-<checkbox value="{{value}}" checked="{{checked}}" disabled="{{disabled}}" color="{{color}}"  />
-<view class="_checkbox-icon {{checked?'checked':''}}"></view>
-<!-- </view> -->

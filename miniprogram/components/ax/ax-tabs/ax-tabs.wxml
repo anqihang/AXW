@@ -1,0 +1,18 @@
+<view class="ax_tabs">
+    <view class="_tabs">
+        <scroll-view class="header" scroll-x show-scrollbar="{{false}}">
+            <slot name="header" class="slot"></slot>
+            <view class="list">
+                <view class="tab" wx:for="{{tabs}}" wx:id="id">
+                    <view class="item">
+                        <text class="title">{{item.title}}</text>
+                        <view class="badge"></view>
+                    </view>
+                </view>
+                    <view class="underline">
+                    </view>
+            </view>
+        <scroll-view>
+    </view>
+    <!-- <slot name="content"></slot> -->
+</view>
