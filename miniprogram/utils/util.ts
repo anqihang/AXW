@@ -66,5 +66,4 @@ export function u_timeTick(_time: Date) {
   if (dif < 60 * 60 * 24 * 30 * 6) return dayjs().diff(_time, "month") + "月前";
   if (dif < 60 * 60 * 24 * 30 * 12) return "半年前";
   return dayjs().diff(_time, "year") + "年前";
-  // return differenceInYears(new Date(), time) + "年前";
 }

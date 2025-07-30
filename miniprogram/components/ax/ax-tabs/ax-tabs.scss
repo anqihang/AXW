@@ -1,24 +1,25 @@
-.ax-tabs {
-  flex: 1;
+.ax_tabs {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  ._tabs {
-    .header {
-      .slot:empty + .list {
-        display: flex;
-      }
+  & > .header {
+    .slot:empty + .content {
+      display: inline-block;
+    }
+    .content {
+      display: none;
+      padding: 0 0 2px;
+
       .list {
-        display: none;
+        display: flex;
 
         .tab {
-          flex: 1;
+          padding: 4px 12px 2px;
 
           .item {
             position: relative;
-            padding: 4px 12px;
 
-            .title {
+            .name {
             }
             .badge {
               position: absolute;
@@ -32,21 +33,23 @@
             }
           }
         }
+      }
 
-        .underline {
-          transition: all 0.3s linear;
-          height: 2px;
-          background: red;
-          border-radius: 999px;
-          width: 2em;
-        }
+      .underline {
+        transition: all 0.2s ease-in-out;
+        height: 2px;
+        background: black;
+        border-radius: 999px;
+        width: 2em;
       }
     }
   }
-  .content {
+  & > .content {
     flex: 1;
     display: flex;
-    flex-direction: column;
-    overflow: hidden;
+    transition: all 0.2s ease-in-out;
+    & > view {
+      width: 100%;
+    }
   }
 }

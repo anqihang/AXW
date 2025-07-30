@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "nav-bar": "/components/navBar/navBar",
+    "ax-tabs": "/components/ax/ax-tabs/ax-tabs"
+  }
+}

@@ -15,9 +15,8 @@
 
 .flex {
   display: flex;
-  &-1 {
-    flex: 1;
-  }
+  flex-direction: row;
+
   &-wrap {
     flex-wrap: wrap;
   }
@@ -26,5 +25,23 @@
     &-#{$name} {
       flex-direction: $value;
     }
+  }
+
+  @for $i from 1 through 12 {
+    &-#{$i} {
+      flex: $i;
+    }
+  }
+}
+
+@for $i from 0 through 12 {
+  .shrink-#{$i} {
+    flex-shrink: $i;
+  }
+  .grow-#{$i} {
+    flex-grow: $i;
+  }
+  .basis-#{$i} {
+    flex-basis: #{$i * 4}px;
   }
 }

@@ -1,0 +1,53 @@
+.ax_tabs {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  & > .header {
+    .slot:empty + .content {
+      display: inline-block;
+    }
+    .content {
+      display: none;
+      padding: 0 0 2px;
+
+      .list {
+        display: flex;
+
+        .tab {
+          padding: 4px 12px 2px;
+
+          .item {
+            position: relative;
+
+            .name {
+            }
+            .badge {
+              position: absolute;
+              right: -50%;
+              top: -50;
+              border-radius: 999px;
+              padding: 2px 4px;
+              font-size: 10px;
+              color: white;
+              background: red;
+            }
+          }
+        }
+      }
+
+      .underline {
+        transition: all 0.2s ease-in-out;
+        height: 2px;
+        background: black;
+        border-radius: 999px;
+        width: 2em;
+      }
+    }
+  }
+  & > .content {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+    transition: all 0.2s ease-in-out;
+  }
+}

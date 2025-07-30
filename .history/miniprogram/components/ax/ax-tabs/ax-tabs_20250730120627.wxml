@@ -1,0 +1,22 @@
+<view class="ax_tabs">
+    <view class="header">
+        <scroll-view scroll-x show-scrollbar="{{false}}">
+            <view  class="slot">
+                <slot name="header"></slot>
+            </view>
+            <view class="content">
+                <view class="list">
+                    <view class="tab" wx:for="{{tabs}}" wx:id="id">
+                        <view class="item">
+                            <text class="name">{{item.name}}</text>
+                            <view class="badge" wx:if="{{item.badge!==undefined&&item.badge!==null}}">{{item.badge}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="underline"></view>
+            </view>
+            <view>23</view>
+        </scroll-view>
+    </view>
+    <!-- <slot name="content"></slot> -->
+</view>

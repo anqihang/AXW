@@ -1,0 +1,4 @@
+<view class="Component page">
+    <nav-bar title="组件" backButton="{{false}}" homeButton="{{false}}" color="white" background="linear-gradient(45deg,#0081ff,#1cbbb4)"></nav-bar>
+    <ax-tabs tabs="{{tabsList}}"></ax-tabs>
+</view>

@@ -1,18 +1,25 @@
 <view class="ax_tabs">
-    <view class="_tabs">
-        <scroll-view class="header" scroll-x show-scrollbar="{{false}}">
-            <slot name="header" class="slot"></slot>
-            <view class="list">
-                <view class="tab" wx:for="{{tabs}}" wx:id="id">
-                    <view class="item">
-                        <text class="title">{{item.title}}</text>
-                        <view class="badge"></view>
-                    </view>
+    <view class="header {{headerClass}}" style="background:{{background}}">
+        <scroll-view scroll-y show-scrollbar="{{false}}" style="overflow:hidden;height:{{headerHeight}}px;">
+            <view class="height">
+                <view class="slot">
+                    <slot name="header"></slot>
                 </view>
-                    <view class="underline">
+                <view class="content">
+                    <view class="list">
+                        <view class="tab {{selectClass}}" wx:for="{{tabs}}" wx:id="id" data-index="{{index}}" bind:tap="f_change">
+                            <view class="item">
+                                <text class="name"  style="color:{{color}};{{fontStyle}}">{{item.name}}</text>
+                                <view class="badge" wx:if="{{item.badge!==undefined&&item.badge!==null}}">{{item.badge}}</view>
+                            </view>
+                        </view>
                     </view>
+                    <view class="underline"  style="{{fontStyle}};left:calc({{left}}px - 1em);color:{{underlineColor}}"></view>
+                </view>
             </view>
-        <scroll-view>
+        </scroll-view>
     </view>
-    <!-- <slot name="content"></slot> -->
+    <view class="content" style="transform:translateX(-{{100*curIndex}}%)">
+        <slot name="content"></slot>
+    </view>
 </view>
