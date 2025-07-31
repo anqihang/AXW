@@ -6,7 +6,6 @@ interface Data {
   left: number;
   curIndex: number;
   isScroll: boolean;
-  isReady: boolean;
 }
 Component<Data, ComponentProp, ComponentMethod>({
   options: {
@@ -57,14 +56,6 @@ Component<Data, ComponentProp, ComponentMethod>({
       value: "center",
       options: ["center", "flex-start", "flex-end", "space-around", "space-between", "space-evenly"],
     },
-    nameMapping: {
-      type: String,
-      value: "name",
-    },
-    badgeMapping: {
-      type: String,
-      value: "badge",
-    },
   },
   lifetimes: {
     attached() {},
@@ -82,6 +73,9 @@ Component<Data, ComponentProp, ComponentMethod>({
         .in(this)
         .select(".content")
         .boundingClientRect((res) => {
+          this.setData({
+            width: res.width,
+          });
           const parentLeft = res.left;
           const parentWidth = res.width;
           this.createSelectorQuery()
@@ -123,19 +117,25 @@ Component<Data, ComponentProp, ComponentMethod>({
     rectWidthList: [],
     curIndex: 0,
     isScroll: false,
-    isReady: false,
+    width: 0,
+    scrollLeft: 0,
   },
   methods: {
     f_change(e: WechatMiniprogram.BaseEvent) {
-      this.setData({
-        isReady: true,
-      });
       console.log(e);
-      console.log(this.data.width);
+      console.log(this.data.width)
       this.setData({
         curIndex: e.currentTarget.dataset.index,
         left: this.data.rectWidthList[e.currentTarget.dataset.index].left + this.data.rectWidthList[e.currentTarget.dataset.index].width / 2,
       });
+      // if (this.data.rectWidthList[e.currentTarget.dataset.index].left - this.data.scrollLeft > this.data.width / 2) {
+      //   this.setData({
+      //     scrollLeft:
+      //       this.data.rectWidthList[e.currentTarget.dataset.index].left -
+      //       this.data.rectWidthList[e.currentTarget.dataset.index].width / 2 -
+      //       this.data.width / 2,
+      //   });
+      // }
 
       this.triggerEvent("change", { index: e.currentTarget.dataset.index });
     },

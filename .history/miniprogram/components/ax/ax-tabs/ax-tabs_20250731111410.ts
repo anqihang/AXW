@@ -5,8 +5,6 @@ interface Data {
   rectWidthList: { left: number; width: number }[];
   left: number;
   curIndex: number;
-  isScroll: boolean;
-  isReady: boolean;
 }
 Component<Data, ComponentProp, ComponentMethod>({
   options: {
@@ -30,7 +28,7 @@ Component<Data, ComponentProp, ComponentMethod>({
     },
     background: {
       type: String,
-      value: "white",
+      value: "transparent",
     },
     underlineColor: {
       type: String,
@@ -57,14 +55,6 @@ Component<Data, ComponentProp, ComponentMethod>({
       value: "center",
       options: ["center", "flex-start", "flex-end", "space-around", "space-between", "space-evenly"],
     },
-    nameMapping: {
-      type: String,
-      value: "name",
-    },
-    badgeMapping: {
-      type: String,
-      value: "badge",
-    },
   },
   lifetimes: {
     attached() {},
@@ -88,28 +78,17 @@ Component<Data, ComponentProp, ComponentMethod>({
             .in(this)
             .selectAll(".tab")
             .boundingClientRect((res: any) => {
-              const setLeft = (res: any) => {
-                this.setData({
-                  rectWidthList: res.map((item: any) => ({ left: item.left - parentLeft, width: item.width })),
-                });
-                this.setData({
-                  left: res[0].left + res[0].width / 2,
-                });
-              };
-              if (res.at(-1)?.right > parentWidth) {
+              this.setData({
+                rectWidthList: res.map((item: any) => ({ left: item.left - parentLeft, width: item.width })),
+              });
+              this.setData({
+                left: res[0].left + res[0].width / 2,
+              });
+              console.log(res);
+              if (res[-1].width > parentWidth) {
                 this.setData({
                   center: false,
-                  isScroll: true,
                 });
-                this.createSelectorQuery()
-                  .in(this)
-                  .selectAll(".tab")
-                  .boundingClientRect((res: any) => {
-                    setLeft(res);
-                  })
-                  .exec();
-              } else {
-                setLeft(res);
               }
             })
             .exec();
@@ -122,21 +101,14 @@ Component<Data, ComponentProp, ComponentMethod>({
     left: 0,
     rectWidthList: [],
     curIndex: 0,
-    isScroll: false,
-    isReady: false,
   },
   methods: {
     f_change(e: WechatMiniprogram.BaseEvent) {
-      this.setData({
-        isReady: true,
-      });
       console.log(e);
-      console.log(this.data.width);
       this.setData({
         curIndex: e.currentTarget.dataset.index,
         left: this.data.rectWidthList[e.currentTarget.dataset.index].left + this.data.rectWidthList[e.currentTarget.dataset.index].width / 2,
       });
-
       this.triggerEvent("change", { index: e.currentTarget.dataset.index });
     },
   },

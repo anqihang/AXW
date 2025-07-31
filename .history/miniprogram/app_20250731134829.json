@@ -1,31 +1,18 @@
 {
-  "pages": [
-    "pages/index/index",
-    "pages/logs/logs"
-  ],
+  "pages": ["pages/index/index", "pages/logs/logs"],
   "subPackages": [
     {
       "root": "packageA",
-      "pages": [
-        "home/home",
-        "dynamic/dynamic",
-        "mine/mine",
-        "sign/sign"
-      ]
+      "pages": ["home/home", "dynamic/dynamic", "mine/mine", "sign/sign"]
     },
     {
       "root": "packageComponents",
-      "pages": [
-        "tabs/tabs",
-        "modal/modal",
-        "input/input",
-        "check/check"
-      ]
+      "pages": ["tabs/tabs"]
     }
   ],
   "usingComponents": {
     "ax-modal": "/components/ax/ax-modal/ax-modal",
-    "nav-bar": "/components/navBar/navBar"
+    "nav-bar":"/components/navBar/navBar"
   },
   "window": {
     "navigationBarTextStyle": "black",

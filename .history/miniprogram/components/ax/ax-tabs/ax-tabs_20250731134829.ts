@@ -6,7 +6,6 @@ interface Data {
   left: number;
   curIndex: number;
   isScroll: boolean;
-  isReady: boolean;
 }
 Component<Data, ComponentProp, ComponentMethod>({
   options: {
@@ -123,13 +122,9 @@ Component<Data, ComponentProp, ComponentMethod>({
     rectWidthList: [],
     curIndex: 0,
     isScroll: false,
-    isReady: false,
   },
   methods: {
     f_change(e: WechatMiniprogram.BaseEvent) {
-      this.setData({
-        isReady: true,
-      });
       console.log(e);
       console.log(this.data.width);
       this.setData({

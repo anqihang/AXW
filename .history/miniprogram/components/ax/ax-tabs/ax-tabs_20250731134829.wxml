@@ -1,6 +1,6 @@
 <view class="ax_tabs">
     <view class="header {{headerClass}}" style="background:{{background}}">
-        <scroll-view :scroll-x="{{center?false:true}}"  show-scrollbar="{{false}}" scroll-into-view="{{isReady?'tab_'+curIndex:''}}" 	scroll-with-animation scroll-into-view-alignment="center"  style="overflow:hidden;height:{{headerHeight}}px;">
+        <scroll-view :scroll-x="{{center?false:true}}"  show-scrollbar="{{false}}" scroll-into-view="tab_{{curIndex}}" 	scroll-with-animation="{{isReady}}" scroll-into-view-alignment="center"  style="overflow:hidden;height:{{headerHeight}}px;">
             <view class="height" >
                 <view class="slot">
                     <slot name="header"></slot>
@@ -20,6 +20,7 @@
         </scroll-view>
         <view class="overShadow" wx:if="{{isScroll}}" style="background:linear-gradient(to right,transparent,{{background}} 40%)"></view>
     </view>
+    {{left}}
     <view class="content" style="transform:translateX(-{{100*curIndex}}%)">
         <slot name="content"></slot>
     </view>

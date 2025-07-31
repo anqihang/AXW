@@ -1,16 +1,16 @@
 <view class="ax_tabs">
     <view class="header {{headerClass}}" style="background:{{background}}">
-        <scroll-view :scroll-x="{{center?false:true}}"  show-scrollbar="{{false}}" scroll-into-view="{{isReady?'tab_'+curIndex:''}}" 	scroll-with-animation scroll-into-view-alignment="center"  style="overflow:hidden;height:{{headerHeight}}px;">
+        <scroll-view :scroll-x="{{center?false:true}}"  show-scrollbar="{{false}}" scroll-into-view="tab_{{curIndex}}"  scroll-into-view-alignment="center"  style="overflow:hidden;height:{{headerHeight}}px;">
             <view class="height" >
                 <view class="slot">
                     <slot name="header"></slot>
                 </view>
-                <view class="content"  style="{{center?'width:100%;':''}}padding-right:{{isScroll?'3em':'0'}}">
+                <view class="content"  style="{{center?'width:100%;':''}}">
                     <view class="list" style="{{center?'justify-content:'+justify:''}}">
                         <view class="tab {{selectClass}}" wx:for="{{tabs}}" wx:id="id" id="tab_{{index}}" data-index="{{index}}" bind:tap="f_change">
                             <view class="item">
-                                <text class="name"  style="color:{{color}};{{fontStyle}}">{{item[nameMapping||"name"]}}</text>
-                                <view class="badge" wx:if="{{item.badge!==undefined&&item.badge!==null}}">{{item[badgeMapping||"badge"]}}</view>
+                                <text class="name"  style="color:{{color}};{{fontStyle}}">{{item.name}}</text>
+                                <view class="badge" wx:if="{{item.badge!==undefined&&item.badge!==null}}">{{item.badge}}</view>
                             </view>
                         </view>
                     </view>

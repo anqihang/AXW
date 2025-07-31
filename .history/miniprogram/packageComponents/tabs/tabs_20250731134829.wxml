@@ -1,0 +1,9 @@
+<view class="page">
+    <nav-bar title="组件" color="white" background="linear-gradient(45deg,#0081ff,#1cbbb4)"></nav-bar>
+    <ax-tabs tabs="{{tabsList}}" center>
+        <view slot="content" class="flex">
+            <view class="w-full shrink-0">1</view>
+            <view class="w-full shrink-0">2</view>
+        </view>
+    </ax-tabs>
+</view>
