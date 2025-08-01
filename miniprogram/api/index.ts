@@ -1,5 +1,5 @@
 import { RequestSSE } from "./request";
-import storage from "/utils/storage";
+import u_storage from "/utils/storage";
 import { Account, BaseResponse } from "typings/api";
 import { PAGES } from "/router/pages";
 
@@ -13,11 +13,11 @@ export function apiSignUp({ username, password, captcha }: { username: string; p
 // 登录
 export function apiSignIn({ username, password }: { username: string; password: string }) {
   return new Promise((resolve, reject) => {
-    RequestSSE<{ Authorization: string, RefreshAuthorization: string }>("/signIn", "POST", { data: { username, password } })
+    RequestSSE<{ Authorization: string; RefreshAuthorization: string }>("/signIn", "POST", { data: { username, password } })
       .then((data) => {
         // 更新带有 用户id 的token
-        storage.set("Authorization", data.Authorization);
-        storage.set("RefreshAuthorization", data.RefreshAuthorization)
+        u_storage.set("Authorization", data.Authorization);
+        u_storage.set("RefreshAuthorization", data.RefreshAuthorization);
         resolve(data);
       })
       .catch((err) => {
@@ -28,7 +28,7 @@ export function apiSignIn({ username, password }: { username: string; password: 
 // 登出
 export function apiSignOut() {
   return RequestSSE<BaseResponse>("/signOut", "POST").then(() => {
-    storage.clear();
+    u_storage.clear();
     wx.reLaunch({
       url: PAGES["home"].path,
     });

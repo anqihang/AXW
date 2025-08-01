@@ -1,6 +1,6 @@
 // import { apiSignOut } from "../../api";
 import { IAppOption } from "typings";
-import storage from "/utils/storage";
+import u_storage from "/utils/storage";
 import { PAGES } from "/router/pages";
 
 import { apiSignOut } from "/api/index";

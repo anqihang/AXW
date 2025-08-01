@@ -1,5 +1,5 @@
 import { IAppOption } from "typings";
-import storage from "./utils/storage";
+import u_storage from "./utils/storage";
 import { URL } from "/api/url";
 
 // app.ts
@@ -27,7 +27,7 @@ App<IAppOption>({
       createTime: "",
       updateTime: "",
     },
-    isSignIn:false
+    isSignIn: false,
   },
   onLaunch() {
     this.globalData.accountInfo = wx.getAccountInfoSync();
@@ -71,10 +71,10 @@ App<IAppOption>({
           data: {
             code: res.code,
           },
-          success({ data }: { data: { Authorization: string, RefreshAuthorization: string } }) {
+          success({ data }: { data: { Authorization: string; RefreshAuthorization: string } }) {
             console.log("/login" + "请求成功", res);
-            storage.set("Authorization", data.Authorization);
-            storage.set("RefreshAuthorization", data.RefreshAuthorization);
+            u_storage.set("Authorization", data.Authorization);
+            u_storage.set("RefreshAuthorization", data.RefreshAuthorization);
           },
         });
       },

@@ -22,7 +22,7 @@ interface IAppOption {
   apiLogin: () => void;
   userInfoReadyCallback?: WechatMiniprogram.GetUserInfoSuccessCallback;
 }
-type storage = {
+type Storage = {
   set(key: string, value: any, sync?: boolean): Promise<any>;
   get(key: string, sync?: boolean): any | Promise<any>;
   remove(key: string): void;

@@ -1,3 +1,5 @@
+import { Storage } from "typings";
+
 const Key = "AXW_";
 /**
  * @param {string} _key
@@ -93,4 +95,4 @@ export default {
   get,
   remove,
   clear,
-} as storage;
+} as Storage;

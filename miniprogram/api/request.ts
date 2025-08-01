@@ -1,5 +1,5 @@
-import { buf2hex, hex2Str } from "/utils/util";
-import storage from "../utils/storage";
+import { u_buf2hex, u_hex2Str, u_splicingJson } from "/utils/util";
+import u_storage from "../utils/storage";
 import { apiConfig } from "./config";
 import { ERRNO } from "./net_error";
 import { IAppOption } from "typings";
@@ -13,7 +13,7 @@ type BasicProps = {
   hideModal?: boolean;
 };
 type SSEEvent = {
-  onMessage: (e: String) => void;
+  onMessage: (e: any[]) => void;
   onConnect: () => void;
   onClose: () => void;
   onError: (e: any) => void;
@@ -44,7 +44,7 @@ export function refreshToken(): Promise<Boolean> {
       method: "POST",
       // 请求头，携带刷新令牌
       header: {
-        RefreshAuthorization: storage.get("RefreshAuthorization"),
+        RefreshAuthorization: u_storage.get("RefreshAuthorization"),
       },
       /**
        * 请求成功的回调函数
@@ -54,7 +54,7 @@ export function refreshToken(): Promise<Boolean> {
         // 检查响应状态码是否在 200 到 299 之间，表示请求成功
         if (res.statusCode >= 200 && res.statusCode < 300) {
           // 将新的访问令牌存储到本地
-          storage.set("Authorization", res.data?.Authorization);
+          u_storage.set("Authorization", res.data?.Authorization);
           // 标记刷新过程结束
           isRefreshing = false;
           // 遍历暂存的请求列表
@@ -121,7 +121,7 @@ export function RequestSSE(
       url: baseUrl + url,
       method,
       header: {
-        Authorization: storage.get("Authorization") || void 0,
+        Authorization: u_storage.get("Authorization") || void 0,
         ...header,
       },
       timeout: 1000 * (apiConfig.TIMEOUT || 20),
@@ -258,8 +258,9 @@ export function RequestSSE(
         }
       });
       requestTask.onChunkReceived((res) => {
-        const text = hex2Str(buf2hex(res.data));
-        onMessage && onMessage(text);
+        const text = u_hex2Str(u_buf2hex(res.data));
+        const sseArr = u_splicingJson(text);
+        onMessage && onMessage(sseArr);
       });
     }
   });
