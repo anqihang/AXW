@@ -5,115 +5,146 @@
   .w-#{$size} {
     width: #{$size * 2}rpx;
   }
+
   .h-#{$size} {
     height: #{$size * 2}rpx;
   }
 }
+
 @for $i from 2 through 10 {
   $end: $i - 1;
-  @for $j from 1 to $end + 1 {
+
+  @for $j from 1 to $end+1 {
     .w-#{$j}_#{$i} {
       width: #{$j / $i * 100%};
     }
+
     .h-#{$j}_#{$i} {
       height: #{$j / $i * 100%};
     }
   }
 }
+
 .w-full {
   width: 100%;
 }
+
 .h-full {
   height: 100%;
 }
+
 .w-screen {
   width: 100vw;
 }
-.w-height {
+
+.h-screen {
   height: 100vh;
 }
+
 // 边距
-@each $dir, $value in $directions {
+@each $dir,
+$value in $directions {
   @for $i from 1 through 80 {
     @if ($i % 2==0) {
       .p#{$dir}-#{$i} {
-        @if (type-of($value) == "list") {
+        @if (type-of($value)=="list") {
           @each $side in $value {
             padding-#{$side}: #{$i * 2}rpx;
           }
         }
-        @if (type-of($value) == "string") {
+
+        @if (type-of($value)=="string") {
           padding-#{$value}: #{$i * 2}rpx;
         }
       }
 
       .m#{$dir}-#{$i} {
-        @if (type-of($value) == "list") {
+        @if (type-of($value)=="list") {
           @each $side in $value {
             margin-#{$side}: #{$i * 2}rpx;
           }
         }
-        @if (type-of($value) == "string") {
+
+        @if (type-of($value)=="string") {
           margin-#{$value}: #{$i * 2}rpx;
         }
       }
     }
   }
 }
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
 }
+
 // 定位
 @each $type in $positions {
   .#{$type} {
     position: #{$type};
   }
 }
+
 @for $size from 0 through 80 {
   .top-#{$size} {
     top: #{$size * 2}rpx;
   }
+
   .-top-#{$size} {
     top: #{$size * 2}rpx;
   }
+
   .right-#{$size} {
     right: #{$size * 2}rpx;
   }
+
   .-right-#{$size} {
     right: #{$size * 2}rpx;
   }
+
   .bottom-#{$size} {
     bottom: #{$size * 2}rpx;
   }
+
   .-bottom-#{$size} {
     bottom: #{$size * 2}rpx;
   }
+
   .left-#{$size} {
     left: #{$size * 2}rpx;
   }
+
   .-left-#{$size} {
     left: #{$size * 2}rpx;
   }
 }
+
 @for $size from 0 through 80 {
   .z-#{$size} {
     z-index: $size;
   }
 }
+
+.z-999 {
+  z-index: 999;
+}
+
 // grid
 @for $size from 1 through 10 {
   .grid-cols-#{$size} {
-    & > view,
-    & > text,
-    & > block {
+
+    &>view,
+    &>text,
+    &>block {
       width: #{100% / $size};
     }
   }
 }
+
 .content-center {
   align-content: center;
 }
+
 // 显示方式
 @each $type in $display {
   .#{$type} {
@@ -125,6 +156,7 @@
 .border-box {
   box-sizing: border-box;
 }
+
 .content-box {
   box-sizing: content-box;
 }

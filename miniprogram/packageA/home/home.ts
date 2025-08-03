@@ -1,4 +1,3 @@
-import { login } from "/utils/util";
 
 Component({
   properties: {
@@ -35,6 +34,8 @@ Component({
 
         this.f_init();
       }
+      // home显示时触发
+      this.triggerEvent("homeShow",true);
     },
     ready() {},
     moved() {},
@@ -112,10 +113,6 @@ Component({
     f_init() {},
     f_refresh() {},
     f_scroll(e: any) {
-      // console.log("home.scroll",e);
-      // this.setData({
-      //   scrollTop: e.detail.scrollTop,
-      // });
     },
     f_scrollTop() {
       this.setData({
@@ -131,7 +128,6 @@ Component({
       });
     },
     f_login(){
-      login()
     }
   },
 });

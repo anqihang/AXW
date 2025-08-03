@@ -2,7 +2,7 @@
 import { IAppOption } from "typings";
 
 // 获取应用实例
-export {};
+export { };
 const { globalData } = getApp<IAppOption>();
 const defaultAvatarUrl = globalData.defaultAvatarUrl;
 
@@ -43,12 +43,17 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow() {},
+  onShow() {
+    // this.setData({
+    //   isLoadingMask:false
+    // })
+  },
 
   /**
    * 生命周期函数--监听页面隐藏
@@ -61,22 +66,22 @@ Page({
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload() {},
+  onUnload() { },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh() {},
+  onPullDownRefresh() { },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom() {},
+  onReachBottom() { },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage() {},
+  onShareAppMessage() { },
 
   data: {
     cur: 1, // 选中的tabBarIndex
@@ -87,6 +92,14 @@ Page({
     isSignIn: false, // 判断是否登录
     // canIUseGetUserProfile: wx.canIUse("getUserProfile"),
     // canIUseNicknameComp: wx.canIUse("input.type.nickname"),
+    isLoadingMask: true,
+  },
+  f_init() {
+    setTimeout(() => {
+      this.setData({
+        isLoadingMask: false
+      })
+    }, 200)
   },
   // 切换tabBar
   f_changeTab(e: any) {

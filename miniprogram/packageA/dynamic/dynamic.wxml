@@ -2,7 +2,7 @@
   <nav-bar title="动态" backButton="{{false}}" homeButton="{{false}}" color="white" background="linear-gradient(45deg,#0081ff,#1cbbb4)"></nav-bar>
   <scroll-view scroll-y type="custom" class="flex-1 overflow-hidden w-screen">
     <grid-view type="masonry" main-axis-gap="8" cross-axis-gap="8" cross-axis-count="{{crossCount}}" padding="{{[12,12,12,12]}}">
-      <block wx:for="{{opusList}}" wx:key="id" bind:tap="{{goTo(item.id)}}">
+      <block wx:for="{{opusList}}" wx:key="id">
         <view class="bg-white rounded-4 overflow-hidden" bind:tap="f_getList">
           <view>
             <image src="{{item.coverImg}}" class="w-full"></image>

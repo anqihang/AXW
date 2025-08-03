@@ -1,6 +1,10 @@
 <view class="Component page">
-    <nav-bar title="组件" backButton="{{false}}" homeButton="{{false}}" color="white" background="linear-gradient(45deg,#0081ff,#1cbbb4)"></nav-bar>
-    <scroll-view scroll-y class="flex-1">
-        <navigator url="/packageComponents/tabs/tabs">tabs</navigator>
-    </scroll-view>
+  <nav-bar title="组件" backButton="{{false}}" homeButton="{{false}}" color="white" background="linear-gradient(45deg,#0081ff,#1cbbb4)"></nav-bar>
+  <scroll-view scroll-y type="custom" class="flex-1 w-screen">
+    <grid-view type="masonry" main-axis-gap="8" cross-axis-gap="8" cross-axis-count="2" padding="{{[12,12,12,12]}}" class="h-full">
+      <block wx:for="{{components}}" wx:key="id">
+        <navigator url="{{item.path}}" class="text-center py-8 rounded-4 text-white" style="background:pink">{{item.name}}</navigator>
+      </block>
+    </grid-view>
+  </scroll-view>
 </view>
