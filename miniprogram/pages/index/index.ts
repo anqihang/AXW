@@ -93,6 +93,8 @@ Page({
     // canIUseGetUserProfile: wx.canIUse("getUserProfile"),
     // canIUseNicknameComp: wx.canIUse("input.type.nickname"),
     isLoadingMask: true,
+    maskVisible: true,
+    visible: [true,false,false,false,false]
   },
   f_init() {
     setTimeout(() => {
@@ -142,4 +144,16 @@ Page({
       },
     });
   },
+  f_transitionEnd(e) {
+    // let v = [false,false,false,false,false];
+
+    // this.setData({
+    //   visible:
+    // })
+  },
+  f_maskTransitionEnd() {
+    this.setData({
+      maskVsible: false,
+    })
+  }
 });

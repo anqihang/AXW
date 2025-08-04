@@ -1,7 +1,7 @@
-<root-portal enable="{{show}}">
-    <view class="ax_toast" style="opacity:{{isShow?'1':'0'}};visibility:{{visibly?'visible':'hidden'}};" bind:transitionend="transitionEnd">
+<root-portal enable="true">
+    <view class="ax_toast" style="opacity:{{isShow?1:0}};visibility:{{visible?'visible':'hidden'}};" bind:transitionend="f_transitionEnd">
         <view wx:if="{{icon}}" class="icon {{iconName}}"></view>
-        <view class="text">{{text}}</view>
+        <view class="text">{{title}}</view>
     </view>
-    <view wx:if="{{hideMask}}" class="mask"  style="opacity:{{isShow?'1':'0'}};visibility:{{visibly?'visible':'hidden'}};{{maskStyle}}"></view>
+    <view wx:if="{{!hideMask}}" class="mask"  style="opacity:{{isShow?'1':'0'}};visibility:{{visible?'visible':'hidden'}};{{maskStyle}}"></view>
 </root-portal>

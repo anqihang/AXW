@@ -6,7 +6,7 @@ Component({
     },
     duration: {
       type: Number,
-      value: 1500,
+      value: 1000,
     },
     icon: {
       type: String,
@@ -30,8 +30,8 @@ Component({
     isShow: false,
     visible: false,
     iconName: "",
-    promiseResolve: (v: any) => {},
-    promiseReject: () => {},
+    promiseResolve: (v: any) => { },
+    promiseReject: () => { },
   },
   lifetimes: {
     attached() {
@@ -67,32 +67,36 @@ Component({
       }
     },
     ready() {
-      setTimeout(() => {
-        this.setData({
-          show: false,
-        });
-        this.data.promiseResolve("");
-      }, this.data.duration || this.properties.duration);
     },
-    detached() {},
+    detached() { },
   },
   methods: {
-    f_showToast(options: { title: string; icon: string; duration: number }) {
+    showToast(options: { text: string; icon: string; duration: number, hideMask: boolean }) {
+      console.log(options)
       return new Promise((resolve, reject) => {
         this.setData({
           isShow: true,
           visible: true,
-          [options?.title ? "title" : ""]: options?.title,
+          [options?.text ? "title" : ""]: options?.text,
           [options?.icon ? "icon" : ""]: options?.icon,
           [options?.duration ? "duration" : ""]: options?.duration,
+          [options?.hideMask ? "hideMask" : ""]: options?.hideMask,
 
           promiseResolve: resolve,
           promiseReject: reject,
         });
+
       });
     },
     f_transitionEnd() {
-      if (!this.data.isShow) {
+      if (this.data.isShow) {
+        setTimeout(() => {
+          this.setData({
+            isShow: false,
+          });
+          this.data.promiseResolve("");
+        }, this.data.duration || this.properties.duration);
+      } else {
         this.setData({
           visible: false,
         });

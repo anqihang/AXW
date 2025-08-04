@@ -1,18 +1,18 @@
 <!--index.wxml-->
 <view class="Index">
   <!-- 首页 -->
-  <home class="main transition-0 {{cur!==1?'absolute z-0 opacity-0 invisible':'relative z-10 opacity-100 visible'}}" hidden="{{cur!==1}}" bind:homeShow="f_init"></home>
+  <home class="main transition-0 {{cur!==1?'absolute z-0 opacity-0 ':'relative z-10 opacity-100 visible'}} {{visible[0]?'':'invisible'}}" hidden="{{cur!==1}}"  data-index="1" bind:homeShow="f_init" bind:transitionend="f_transitionEnd"></home>
   <!-- 动态 -->
-  <dynamic class="main transition-0 {{cur!==2?'absolute z-0 opacity-0 invisible':'relative z-10 opacity-100 visible'}}" hidden="{{cur!==2}}"></dynamic>
+  <dynamic class="main transition-0 {{cur!==2?'absolute z-0 opacity-0 ':'relative z-10 opacity-100 visible'}}  {{visible[1]?'':'invisible'}}" hidden="{{cur!==2}}"  data-index="2" bind:transitionend="f_transitionEnd"></dynamic>
   <!-- 组件 -->
-  <component class="main transition-0 {{cur!==3?'absolute z-0 opacity-0 invisible':'relative z-10 opacity-100 visible'}}"  hidden="{{cur!==3}}"></component>
+  <component class="main transition-0 {{cur!==3?'absolute z-0 opacity-0 ':'relative z-10 opacity-100 visible'}}  {{visible[2]?'':'invisible'}}" hidden="{{cur!==3}}"  data-index="3" bind:transitionend="f_transitionEnd"></component>
   <!-- 实验 -->
   <!-- <experiment class="main" wx:if="{{cur===4}}"></experiment> -->
   <!-- 我的 -->
-  <mine class="main transition-0 {{cur!==5?'absolute z-0 opacity-0 invisible':'relative z-10 opacity-100 visible'}}" hidden="{{cur!==5}}"></mine>
+  <mine class="main transition-0 {{cur!==5?'absolute z-0 opacity-0 ':'relative z-10 opacity-100 visible'}}  {{visible[4]?'':'invisible'}}" hidden="{{cur!==5}}" data-index="5" bind:transitionend="f_transitionEnd"></mine>
 </view>
 
-<view class="h-screen w-screen absolute t-0 bg-white flex justify-center items-center transition-0 {{!isLoadingMask?'z-0 opacity-0 invisible':'z-999 opacity-100 visible'}}">
+<view class="h-screen w-screen absolute t-0 bg-white flex justify-center items-center transition-0 {{!isLoadingMask?'z-0 opacity-0':'z-999 opacity-100'}} {{maskVisible?'visible':'invisible'}}" bind:transitionend="f_maskTransitionEnd">
   <view>加载中。。。</view>
 </view>
 

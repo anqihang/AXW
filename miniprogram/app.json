@@ -19,7 +19,8 @@
         "tabs/tabs",
         "modal/modal",
         "input/input",
-        "check/check"
+        "check/check",
+        "toast/toast"
       ]
     }
   ],

@@ -51,8 +51,8 @@ Component<Data, ComponentProp, ComponentMethod>({
   data: {
     isShow: false,
     visible: false,
-    promiseResolve: () => {},
-    promiseReject: () => {},
+    promiseResolve: (v?:any) => {},
+    promiseReject: (v?:any) => {},
   },
   methods: {
     showModal(options: { title: string; content: string; cancelText: string; confirmText: string; showCancel: boolean; showConfirm: boolean }) {
@@ -83,11 +83,6 @@ Component<Data, ComponentProp, ComponentMethod>({
         isShow: false,
       });
       this.data.promiseResolve("confirm");
-    },
-    close() {
-      this.setData({
-        isShow: false,
-      });
     },
     f_transitionEnd() {
       if (!this.data.isShow) {

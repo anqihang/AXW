@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "ax-toast":"/components/ax/ax-toast/ax-toast"
+  }
+}
