@@ -76,7 +76,7 @@ Component<Data, ComponentProp, ComponentMethod>({
       this.setData({
         isShow: false,
       });
-      this.data.promiseReject("cancel");
+      this.data.promiseReject("");
     },
     f_confirm() {
       this.setData({

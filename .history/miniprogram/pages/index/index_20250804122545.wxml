@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<view class="Index">
+  <!-- 首页 -->
+  <home class="main transition-0 {{cur!==1?'absolute z-0 opacity-0 visible':'relative z-10 opacity-100 visible'}}" hidden="{{cur!==1}}" bind:homeShow="f_init"></home>
+  <!-- 动态 -->
+  <dynamic class="main transition-0 {{cur!==2?'absolute z-0 opacity-0 visible':'relative z-10 opacity-100 visible'}}" hidden="{{cur!==2}}"></dynamic>
+  <!-- 组件 -->
+  <component class="main transition-0 {{cur!==3?'absolute z-0 opacity-0 visible':'relative z-10 opacity-100 visible'}}"  hidden="{{cur!==3}}"></component>
+  <!-- 实验 -->
+  <!-- <experiment class="main" wx:if="{{cur===4}}"></experiment> -->
+  <!-- 我的 -->
+  <mine class="main transition-0 {{cur!==5?'absolute z-0 opacity-0 visible':'relative z-10 opacity-100 visible'}}" hidden="{{cur!==5}}"></mine>
+  
+</view>
+<view class="h-screen w-screen absolute t-0 bg-white flex justify-center items-center transition-0 {{!isLoadingMask?'z-0 opacity-0 visible':'z-999 opacity-100 visible'}}">
+  <view>加载中。。。</view>
+</view>
+
+<tab-bar bind:changeTabBar="f_changeTab" cur="{{cur}}"></tab-bar>
