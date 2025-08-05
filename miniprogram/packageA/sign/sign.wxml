@@ -1,9 +1,10 @@
+<!-- 登录 -->
 <view id="Sign" class="page">
   <nav-bar title="" background="transparent"></nav-bar>
   <view class="flex-1 px-16">
     <view class="pt-16">
       <text class="text-3xl font-bold">欢迎使用 安 许</text>
-      <text class="text-md mt-4">登录后可使用，享受优质服务</text>
+      <text class="text-md mt-4">登录后可使用更功能，享受优质服务</text>
     </view>
     <view style="opacity:{{isAccount?1:0}};visibility: {{isAccount?'visibility':'hidden'}};{{isAccount?'':'position:absolute'}}" class="transition-0">
       <view class="pt-48 pb-32">
@@ -34,7 +35,7 @@
         <image src="" mode="" class="bg-light-orange" style="height:calc(90vw / 16 * 9)" />
       </view>
     </view>
-    
+
     <view class="flex">
       <button class="bg-green text-white flex-1 rounded-full text-lg font-medium" open-type="{{isAccount?'':'getPhoneNumber'}}" bind:tap="{{isAccount?'f_sign':''}}">
         {{isAccount?"注册并登录":"手机号快速验证"}}

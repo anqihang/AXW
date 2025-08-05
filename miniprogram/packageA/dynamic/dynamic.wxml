@@ -1,3 +1,4 @@
+<!-- 动态 -->
 <view class="Dynamic page">
   <nav-bar title="动态" backButton="{{false}}" homeButton="{{false}}" color="white" background="linear-gradient(45deg,#0081ff,#1cbbb4)"></nav-bar>
   <scroll-view scroll-y type="custom" class="flex-1 overflow-hidden w-screen">

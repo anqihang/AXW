@@ -1,6 +1,7 @@
+<!--index.wxml-->
 <view class="Index">
   <!-- 首页 -->
-  <home class="main transition-0 {{visible[0]||cur===1?'visible':'invisible'}} {{cur!==1?'absolute z-0 opacity-0':'relative z-10 opacity-100 visible'}} " hidden="{{cur!==1}}"  data-index="1"  bind:transitionend="f_transitionEnd"></home>
+  <home class="main transition-0 {{visible[0]||cur===1?'visible':'invisible'}} {{cur!==1?'absolute z-0 opacity-0':'relative z-10 opacity-100 visible'}} " hidden="{{cur!==1}}"  data-index="1" bind:homeShow="f_init" bind:transitionend="f_transitionEnd"></home>
   <!-- 动态 -->
   <dynamic class="main transition-0 {{visible[1]||cur===2?'visible':'invisible'}} {{cur!==2?'absolute z-0 opacity-0':'relative z-10 opacity-100 visible'}}" hidden="{{cur!==2}}"  data-index="2" bind:transitionend="f_transitionEnd"></dynamic>
   <!-- 组件 -->
@@ -8,7 +9,7 @@
   <!-- 实验 -->
   <!-- <experiment class="main" wx:if="{{cur===4}}"></experiment> -->
   <!-- 我的 -->
-  <mine class="main transition-0 {{visible[4]||cur===5?'visible':'invisible'}} {{cur!==5?'absolute z-0 opacity-0':'relative z-10 opacity-100 visible'}}" hidden="{{cur!==5}}" data-index="5" bind:transitionend="f_transitionEnd"></mine>
+  <mine class="main transition-0  {{visible[4]||cur===5?'visible':'invisible'}} {{cur!==5?'absolute z-0 opacity-0':'relative z-10 opacity-100 visible'}}" hidden="{{cur!==5}}" data-index="5" bind:transitionend="f_transitionEnd"></mine>
 </view>
 
 <view class="h-screen w-screen absolute t-0 bg-white flex justify-center items-center transition-0 {{!isLoadingMask?'z-0 opacity-0':'z-999 opacity-100'}} {{maskVisible?'visible':'invisible'}}" bind:transitionend="f_maskTransitionEnd">

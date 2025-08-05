@@ -3,15 +3,7 @@
   "subPackages": [
     {
       "root": "packageA",
-      "pages": [
-        "home/home",
-        "dynamic/dynamic",
-        "mine/mine",
-        "sign/sign",
-        "webview/webview",
-        "legal/privacyPolicy/privacyPolicy",
-        "legal/userAgreement/userAgreement"
-      ]
+      "pages": ["home/home", "dynamic/dynamic", "mine/mine", "sign/sign"]
     },
     {
       "root": "packageComponents",

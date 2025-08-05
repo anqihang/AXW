@@ -4,14 +4,15 @@ import { PAGES } from "/router/pages";
 
 const { globalData } = getApp<IAppOption>();
 interface Data {
-  isAccount: Boolean;
+  isAccount: boolean;
   username: string;
   usernamePrompt: string;
-  isSignUp: Boolean;
+  isSignUp: boolean;
   password: string;
   passwordPrompt: string;
   captcha: string;
-  agreement: Boolean;
+  agreement: boolean;
+  isRead: boolean;
   modal: WechatMiniprogram.Component.Instance<Record<string, any>, Record<string, any>, Record<string, any>, Record<string, any>, false> | null;
 }
 Component<Data, ComponentProp, ComponentMethod>({
@@ -24,6 +25,7 @@ Component<Data, ComponentProp, ComponentMethod>({
     passwordPrompt: "",
     captcha: "",
     agreement: false,
+    isRead: false,
     modal: null,
   },
   lifetimes: {

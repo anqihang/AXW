@@ -1,0 +1,6 @@
+<view class="PersonalInfo page">
+    <nav-bar title="个人信息"></nav-bar>
+    <view class="xs-flex-1 fakeBarr overflow-hidden">
+        <view></view>
+    </view>
+</view>

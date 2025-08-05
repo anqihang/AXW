@@ -1,4 +1,4 @@
-<!--pages/min/mine.wxml-->
+<!--我的-->
 <view class="Mine page">
   <view class="bg-gradual-blue absolute w-full h-full"></view>
   <scroll-view class="h-full overflow-hidden" scroll-y type="custom" enable-flex show-scrollbar="{{false}}">

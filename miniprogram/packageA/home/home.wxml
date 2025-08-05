@@ -1,6 +1,5 @@
-<!--pages/home/home.wxml-->
-<!-- style="opacity:{{hidden?0:1}};visibility:{{hidden?'hidden':'visible'}};" -->
-<view  class="Home page">
+<!--首页-->
+<view class="Home page">
   <nav-bar title="首页" backButton="{{false}}" homeButton="{{false}}" color="white" background="linear-gradient(45deg,#0081ff,#1cbbb4)"></nav-bar>
 
   <scroll-view scroll-y enable-flex type="custom" show-scrollbar="{{true}}" class="flex-1 overflow-hidden" scroll-top="{{scrollTop}}" bind:refresherrefresh="f_refresh" bind:scroll="f_scroll">

@@ -1,7 +1,7 @@
 // 页面元素递级延迟显示
 @for $i from 0 through 12 {
   .transition-#{$i} {
-    transition: all 0.3s linear #{0.05 * $i}s;
+    transition: all 0.2s linear #{0.05 * $i}s;
   }
 }
 .transition-none {
