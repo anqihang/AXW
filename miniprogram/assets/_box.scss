@@ -153,10 +153,10 @@ $value in $directions {
 }
 
 // 盒模型类型
-.border-box {
+.box-border {
   box-sizing: border-box;
 }
 
-.content-box {
+.box-content {
   box-sizing: content-box;
 }
