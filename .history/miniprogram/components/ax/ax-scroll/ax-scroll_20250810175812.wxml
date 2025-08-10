@@ -1,0 +1,5 @@
+<view class="Scroll">
+    <scroll-view scroll-y refresher-enabled refresher-default-style="none" 	refresher-triggered="{{refresh}}"	show-scrollbar="{{showScrollBar}}" 	bind:scrolltolower="f_arriveBottom" 	bind:scroll="f_scroll" bind:refresherpulling="f_pulling" 	bindrefresherrefresh="f_refresh" bind:refresherrestore="f_end" bind:refresherabort="f_abort"
+    type="custom" associative-container="container" refresher-ballistic-refresh-enabled="{{true}}" bind:refresherstatuschange="f_pullBack">
+    </scroll-vie>
+</view>
