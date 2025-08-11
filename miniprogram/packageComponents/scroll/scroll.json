@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "ax-scroll":"/components/ax/ax-scroll/ax-scroll"
+  }
+}

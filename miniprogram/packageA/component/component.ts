@@ -8,6 +8,7 @@ Component({
       { id: 5, name: "toast", path: "/packageComponents/toast/toast" },
       { id: 2, name: "input", path: "/packageComponents/input/input" },
       { id: 3, name: "check", path: "/packageComponents/check/check" },
+      { id: 3, name: "scrol", path: "/packageComponents/scroll/scroll" },
     ],
   },
 

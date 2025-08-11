@@ -1,0 +1,6 @@
+<view class="page">
+  <nav-bar title="组件" color="white" background="linear-gradient(45deg,#0081ff,#1cbbb4)"></nav-bar>
+  <ax-scroll class="flex-1">
+    <view wx:for="{{list}}" key="id">{{item.id}}</view>
+  </ax-scroll>
+</view>

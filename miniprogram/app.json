@@ -1,5 +1,8 @@
 {
-  "pages": ["pages/index/index", "pages/logs/logs"],
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
   "subPackages": [
     {
       "root": "packageA",
@@ -15,7 +18,14 @@
     },
     {
       "root": "packageComponents",
-      "pages": ["tabs/tabs", "modal/modal", "input/input", "check/check", "toast/toast"]
+      "pages": [
+        "tabs/tabs",
+        "modal/modal",
+        "input/input",
+        "check/check",
+        "toast/toast",
+        "scroll/scroll"
+      ]
     }
   ],
   "usingComponents": {

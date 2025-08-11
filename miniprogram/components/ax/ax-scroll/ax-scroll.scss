@@ -1,19 +1,25 @@
 .Scroll {
-  .refreshBar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 24rpx 0;
+  height: 100%;
+  overflow: hidden;
 
-    .refreshBar-icon {
-      margin-right: 10rpx;
-      height: 64rpx;
-      width: 64rpx;
-    }
+  scroll-view {
+    height:100%;
 
-    .refreshBar-text {
-      font-size: 24rpx;
-      color: #666666;
+    .refreshBar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .refreshBar-icon {
+        margin-right: 10rpx;
+        height: 64rpx;
+        width: 64rpx;
+      }
+
+      .refreshBar-text {
+        font-size: 24rpx;
+        color: #666666;
+      }
     }
   }
 }

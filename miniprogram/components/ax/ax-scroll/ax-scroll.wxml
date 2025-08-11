@@ -1,12 +1,11 @@
 <view class="Scroll">
-    <scroll-view scroll-y refresher-enabled="{{isRefresher}}" refresher-default-style="none" 	refresher-triggered="{{isRefreshing}}"	show-scrollbar="{{showScrollBar}}" 	bind:scrolltolower="f_arriveBottom" 	bind:scroll="f_scroll" bind:refresherpulling="f_pulling" 	bindrefresherrefresh="f_refresh" bind:refresherrestore="f_end" bind:refresherabort="f_abort"
-    type="custom" associative-container="container" refresher-ballistic-refresh-enabled="{{true}}" bind:refresherstatuschange="f_pullBack">
-        <view name="refresher">
-            <view style="refreshBar">
-                <view style="refreshBar-icon"></view>
-                <view style="refreshBar-text">{{}}</view>
-            </view>
-        </view>
-        <slot></slot>
-    </scroll-vie>
+  <scroll-view scroll-y refresher-enabled="{{isRefresher}}" refresher-default-style="none" refresher-triggered="{{isRefreshing}}" show-scrollbar="{{showScrollBar}}" bind:scrolltolower="f_arriveBottom" bind:scroll="f_scroll" bind:refresherpulling="f_pulling" bindrefresherrefresh="f_refresh" bind:refresherrestore="f_end" bind:refresherabort="f_abort" type="custom" associative-container="container" refresher-ballistic-refresh-enabled="{{true}}" bind:refresherstatuschange="f_pullBack">
+    <view slot="refresher">
+      <view class="refreshBar">
+        <view class="refreshBar-icon"></view>
+        <view class="refreshBar-text">刷新</view>
+      </view>
+    </view>
+    <slot></slot>
+  </scroll-view>
 </view>
