@@ -23,7 +23,7 @@ Component({
         if (newVal) {
         } else {
           this.setData({
-            loadText: "加载完成",
+            loadText: "下拉加载更多",
             bottomStatus: "end",
           });
         }
