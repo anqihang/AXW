@@ -1,7 +1,6 @@
 <view class="page">
   <nav-bar title="组件" color="white" background="linear-gradient(45deg,#0081ff,#1cbbb4)"></nav-bar>
-  {{isRefresh}}
-  <ax-scroll class="flex-1" bind:refresh="f_arriveBottom" isRefresh="{{isRefresh}}" isNoMore="{{isNoMore}}" isLoadMore="{{isLoading}}">
+  <ax-scroll class="flex-1">
     <view wx:for="{{list}}" key="id">{{item.id}}</view>
   </ax-scroll>
 </view>

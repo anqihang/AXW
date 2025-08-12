@@ -15,6 +15,7 @@
         display: inline-block;
         width: 1em;
         height: 1em;
+        background-color: black;
         -webkit-mask-image: var(--svg);
         mask-image: var(--svg);
         -webkit-mask-repeat: no-repeat;
@@ -22,18 +23,15 @@
         -webkit-mask-size: 100% 100%;
         mask-size: 100% 100%;
 
-        &.pull {
-          background-color: #666666;
+        .pull {
           --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='black' d='M7.03 13.92h4V5l2.01-.03v8.95h3.99l-5 5Z'/%3E%3C/svg%3E");
         }
 
-        &.trigger {
-          background-color: #666666;
+        .triger {
           --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='black' d='M7.03 9.97h4v8.92l2.01.03V9.97h3.99l-5-5Z'/%3E%3C/svg%3E");
         }
 
-        &.refresh {
-          background-color: #666666;
+        .refresh {
           --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='none' stroke='black' stroke-linecap='round' stroke-width='2' d='M12 6.99998C9.1747 6.99987 6.99997 9.24998 7 12C7.00003 14.55 9.02119 17 12 17C14.7712 17 17 14.75 17 12'%3E%3CanimateTransform attributeName='transform' attributeType='XML' dur='560ms' from='0,12,12' repeatCount='indefinite' to='360,12,12' type='rotate'/%3E%3C/path%3E%3C/svg%3E");
         }
       }
