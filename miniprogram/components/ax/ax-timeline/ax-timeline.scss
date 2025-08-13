@@ -1,0 +1,75 @@
+.ax_timeline {
+  .time {
+    .left {
+      padding:24rpx 32rpx;
+      width:1px;
+      position:relative;
+      text{
+        position:absolute;
+        top:0;
+        left:0;
+        right:0;
+        margin:0 auto;
+        color: #888888;
+        font-size: 20rpx;
+      }
+    }
+  }
+
+  .info {
+    display: flex;
+    .left{
+      padding:0 32rpx;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .line{
+        width:1px;
+        background:#dddddd;
+        height:24rpx;
+      }
+      .icon{
+        margin: 12rpx 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    .right{
+      padding:24rpx 0;
+    }
+  }
+
+  // .left {
+  //   display: flex;
+  //   flex-direction: column;
+  //   align-items: center;
+  //   position:relative;
+  //   padding:0 24rpx;
+
+  //   .time{
+  //     font-size: 20rpx;
+  //     color:#888888;
+  //   }
+  //   .line {
+  //     width: 1px;
+  //     background: #dddddd;
+  //     // height: 100%;
+  //   }
+  //   .icon{
+  //     display: flex;
+  //     justify-content: center;
+  //     align-items: center;
+  //     // background:white;
+  //     padding:8rpx 0;
+  //     .content{
+  //       width:32rpx;
+  //       height:32rpx;
+  //     }
+  //   }
+  // }
+  // .right{
+  //   padding:24rpx 0;
+  // }
+}

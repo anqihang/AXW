@@ -1,3 +1,16 @@
 <view class="ax_timeline">
-    <view></view>
+  <view class="time">
+    <view class="left">
+      <text>09-10</text>
+    </view>
+  </view>
+  <view class="info">
+    <view class="left">
+      <view class="line first"></view>
+      <view class="icon">12</view>
+      <view class="line second"></view>
+    </view>
+    <view class="right">
+    </view>
+  </view>
 </view>

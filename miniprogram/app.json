@@ -24,7 +24,8 @@
         "input/input",
         "check/check",
         "toast/toast",
-        "scroll/scroll"
+        "scroll/scroll",
+        "timeline/timeline"
       ]
     }
   ],

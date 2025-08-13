@@ -1,0 +1,6 @@
+<view class="page">
+  <nav-bar title="组件" color="white" background="linear-gradient(45deg,#0081ff,#1cbbb4)"></nav-bar>
+  <ax-timeline>
+    <view style="height:40rpx;background:red;">12312</view>
+  </ax-timeline>
+</view>

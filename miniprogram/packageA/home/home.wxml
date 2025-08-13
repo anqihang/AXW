@@ -43,8 +43,6 @@
       </block>
     </grid-view>
     <video controls src="https://95sunny.github.io/FlappyBird-canvas-demo/images/v.f1427677.mp4"/>
-    <span class="bg-black icon--codex icon--codex--loader"></span>
-    <image src="./load.svg"></image>
     <!-- </sticky-section> -->
   </scroll-view>
 </view>

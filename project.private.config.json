@@ -24,6 +24,13 @@
     "miniprogram": {
       "list": [
         {
+          "name": "packageComponents/timeline/timeline",
+          "pathName": "packageComponents/timeline/timeline",
+          "query": "",
+          "scene": null,
+          "launchMode": "default"
+        },
+        {
           "name": "packageA/sign/sign",
           "pathName": "packageA/sign/sign",
           "query": "",

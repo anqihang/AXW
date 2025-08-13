@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "ax-timeline":"/components/ax/ax-timeline/ax-timeline"
+  }
+}
