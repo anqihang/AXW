@@ -1,29 +1,35 @@
 .ax_timeline {
   .time {
+    display: flex;
+
     .left {
       display: flex;
-      padding: 24rpx 32rpx;
+      margin: 16rpx 32rpx;
       width: 1px;
       position: relative;
+      background: pink;
+
       text,
       view,
       span {
         position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
+        top: 50%;
+        left: 50%;
         color: #888888;
         font-size: 20rpx;
+        transform: translate(-50%, -50%);
+        white-space: nowrap;
       }
     }
-    .left:empty .left {
+
+    .left:empty {
       display: none;
     }
   }
 
   .info {
     display: flex;
+
     .left {
       padding: 0 32rpx;
       display: flex;
@@ -34,61 +40,65 @@
         width: 1px;
         background: #dddddd;
       }
+
       .first {
-        height: 24rpx;
+        height: 16rpx;
       }
+
       .second {
         flex: 1;
       }
+
       .icon {
-        padding: 24rpx 32rpx;
         width: 1px;
         position: relative;
-        .icon_slot {
+        padding: 16rpx 0rpx;
+
+        .item {
           position: absolute;
           width: 32rpx;
           height: 32rpx;
-          left: 0;
-          right: 0;
-          top: 4rpx;
+          left: 50%;
+          top: 50%;
           margin: 0 auto;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+        }
+
+        .icon_slot:empty {
+          display: none;
+        }
+
+        .icon_slot:empty+.placeholder {
+          display: inline-block;
+          width: 24rpx;
+          height: 24rpx;
+          background: #dddddd;
+          border-radius: 100%;
+          -webkit-mask-image: var(--svg);
+          mask-image: var(--svg);
+          -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+          -webkit-mask-size: 100% 100%;
+          mask-size: 100% 100%;
+
+        }
+
+        .circle {
+          --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' width='512' height='512'%3E%3Cpath fill='black' fill-rule='evenodd' d='M256 42.667c117.821 0 213.334 95.513 213.334 213.333c0 117.821-95.513 213.334-213.334 213.334c-117.82 0-213.333-95.513-213.333-213.334C42.667 138.18 138.18 42.667 256 42.667m0 106.667c-58.91 0-106.666 47.756-106.666 106.666S197.09 362.667 256 362.667S362.667 314.911 362.667 256c0-58.91-47.756-106.666-106.667-106.666'/%3E%3C/svg%3E");
+        }
+
+        .bell {
+          --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='black' d='M21 19v1H3v-1l2-2v-6c0-3.1 2.03-5.83 5-6.71V4a2 2 0 0 1 2-2a2 2 0 0 1 2 2v.29c2.97.88 5 3.61 5 6.71v6zm-7 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2'/%3E%3C/svg%3E");
         }
       }
     }
-    .right {
-      padding: 24rpx 0;
-    }
   }
 
-  // .left {
-  //   display: flex;
-  //   flex-direction: column;
-  //   align-items: center;
-  //   position:relative;
-  //   padding:0 24rpx;
-
-  //   .time{
-  //     font-size: 20rpx;
-  //     color:#888888;
-  //   }
-  //   .line {
-  //     width: 1px;
-  //     background: #dddddd;
-  //     // height: 100%;
-  //   }
-  //   .icon{
-  //     display: flex;
-  //     justify-content: center;
-  //     align-items: center;
-  //     // background:white;
-  //     padding:8rpx 0;
-  //     .content{
-  //       width:32rpx;
-  //       height:32rpx;
-  //     }
-  //   }
-  // }
-  // .right{
-  //   padding:24rpx 0;
-  // }
+  .right {
+    padding: 16rpx 0;
+    flex:1;
+  }
 }

@@ -24,11 +24,18 @@
     "miniprogram": {
       "list": [
         {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "page=home",
+          "scene": null,
+          "launchMode": "default"
+        },
+        {
           "name": "packageComponents/timeline/timeline",
           "pathName": "packageComponents/timeline/timeline",
           "query": "",
-          "scene": null,
-          "launchMode": "default"
+          "launchMode": "default",
+          "scene": null
         },
         {
           "name": "packageA/sign/sign",

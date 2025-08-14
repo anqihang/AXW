@@ -25,7 +25,8 @@
         "check/check",
         "toast/toast",
         "scroll/scroll",
-        "timeline/timeline"
+        "timeline/timeline",
+        "swiper/swiper"
       ]
     }
   ],

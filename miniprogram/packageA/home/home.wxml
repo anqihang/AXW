@@ -42,7 +42,7 @@
         </view>
       </block>
     </grid-view>
-    <video controls src="https://95sunny.github.io/FlappyBird-canvas-demo/images/v.f1427677.mp4"/>
+    <!-- <video controls src="https://95sunny.github.io/FlappyBird-canvas-demo/images/v.f1427677.mp4"/> -->
     <!-- </sticky-section> -->
   </scroll-view>
 </view>

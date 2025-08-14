@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "ax-swiper":"/components/ax/ax-swiper/ax-swiper"
+  }
+}

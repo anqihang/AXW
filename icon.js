@@ -8,7 +8,7 @@ import { locate } from "@iconify/json";
  * @type {Record<string, string[]>}
  */
 const icons = {
-  mdi: ["home", "account-outline", "password-outline", "form-textbox-password", "eye-outline", "eye-off", "arrow-down-thin", "arrow-up-thin"], // 睁眼，闭眼，向上箭头，向下箭头
+  mdi: ["home", "account-outline", "password-outline", "form-textbox-password", "eye-outline", "eye-off", "arrow-down-thin", "arrow-up-thin","bell"], // 睁眼，闭眼，向上箭头，向下箭头，铃铛
   "mdi-light": ["circle", "help-circle"], // 圆圈，圆圈问号
   tabler: ["search"], // 搜索
   gg: ["close-o"], // 圆圈叉号
@@ -19,6 +19,7 @@ const icons = {
   bxs: ["like"], // 点赞
   carbon: ["overflow-menu-vertical"], // 竖三点
   codex: ["loader"],// 加载缺口圆环
+  ix:["circle-dot-filled"],// 同心圆
 };
 
 // Parse each icon set

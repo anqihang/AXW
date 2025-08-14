@@ -6,13 +6,15 @@
   </view>
   <view class="info">
     <view class="left">
-      <view class="line first"></view>
-      <view class="icon">
-        <view class="icon_slot">
+      <view class="line first" style="{{isStart?'opacity:0;visible:hidden;':''}}"></view>
+      <view class="icon" wx:if="{{icon}}">
+        <view class="item icon_slot">
           <slot name="icon"></slot>
         </view>
+        <view class="item placeholder {{icon}}">
+        </view>
       </view>
-      <view class="line second"></view>
+      <view class="line {{isEnd?'':'second'}}"></view>
     </view>
     <view class="right">
       <slot></slot>
