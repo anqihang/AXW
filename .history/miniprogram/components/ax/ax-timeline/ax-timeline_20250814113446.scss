@@ -1,7 +1,6 @@
 .ax_timeline {
   .time {
     .left {
-      display: flex;
       padding: 24rpx 32rpx;
       width: 1px;
       position: relative;
@@ -16,9 +15,6 @@
         color: #888888;
         font-size: 20rpx;
       }
-    }
-    .left:empty .left {
-      display: none;
     }
   }
 

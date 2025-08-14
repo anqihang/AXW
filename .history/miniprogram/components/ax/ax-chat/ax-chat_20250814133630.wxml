@@ -1,0 +1,7 @@
+<view class="ax_chat">
+    <view class="item" wx:for="{{messageList}}" wx:key="index">
+        <view class="avatar"></view>
+        <view></view>
+        <view class="avatar"></view>
+    </view>
+</view>

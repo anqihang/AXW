@@ -1,62 +1,43 @@
 .ax_timeline {
   .time {
     .left {
-      display: flex;
-      padding: 24rpx 32rpx;
-      width: 1px;
-      position: relative;
-      text,
-      view,
-      span {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
+      padding:24rpx 32rpx;
+      width:1px;
+      position:relative;
+      text{
+        position:absolute;
+        top:0;
+        left:0;
+        right:0;
+        margin:0 auto;
         color: #888888;
         font-size: 20rpx;
       }
-    }
-    .left:empty .left {
-      display: none;
     }
   }
 
   .info {
     display: flex;
-    .left {
-      padding: 0 32rpx;
+    .left{
+      padding:0 32rpx;
       display: flex;
       flex-direction: column;
       align-items: center;
 
-      .line {
-        width: 1px;
-        background: #dddddd;
+      .line{
+        width:1px;
+        background:#dddddd;
+        height:24rpx;
       }
-      .first {
-        height: 24rpx;
-      }
-      .second {
-        flex: 1;
-      }
-      .icon {
-        padding: 24rpx 32rpx;
-        width: 1px;
-        position: relative;
-        .icon_slot {
-          position: absolute;
-          width: 32rpx;
-          height: 32rpx;
-          left: 0;
-          right: 0;
-          top: 4rpx;
-          margin: 0 auto;
-        }
+      .icon{
+        margin: 12rpx 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
     }
-    .right {
-      padding: 24rpx 0;
+    .right{
+      padding:24rpx 0;
     }
   }
 

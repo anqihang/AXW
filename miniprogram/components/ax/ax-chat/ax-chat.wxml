@@ -1,0 +1,22 @@
+<view class="ax_chat">
+    <view class="item">
+        <view class="avatar"></view>
+        <view class="main">
+            <view class=""></view>
+            <view class="info">
+                <view class="text">
+                </view>
+                <view class="image">
+                </view>
+                <view class="video">
+                </view>
+                <view class="audio">
+                </view>
+                <view class="file">
+                </view>
+            </view>
+            <view></view>
+        </view>
+        <view class="avatar"></view>
+    </view>
+</view>
