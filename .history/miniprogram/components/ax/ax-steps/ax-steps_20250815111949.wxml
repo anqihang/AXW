@@ -1,0 +1,5 @@
+<view class="ax_steps">
+    <scroll-view scroll-x="" type="custom" >
+        <view class="item"></view>
+    </scroll-view>
+</view>

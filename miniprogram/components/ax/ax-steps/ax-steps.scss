@@ -1,0 +1,55 @@
+.ax_steps {
+  .item {
+    display: flex;
+    align-items: center;
+    padding: 0 64rpx;
+    text-align: center;
+    position: relative;
+
+    .line {
+      flex: 1;
+      height: 1px;
+      background: var(--color);
+      position: absolute;
+      width: calc(100% - 32rpx);
+      left: calc((100% - 32rpx) / 2);
+    }
+
+    .active {
+      width: 100%;
+      transition: width 0.3s linear;
+      background: var(--active-color);
+    }
+
+    .icon {
+      width: 32rpx;
+      height: 32rpx;
+      padding: 8rpx 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .slot {
+        display: none;
+        width: 24rpx;
+        height: 24rpx;
+      }
+    }
+
+    .icon:empty .slot {
+      display: block;
+    }
+
+    .text {
+      font-size: 28rpx;
+      color: var(--color);
+
+      .active {
+        color: var(--active-color);
+      }
+    }
+
+    --color: #dddddd;
+    --active-color: #e54d42;
+  }
+}

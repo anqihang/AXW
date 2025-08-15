@@ -1,0 +1,11 @@
+<view class="ax_steps">
+    <scroll-view scroll-x="" type="custom" >
+        <view class="item">
+            <view class="line">
+                <view class="active_line"></view>
+            </view>
+
+            <view class="icon"></view>
+        </view>
+    </scroll-view>
+</view>
