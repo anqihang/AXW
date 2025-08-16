@@ -33,6 +33,11 @@
         display: none;
         width: 24rpx;
         height: 24rpx;
+
+        .active {
+          height: 100%;
+          transition: all 0.3s linear;
+        }
       }
     }
 

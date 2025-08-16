@@ -1,12 +1,14 @@
 <view class="ax_steps">
-    <scroll-view scroll-x="" type="custom" >
+    <scroll-view scroll-x="{{scroll}}" type="custom" >
         <view class="item">
             <view class="line">
                 <view class="{{active?'active':''}}"></view>
             </view>
             <view class="icon">
                 <slot name="icon"></slot>
-                <view class="slot"></view>
+                <view class="slot">
+                    <view class="{{active?'active':''}}"></view>
+                </view>
             </view>
             <view class="text">
                 <text>{{name}}</text>

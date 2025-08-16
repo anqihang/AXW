@@ -12,6 +12,10 @@ Component({
       value: "circle",
       options: ["circle", "bell", "finish", "error"],
     },
+    scroll: {
+      type: Boolean,
+      value: false,
+    },
   },
   data: {},
 });
